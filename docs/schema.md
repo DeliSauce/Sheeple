@@ -13,19 +13,19 @@ session_token   | string    | not null, indexed, unique
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    |
-description | string    |
-price       | integer   |
-skill       | string    |
-location    | string    |
+name        | string    | not null
+description | string    | not null
+price       | integer   | not null
+skill       | string    | not null
+location    | string    | not null
 
 ##reviews
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-tasker_id   | string    |
-reviewer    | string    |
-comment     | string    |
+tasker_id   | string    | not null
+reviewer    | string    | not null
+comment     | string    | not null
 
 ## tasks
 column name | data type | details
@@ -33,5 +33,5 @@ column name | data type | details
 id          | integer   | not null, primary key
 tasker_id   | integer   | not null, foreign key (references takers), indexed
 user_id     | string    | not null, foreign key (references users), indexed
-description | string    |
-date        | date      |
+description | string    | not null
+date        | date      | not null

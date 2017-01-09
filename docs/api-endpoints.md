@@ -12,7 +12,6 @@
 
 - `POST /api/users`
 - `PATCH /api/users`
-- `GET /api/users/:id`
 
 ### Session
 
@@ -20,11 +19,13 @@
 - `DELETE /api/session`
 
 ### Tasks
-
+- `GET /api/tasks`
+- `POST /api/tasks`
+- `DELETE /api/tasks/:id`
 
 ### Taskers
 - `GET /api/taskers`
 - `GET /api/taskers/:id`
-- `GET /api/taskers/:id/reviews`
 
 ### Reviews
+- `GET /api/taskers/:id/reviews`

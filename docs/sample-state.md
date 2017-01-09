@@ -6,8 +6,7 @@
   },
   forms: {
     signUp: {errors: []},
-    logIn: {errors: []},
-    createNote: {errors: ["body can't be blank"]}
+    logIn: {errors: []}}
   },
   taskers: {
     1: {
@@ -30,7 +29,7 @@
       tasker_id: 1,
       user_id: 1,
       date: "2017-01-01",
-      description: "Standing in line for the grand opening of my bar."
+      description: "Standing in line for the grand opening of my club."
     }
   }
 }

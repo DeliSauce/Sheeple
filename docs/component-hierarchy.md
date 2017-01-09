@@ -1,21 +1,24 @@
 ## Component Hierarchy
 
+- Header
+
 **AuthFormContainer**
  - AuthForm
 
 **HomeContainer**
- - Header
  - Home
 
 **BookingSearchContainer**
 - BookingSearch
   * TaskerList
-    * Tasker
+    * TaskerDetails
 
 **TaskerDetailsContainer**
 - TaskerDetails
   * TaskerReviews
 
+**DashboardContainer**
+- TaskDetails
 
 
 |Path   | Component   |
@@ -28,3 +31,4 @@
 | "/booking/search-results/tasker/:taskerId" | "TaskerDetailsContainer" |
 | "/booking/search-results/booking-form" | "BookingFormContainer" |
 | "/users/:id" | "DashboardContainer" |
+| "/users/:id/tasks" | "DashboardContainer" |
