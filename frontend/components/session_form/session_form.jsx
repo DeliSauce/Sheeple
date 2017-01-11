@@ -17,6 +17,7 @@ class SessionForm extends React.Component {
 		this.redirectIfLoggedIn();
 	}
 
+  //TODO redo this function with hashHistory.push?
   redirectIfLoggedIn() {
     if (this.props.loggedIn) {
       this.props.router.push("/");
@@ -87,11 +88,10 @@ class SessionForm extends React.Component {
 
   render (){
     return (
-      <div className="login-signup">
-        <form onSubmit={this.handleSubmit}>
+
+        <form onSubmit={this.handleSubmit} className="session-form">
           {this.header()}
           {this.renderErrors()}
-
           <label> Username:
             <input
               type="text"
@@ -111,15 +111,11 @@ class SessionForm extends React.Component {
 
           {this.email()}
 
-          <input
-            type="submit"
+          <input type="submit" />
 
-          />
-        <br />
-        {this.switchforms()}
+          {this.switchforms()}
 
         </form>
-      </div>
     );
   }
 

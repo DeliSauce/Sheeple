@@ -13,3 +13,82 @@
  *= require_tree .
  *= require_self
  */
+.header {
+  border: solid 1px blue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.logo {
+  border: solid 1px green;
+  margin: 10px;
+}
+
+.logged-out-nav {
+  border: solid 1px green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logged-out-nav > * {
+  margin: 10px;
+}
+
+.logged-in-nav {
+  border: solid 1px green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logged-in-nav > * {
+  margin: 10px;
+}
+
+
+
+.homepage {
+
+}
+
+.splash {
+  width: 100%;
+  height: 450px;
+  margin-bottom: 50px;
+  background-image: url(https://unsplash.com/photos/gcDwzUGuUoI);
+}
+
+.task-selectors {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.task-selectors > div {
+  width: 200px;
+  height: 200px;
+  border: solid 1px red;
+
+}
+
+
+.session-form {
+  position: absolute;
+  top: 100px;
+  right: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightblue;
+  border: solid 1px red;
+  width: 600px;
+  height: 400px;
+}
+
+.session-form > label {
+  border: solid 1px red;
+}
