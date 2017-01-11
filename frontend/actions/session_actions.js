@@ -5,7 +5,6 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 // regular actions creators:
 export const receiveCurrentUser = (currentUser) => {
-  debugger;
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser
@@ -13,7 +12,6 @@ export const receiveCurrentUser = (currentUser) => {
 };
 
 export const receiveErrors = (errors) => {
-  debugger;
   return {
     type: RECEIVE_ERRORS,
     errors
