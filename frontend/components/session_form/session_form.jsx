@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
 		this.redirectIfLoggedIn();
 	}
 
-  //TODO redo this function with hashHistory.push?
+  //TODO redo this function with hashHistory.?
   redirectIfLoggedIn() {
     if (this.props.loggedIn) {
       this.props.router.push("/");
