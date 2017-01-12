@@ -5,7 +5,7 @@ const App = ({ children }) => (
   <div className="top-level-change-this">
 
     <div className="header">
-      <div className="logo">LOGO</div>
+      <div className="hero-image"></div>
       <HeaderNavContainer />
     </div>
 
@@ -18,21 +18,21 @@ const App = ({ children }) => (
         </div>
       </div>
 
-      <div className="task-selectors">
+      <div className="task-selectors-container">
 
-        <div className="task-selector-line">
-          Line Standers 
-          <button>BOOK</button>
+        <div className="task-selector line-background">
+          <div className="task-selector-text">Line Standers</div>
+          <button className="book-button">BOOK</button>
         </div>
 
-        <div className="task-selector-seat">
-          Seat Fillers
-          <button>BOOK</button>
+        <div className="task-selector seat-background">
+          <div className="task-selector-text">Seat Fillers</div>
+          <button className="book-button">BOOK</button>
         </div>
 
-        <div className="task-selector-concert">
-          Concert Goers
-          <button>BOOK</button>
+        <div className="task-selector concert-background">
+          <div className="task-selector-text">Concert Goers</div>
+          <button className="book-button">BOOK</button>
         </div>
 
       </div>

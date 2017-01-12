@@ -11,7 +11,7 @@ html {
 }
 
 .header {
-  border: solid 1px blue;
+  // border: solid 1px blue;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -20,13 +20,17 @@ html {
   width: 100%;
 }
 
-.logo {
-  border: solid 1px green;
+.hero-image {
+  height: 30px;
+  width: 160px;
   margin: 10px;
+  background-image: url(http://res.cloudinary.com/delisauce/image/upload/v1484206007/WB_logo_hgtqai.png);
+  background-size: cover;
+
 }
 
 .logged-out-nav {
-  border: solid 1px green;
+  // border: solid 1px green;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -37,7 +41,7 @@ html {
 }
 
 .logged-in-nav {
-  border: solid 1px green;
+  // border: solid 1px green;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -57,7 +61,7 @@ html {
 .splash {
   width: 100%;
   height: 700px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   background-image: url(http://res.cloudinary.com/delisauce/image/upload/c_scale,h_700,w_1200/v1484172472/kr2mdhj5qmg-luke-chesser_eb14sl.jpg);
   background-size: cover;
 
@@ -75,37 +79,48 @@ html {
   margin: auto 0;
 }
 
-.task-selectors {
+.task-selectors-container {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 100%;
 }
 
-.task-selectors > div {
-  border: solid 1px red;
-  margin: 20px;
-  width: 25%;
-  height: 200px;
+.task-selector {
+  // border: solid 1px red;
+  margin: 10px 0;
+  width: 28%;
+  height: 300px;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: black;
+  font-weight: bold;
+  font-family: $sans-serif;
+  font-size: 18px;
+  // text-shadow: 1px 0px $button-green;
 }
 
-.task-selector-line {
+.line-background {
   background-image: url(http://res.cloudinary.com/delisauce/image/upload/q_39/v1484180243/line-full.jpg);
 
 }
 
-.task-selector-seat {
+.seat-background {
   background-image: url(http://res.cloudinary.com/delisauce/image/upload/q_39/v1484180243/restaurant-full.jpg);
 }
 
-.task-selector-concert {
+.concert-background {
   background-image: url(http://res.cloudinary.com/delisauce/image/upload/q_39/v1484180243/concert-full.jpg);
+}
+
+.task-selector-text {
+  background-color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .session-form {
@@ -118,7 +133,7 @@ html {
   align-items: center;
   justify-content: center;
   background-color: $light-gray;
-  border: solid 1px red;
+  // border: solid 1px red;
   width: 600px;
   height: 400px;
   opacity: .8;
@@ -128,7 +143,7 @@ html {
   display: flex;
   flex-direction: column;
   margin: 10px;
-  border: blue solid 1px;
+  // border: blue solid 1px;
 }
 
 
@@ -147,6 +162,6 @@ button {
 }
 
 button:hover {
-	background-color: $blue;
-  border-color: $darkest-blue;
+	background-color: $button-hover-green;
+  border-color: $button-hover-green;
 }

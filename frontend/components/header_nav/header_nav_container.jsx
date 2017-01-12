@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { logout, login } from '../../actions/session_actions';
 import HeaderNav from './header_nav';
 
 const mapStateToProps = ({ session }) => ({
@@ -7,7 +7,8 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  loginGuest: () => dispatch(login({user: {username: "GUEST", password: "password"}}))
 });
 
 export default connect(

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const loggedOutNav = () => (
+const loggedOutNav = (loginGuest) => (
   <nav className="logged-out-nav">
-    <Link to="/login" activeClassName="current">Login</Link>
+    <button className="guest-login-button" onClick={loginGuest}>Guest Log In</button>
+    <Link to="/login" activeClassName="current">Log In</Link>
     <Link to="/signup" activeClassName="current">Sign up</Link>
   </nav>
 );
@@ -15,8 +16,8 @@ const loggedInNav = (currentUser, logout) => (
 	</hgroup>
 );
 
-const HeaderNav = ({ currentUser, logout }) => (
-  currentUser ? loggedInNav(currentUser, logout) : loggedOutNav()
+const HeaderNav = ({ currentUser, logout, loginGuest}) => (
+  currentUser ? loggedInNav(currentUser, logout) : loggedOutNav(loginGuest)
 );
 
 export default HeaderNav;

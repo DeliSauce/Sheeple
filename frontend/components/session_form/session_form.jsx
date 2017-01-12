@@ -28,6 +28,11 @@ class SessionForm extends React.Component {
     e.preventDefault();
     // const user = Object.assign({}, this.state);
     const user = {user: this.state};
+    this.setState({
+        username: "",
+        password: "",
+        email: ""
+    });
     this.props.processForm(user);
     // .then(() => this.redirect());
   }
