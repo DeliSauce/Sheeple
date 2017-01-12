@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, IndexLink} from 'react-router';
 
 const loggedOutNav = (loginGuest) => (
   <nav className="logged-out-nav">
