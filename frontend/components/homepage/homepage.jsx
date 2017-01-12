@@ -1,4 +1,9 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
+
+const gotoBooking = (type) => () => {
+  hashHistory.push(`/booking`);
+};
 
 const Homepage = ({ children }) => (
     <div className="homepage">
@@ -14,17 +19,17 @@ const Homepage = ({ children }) => (
 
         <div className="task-selector line-background">
           <div className="task-selector-text">Line Standers</div>
-          <button className="book-button">BOOK</button>
+          <button onClick={gotoBooking('line')}  className="book-button">BOOK</button>
         </div>
 
         <div className="task-selector seat-background">
           <div className="task-selector-text">Seat Fillers</div>
-          <button className="book-button">BOOK</button>
+          <button onClick={gotoBooking('seat')} className="book-button">BOOK</button>
         </div>
 
         <div className="task-selector concert-background">
           <div className="task-selector-text">Concert Goers</div>
-          <button className="book-button">BOOK</button>
+          <button onClick={gotoBooking('concert')} className="book-button">BOOK</button>
         </div>
 
       </div>
