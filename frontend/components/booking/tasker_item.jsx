@@ -1,26 +1,48 @@
 import React from 'react';
 
+const bookingButtonToggle = (bool) => {
+  if (bool) {
+    return (
+      <button className="instant-book">
+        Instant Booking
+      </button>
+    );
+  } else {
+    return (
+      <button className="normal-book">
+        Request Booking
+      </button>
+    );
+  }
+};
 
 const TaskerItem = (props) => (
-  <li className="tasker-item">
-    <div>
-      {props.tasker.first_name}
-      {props.tasker.last_name}
+  <li className="search-result-item">
+
+    <div className="profile-img">
+      <img src={props.tasker.profile_img_link} />
     </div>
-    <div>
+
+    <div className="profile-data">
+      <div>
+        {props.tasker.first_name + " " + props.tasker.last_name + " (" + props.tasker.location + ")"  }
+      </div>
+      <div>
+        {"rate: $" + props.tasker.rate + "/hr"}
+      </div>
+      <div>
+        {"skillset: " + props.tasker.skill}
+      </div>
+    </div>
+
+    <div className="profile-description">
       {props.tasker.description}
     </div>
-    <div>
-      {props.tasker.rate}
-    </div>
-    <div>
-      {props.tasker.auto_book}
-    </div>
-    <div>
-      {props.tasker.skill}
-    </div>
-    <div>
-      {props.tasker.location}
+
+    <div className="profile-buttons">
+      <div>
+        {bookingButtonToggle(props.tasker.auto_book)}
+      </div>
     </div>
   </li>
 );

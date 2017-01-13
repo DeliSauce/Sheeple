@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import Homepage from './homepage/homepage';
-import BookingContainer from './booking/booking_container';
+import Booking from './booking/booking';
 import DashboardContainer from './dashboard/dashboard_container';
 
 // react router
@@ -40,7 +40,7 @@ const Root = ({ store }) => {
             <Route path="/signup" component={ SessionFormContainer } onEnter={ _redirectIfLoggedIn } />
           </Route>
 
-          <Route path='/booking' component={BookingContainer} onEnter={_ensureLoggedIn}/>
+          <Route path='/booking' component={Booking} onEnter={_ensureLoggedIn}/>
           <Route path='/dashboard' component={DashboardContainer} onEnter={_ensureLoggedIn}/>
         </Route>
 

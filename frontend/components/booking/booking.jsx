@@ -1,25 +1,12 @@
 import React from 'react';
-import TaskerItem from './tasker_item';
+import FiltersContainer from './filters_container';
+import SearchResultsContainer from './search_results_container';
 
-
-class Booking extends React.Component {
-
-  componentDidMount() {
-    this.props.fetchTaskers();
-  }
-
-  render() {
-    let taskers = this.props.taskers.map((tasker) => <TaskerItem tasker={tasker}/>);
-    console.log(taskers, this.props);
-    return (
-      <div>
-        BOOKING PAGE
-        <ul>
-          {taskers}
-        </ul>
-      </div>
-    );
-  }
-}
+const Booking = () => (
+  <div className="booking-container">
+    <FiltersContainer />
+    <SearchResultsContainer />
+  </div>
+);
 
 export default Booking;

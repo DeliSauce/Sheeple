@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Search from './booking';
+import Filters from './filters';
 
 const mapStateToProps = () => ({
 });
@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Search);
+)(Filters);
