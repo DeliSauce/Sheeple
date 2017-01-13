@@ -15,7 +15,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 name        | string    | not null
 description | string    | not null
-price       | integer   | not null
+rate        | integer   | not null
 skill       | string    | not null
 location    | string    | not null
 
@@ -31,7 +31,7 @@ comment     | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-tasker_id   | integer   | not null, foreign key (references takers), indexed
+tasker_id   | integer   | not null, foreign key (references taskers), indexed
 user_id     | string    | not null, foreign key (references users), indexed
 description | string    | not null
 date        | date      | not null

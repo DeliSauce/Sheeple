@@ -165,3 +165,12 @@ button:hover {
 	background-color: $button-hover-green;
   border-color: $button-hover-green;
 }
+
+
+.tasker-item {
+  border: solid red 1px;
+}
+
+.tasker-item > div {
+  
+}

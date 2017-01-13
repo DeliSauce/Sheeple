@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110194037) do
+ActiveRecord::Schema.define(version: 20170113030823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "taskers", force: :cascade do |t|
+    t.string   "first_name",                  null: false
+    t.string   "last_name",                   null: false
+    t.string   "username",                    null: false
+    t.string   "email",                       null: false
+    t.text     "description",                 null: false
+    t.integer  "rate",                        null: false
+    t.boolean  "auto_book",   default: false, null: false
+    t.string   "skill",                       null: false
+    t.string   "location"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["username"], name: "index_taskers_on_username", unique: true, using: :btree
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer  "tasker_id",   null: false
+    t.integer  "user_id",     null: false
+    t.date     "date",        null: false
+    t.text     "description", null: false
+    t.string   "location"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
