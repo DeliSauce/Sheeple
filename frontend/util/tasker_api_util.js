@@ -1,6 +1,7 @@
-export const fetchTaskers = () => (
+export const fetchTaskers = (filters) => (
   $.ajax({
     method: 'GET',
-    url: `api/taskers`
+    url: `api/taskers`,
+    data: filters
   })
 );

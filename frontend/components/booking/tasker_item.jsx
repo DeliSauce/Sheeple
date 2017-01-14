@@ -28,10 +28,10 @@ const TaskerItem = (props) => (
         {props.tasker.first_name + " " + props.tasker.last_name + " (" + props.tasker.location + ")"  }
       </div>
       <div>
-        {"rate: $" + props.tasker.rate + "/hr"}
+        {"Rate: $" + props.tasker.rate + "/hr"}
       </div>
       <div>
-        {"skillset: " + props.tasker.skill}
+        {"Skillset: " + props.tasker.skill}
       </div>
     </div>
 

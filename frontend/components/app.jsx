@@ -8,8 +8,9 @@ const App = ({ children }) => (
       <div className="hero-image"></div>
       <HeaderNavContainer />
     </div>
-
-    { children }
+    <div className="body">
+      { children }
+    </div>
   </div>
 );
 

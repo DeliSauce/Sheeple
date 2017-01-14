@@ -9,6 +9,6 @@ export const receiveTaskers = (taskers) => ({
 });
 
 
-export const fetchTaskers = () => (dispatch) => (
-  APIUtil.fetchTaskers().then((taskers) => dispatch(receiveTaskers(taskers)))
+export const fetchTaskers = (filters) => (dispatch) => (
+  APIUtil.fetchTaskers(filters).then((taskers) => dispatch(receiveTaskers(taskers)))
 );
