@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Filters from './filters';
-import {updateLocation} from '../../actions/filter_actions';
+import {updateLocation, updateAutoBook} from '../../actions/filter_actions';
 import {fetchTaskers} from '../../actions/tasker_actions';
 
 
@@ -10,6 +10,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
   updateLocation: (location) => dispatch(updateLocation(location)),
+  updateAutoBook: (autobook) => dispatch(updateAutoBook(autobook)),
   fetchTaskers: (filters) => dispatch(fetchTaskers(filters))
 });
 

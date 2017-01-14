@@ -9,3 +9,8 @@ export const updateLocation = (location) => ({
   type: UPDATE_LOCATION,
   location
 });
+
+export const updateAutoBook = (autobook) => ({
+  type: UPDATE_AUTOBOOK,
+  autobook
+});

@@ -4,12 +4,23 @@ class Filters extends React.Component {
   constructor(props) {
     super(props);
     this.updateFilter = this.updateFilter.bind(this);
+    this.state = this.props.filters;
   }
 
   updateFilter(field) {
     return (e) => {
-      this.props.updateLocation(e.target.value);
-      // this.props.fetchTaskers(this.props.filters);
+      switch (field) {
+        case 'location':
+          this.props.updateLocation(e.target.value);
+          break;
+        case 'autobook':
+          // debugger;
+          console.log("autobook:", e.target.value, e.currentTarget.value);
+          // this.props.updateAutoBook(e.target.value);
+          break;
+        default:
+          break;
+      }
     };
   }
 
@@ -17,8 +28,12 @@ class Filters extends React.Component {
     this.props.fetchTaskers(this.props.filters);
   }
 
+  checkedAutoBook(){
+    return (this.props.filters.autobook ? "checked" : "");
+  }
 
   render() {
+
     return (
       <div className="filters-container">
 
@@ -38,8 +53,8 @@ class Filters extends React.Component {
         </label>
 
         <label>
-          AutoBook
-          <input type="checkbox" />
+          AutoBook Only
+          <input type="checkbox" onClick={this.updateFilter('autobook')}/>
         </label>
 
         <label>
@@ -48,8 +63,8 @@ class Filters extends React.Component {
 
         <label>
           Location:
-          <select name="location" onChange={this.updateFilter('loc')}>
-            <option selected disabled>Select a Location</option>
+          <select name="location" value={this.props.filters.location} onChange={this.updateFilter('location')}>
+            <option value="" disabled >Select a Location</option>
             <option value="SF">SF</option>
             <option value="NY">NY</option>
           </select>
