@@ -4,8 +4,10 @@ import Rheostat from 'rheostat';
 class Filters extends React.Component {
   constructor(props) {
     super(props);
-    this.filterChangeHandler = this.filterChangeHandler.bind(this);
     this.state = this.props.filters;
+    this.filterChangeHandler = this.filterChangeHandler.bind(this);
+    this.handleSlider = this.handleSlider.bind(this);
+    this.updateSliderMinMax = this.updateSliderMinMax.bind(this);
   }
 
   filterChangeHandler(field) {
@@ -13,6 +15,9 @@ class Filters extends React.Component {
       switch (field) {
         case 'location':
           this.props.updateFilter(field, e.target.value);
+          break;
+        case 'rates':
+          this.props.updateFilter(field, [e.values[0], e.values[1]]);
           break;
         case 'skill':
           this.props.updateFilter(field, e.target.value);
@@ -34,6 +39,19 @@ class Filters extends React.Component {
 
   checkedAutoBook(){
     return (this.props.filters.autobook ? "checked" : "");
+  }
+
+  handleSlider(){
+    return (e) => {
+      // debugger;
+      console.log('min: ', e.values[0], '  max: ', e.values[1]);
+    };
+  }
+
+  updateSliderMinMax() {
+    return (e) => {
+      this.setState({minRate: e.values[0], maxRate: e.values[1]});
+    };
   }
 
   render() {
@@ -62,7 +80,17 @@ class Filters extends React.Component {
         </label>
 
         <label>
-          $/hr: <Rheostat min={0} max={50} values={[0,50]}/>
+          $/hr: <Rheostat
+          min={0}
+          max={50}
+          values={[this.state.minRate,this.state.maxRate]}
+          onChange={this.filterChangeHandler('rates')}
+          onValuesUpdated={this.updateSliderMinMax()}
+          />
+        <div className="slider-min-max">
+          <div> {this.state.minRate} </div>
+          <div> {this.state.maxRate} </div>
+        </div>
         </label>
 
         <label>

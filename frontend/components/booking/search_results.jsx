@@ -6,18 +6,17 @@ class SearchResults extends React.Component {
   componentDidMount() {
     this.props.fetchTaskers(this.props.filters);
   }
-  
+
   render() {
     let taskers = this.props.taskers.map((tasker, idx) => <TaskerItem key={idx} tasker={tasker}/>);
     console.log(taskers, this.props);
     return (
-      <div className="results-container">
-        <ul>
-          {taskers}
-        </ul>
+      <div className="search-results-container">
+        {taskers}
       </div>
     );
   }
 }
 
 export default SearchResults;
+// {taskers}

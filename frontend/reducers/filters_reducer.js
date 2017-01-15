@@ -1,4 +1,4 @@
-import { UPDATE_LOCATION, UPDATE_SKILL, UPDATE_AUTOBOOK } from '../actions/filter_actions';
+import { UPDATE_LOCATION, UPDATE_SKILL, UPDATE_RATES, UPDATE_AUTOBOOK } from '../actions/filter_actions';
 import merge from 'lodash/merge';
 
 const _defaultState = {
@@ -6,16 +6,20 @@ const _defaultState = {
   skill: "",
   autobook: "",
   minRate: 0,
-  maxRate: 100
+  maxRate: 50
 };
 
 const FiltersReducer = (state = _defaultState, action) => {
   Object.freeze(state);
-  const newState = merge({}, state);
+  let newState = merge({}, state);
   switch(action.type) {
     case UPDATE_SKILL:
       console.log("hit the skill in filters reducer");
       return merge(newState, {skill: action.skill});
+    case UPDATE_RATES:
+      console.log("hit the rates in filters reducer");
+      newState = merge(newState, {minRate: action.rates[0], maxRate: action.rates[1]});
+      return newState;
     case UPDATE_LOCATION:
       console.log("hit the location in filters reducer");
       return merge(newState, {location: action.location});

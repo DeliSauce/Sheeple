@@ -1,8 +1,8 @@
 export const UPDATE_LOCATION = "UPDATE_LOCATION";
 export const UPDATE_SKILL = "UPDATE_SKILL";
+export const UPDATE_RATES = "UPDATE_MINRATE";
+// export const UPDATE_MAXRATE = "UPDATE_MAXRATE";
 export const UPDATE_AUTOBOOK = "UPDATE_AUTOBOOK";
-export const UPDATE_MINRATE = "UPDATE_MINRATE";
-export const UPDATE_MAXRATE = "UPDATE_MAXRATE";
 
 
 export const updateFilter = (field, value) => {
@@ -10,6 +10,10 @@ export const updateFilter = (field, value) => {
   switch(field) {
     case 'location':
       type = UPDATE_LOCATION;
+      break;
+    case 'rates':
+      type = UPDATE_RATES;
+      // debugger;
       break;
     case 'skill':
       type = UPDATE_SKILL;
@@ -20,7 +24,7 @@ export const updateFilter = (field, value) => {
     type,
     [field]: value
   });
-  
+
 };
 // export const updateLocation = (location) => ({
 //   type: UPDATE_LOCATION,

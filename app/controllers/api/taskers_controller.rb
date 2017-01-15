@@ -8,6 +8,7 @@ class Api::TaskersController < ApplicationController
     if skill
       @taskers = @taskers.where('skill LIKE ?', "%#{skill}")
     end
+    @taskers = @taskers.where('rate BETWEEN ? AND ?', "#{minRate}", "#{maxRate}")
     # if autobook
     #   @taskers = @taskers.where('auto_book LIKE ?', true)
     # end
@@ -21,6 +22,14 @@ class Api::TaskersController < ApplicationController
 
   def skill
     params[:skill]
+  end
+
+  def minRate
+    params[:minRate]
+  end
+
+  def maxRate
+    params[:maxRate]
   end
 
   # def autobook
