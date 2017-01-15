@@ -1,4 +1,5 @@
 import React from 'react';
+import Rheostat from 'rheostat';
 
 class Filters extends React.Component {
   constructor(props) {
@@ -61,7 +62,7 @@ class Filters extends React.Component {
         </label>
 
         <label>
-          $/hr: USE AIRBNB RHEOSTAT
+          $/hr: <Rheostat min={0} max={50} values={[0,50]}/>
         </label>
 
         <label>
