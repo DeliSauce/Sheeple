@@ -9,6 +9,7 @@ const _defaultState = {
   maxRate: 50
 };
 
+
 const FiltersReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
