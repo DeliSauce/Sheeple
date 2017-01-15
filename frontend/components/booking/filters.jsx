@@ -6,12 +6,12 @@ class Filters extends React.Component {
     super(props);
     this.state = this.props.filters;
     this.filterChangeHandler = this.filterChangeHandler.bind(this);
-    this.handleSlider = this.handleSlider.bind(this);
     this.updateSliderMinMax = this.updateSliderMinMax.bind(this);
   }
 
   filterChangeHandler(field) {
     return (e) => {
+      this.props.fetchTaskers(this.props.filters);
       switch (field) {
         case 'location':
           this.props.updateFilter(field, e.target.value);
@@ -33,20 +33,17 @@ class Filters extends React.Component {
     };
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     this.props.fetchTaskers(this.props.filters);
   }
+  // componentDidUpdate() {
+  //   this.props.fetchTaskers(this.props.filters);
+  // }
 
   checkedAutoBook(){
     return (this.props.filters.autobook ? "checked" : "");
   }
 
-  handleSlider(){
-    return (e) => {
-      // debugger;
-      console.log('min: ', e.values[0], '  max: ', e.values[1]);
-    };
-  }
 
   updateSliderMinMax() {
     return (e) => {
@@ -65,6 +62,12 @@ class Filters extends React.Component {
         </label>
 
         <label>
+          Max Results [5,10,15,20,50]
+          **perhaps put this in user settings**
+
+        </label>
+
+        <label>
           Skill:
           <select name="skill" value={this.props.filters.skill} onChange={this.filterChangeHandler('skill')}>
             <option value="" disabled>Select a Task Type</option>
@@ -76,10 +79,12 @@ class Filters extends React.Component {
 
         <label>
           AutoBook Only
+          **need to see if I can set to state or maybe even change to a button**
           <input type="checkbox" onClick={this.filterChangeHandler('autobook')}/>
         </label>
 
         <label>
+          **slider seems to register last value instead of current value - need to fix **
           $/hr: <Rheostat
           min={0}
           max={50}
