@@ -11,7 +11,6 @@ class SearchResults extends React.Component {
 
   render() {
     let taskers = this.props.taskers.map((tasker, idx) => <TaskerItem key={idx} tasker={tasker}/>);
-    console.log(taskers, this.props);
     return (
       <div className="search-results-container">
         {taskers}
