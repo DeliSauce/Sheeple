@@ -17,5 +17,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Filters);
-
-// updateAutoBook: (autobook) => dispatch(updateAutoBook(autobook)),

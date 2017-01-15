@@ -11,38 +11,25 @@ class Filters extends React.Component {
 
   filterChangeHandler(field) {
     return (e) => {
-      // this.props.fetchTaskers(this.props.filters);
       switch (field) {
         case 'location':
           this.props.updateFilter(field, e.target.value);
-          // this.props.fetchTaskers(this.props.filters);
           break;
         case 'rates':
           this.props.updateFilter(field, [e.values[0], e.values[1]]);
-          // this.props.fetchTaskers(this.props.filters);
           break;
         case 'skill':
           this.props.updateFilter(field, e.target.value);
-          // this.props.fetchTaskers(this.props.filters);
           break;
         case 'autobook':
-          // debugger;
           console.log("autobook:", e.target.value, e.currentTarget.value);
           // this.props.updateAutoBook(e.target.value);
-          // this.props.fetchTaskers(this.props.filters);
           break;
         default:
           break;
       }
     };
   }
-
-  // componentDidMount() {
-  //   this.props.fetchTaskers(this.props.filters);
-  // }
-  // componentDidUpdate() {
-  //   this.props.fetchTaskers(this.props.filters);
-  // }
 
   checkedAutoBook(){
     return (this.props.filters.autobook ? "checked" : "");
