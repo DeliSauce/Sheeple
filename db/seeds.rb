@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# don't actually need this
+# require 'factory_girl_rails'
+
 User.create({username: "GUEST", password: "password", email: "guest@example.com"})
 
 #include latitude/longitude if
@@ -36,3 +39,25 @@ Tasker.create({
   latitude: 40.7128,
   longitude: -74.0059
 })
+
+  FactoryGirl.define do
+    factory :tasker do
+      first_name {Faker::Name.first_name}
+      last_name {Faker::Name.last_name}
+      username {"#{first_name.downcase}#{rand(100.999)}_#{last_name}"}
+      email {"#{first_name}.#{last_name}@example.com".downcase}
+      description 'placeholder description'
+      rate {Faker::Number.between(0,30)}
+      auto_book {[false, true].sample}
+      skill {['sitting', 'standing', 'wandering'].sample}
+      location {['NY', 'SF'].sample}
+      longitude {Faker::Address.longitude}
+      latitude {Faker::Address.latitude}
+    end
+  end
+
+  100.times do
+    FactoryGirl.create(:tasker)
+  end
+  # email {Faker::Internet.email}
+# password {Faker::Number.number(1,2)}

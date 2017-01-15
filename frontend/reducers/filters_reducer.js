@@ -1,4 +1,4 @@
-import { UPDATE_LOCATION, UPDATE_AUTOBOOK } from '../actions/filter_actions';
+import { UPDATE_LOCATION, UPDATE_SKILL, UPDATE_AUTOBOOK } from '../actions/filter_actions';
 import merge from 'lodash/merge';
 
 const _defaultState = {
@@ -13,6 +13,9 @@ const FiltersReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   const newState = merge({}, state);
   switch(action.type) {
+    case UPDATE_SKILL:
+      console.log("hit the skill in filters reducer");
+      return merge(newState, {skill: action.skill});
     case UPDATE_LOCATION:
       console.log("hit the location in filters reducer");
       return merge(newState, {location: action.location});

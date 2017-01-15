@@ -5,12 +5,29 @@ export const UPDATE_MINRATE = "UPDATE_MINRATE";
 export const UPDATE_MAXRATE = "UPDATE_MAXRATE";
 
 
-export const updateLocation = (location) => ({
-  type: UPDATE_LOCATION,
-  location
-});
+export const updateFilter = (field, value) => {
+  let type;
+  switch(field) {
+    case 'location':
+      type = UPDATE_LOCATION;
+      break;
+    case 'skill':
+      type = UPDATE_SKILL;
+      break;
+  }
 
-export const updateAutoBook = (autobook) => ({
-  type: UPDATE_AUTOBOOK,
-  autobook
-});
+  return ({
+    type,
+    [field]: value
+  });
+  
+};
+// export const updateLocation = (location) => ({
+//   type: UPDATE_LOCATION,
+//   location
+// });
+//
+// export const updateAutoBook = (autobook) => ({
+//   type: UPDATE_AUTOBOOK,
+//   autobook
+// });

@@ -3,15 +3,18 @@ import React from 'react';
 class Filters extends React.Component {
   constructor(props) {
     super(props);
-    this.updateFilter = this.updateFilter.bind(this);
+    this.filterChangeHandler = this.filterChangeHandler.bind(this);
     this.state = this.props.filters;
   }
 
-  updateFilter(field) {
+  filterChangeHandler(field) {
     return (e) => {
       switch (field) {
         case 'location':
-          this.props.updateLocation(e.target.value);
+          this.props.updateFilter(field, e.target.value);
+          break;
+        case 'skill':
+          this.props.updateFilter(field, e.target.value);
           break;
         case 'autobook':
           // debugger;
@@ -44,8 +47,8 @@ class Filters extends React.Component {
 
         <label>
           Skill:
-          <select name="skill">
-            <option selected disabled>Select a Task Type</option>
+          <select name="skill" value={this.props.filters.skill} onChange={this.filterChangeHandler('skill')}>
+            <option value="" disabled>Select a Task Type</option>
             <option value="standing">Standing</option>
             <option value="sitting">Sitting</option>
             <option value="wandering">Wandering</option>
@@ -54,16 +57,16 @@ class Filters extends React.Component {
 
         <label>
           AutoBook Only
-          <input type="checkbox" onClick={this.updateFilter('autobook')}/>
+          <input type="checkbox" onClick={this.filterChangeHandler('autobook')}/>
         </label>
 
         <label>
-          $/hr: USE AIRBNB RHEOSTAT??
+          $/hr: USE AIRBNB RHEOSTAT
         </label>
 
         <label>
           Location:
-          <select name="location" value={this.props.filters.location} onChange={this.updateFilter('location')}>
+          <select name="location" value={this.props.filters.location} onChange={this.filterChangeHandler('location')}>
             <option value="" disabled >Select a Location</option>
             <option value="SF">SF</option>
             <option value="NY">NY</option>

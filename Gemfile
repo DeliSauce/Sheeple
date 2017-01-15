@@ -30,6 +30,10 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# TODO might move this into a different group
+gem "factory_girl_rails", "~> 4.0"
+gem "faker"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

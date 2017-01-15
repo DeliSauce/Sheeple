@@ -5,6 +5,9 @@ class Api::TaskersController < ApplicationController
     if location
       @taskers = @taskers.where('location LIKE ?', "%#{location}")
     end
+    if skill
+      @taskers = @taskers.where('skill LIKE ?', "%#{skill}")
+    end
     # if autobook
     #   @taskers = @taskers.where('auto_book LIKE ?', true)
     # end
@@ -14,6 +17,10 @@ class Api::TaskersController < ApplicationController
 
   def location
     params[:location]
+  end
+
+  def skill
+    params[:skill]
   end
 
   # def autobook
