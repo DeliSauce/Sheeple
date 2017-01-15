@@ -7,6 +7,10 @@ class SearchResults extends React.Component {
     this.props.fetchTaskers(this.props.filters);
   }
 
+  // componentDidUpdate() {
+  //   this.props.fetchTaskers(this.props.filters);
+  // }
+
   render() {
     let taskers = this.props.taskers.map((tasker, idx) => <TaskerItem key={idx} tasker={tasker}/>);
     console.log(taskers, this.props);

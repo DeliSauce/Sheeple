@@ -3,9 +3,15 @@ export const UPDATE_SKILL = "UPDATE_SKILL";
 export const UPDATE_RATES = "UPDATE_MINRATE";
 // export const UPDATE_MAXRATE = "UPDATE_MAXRATE";
 export const UPDATE_AUTOBOOK = "UPDATE_AUTOBOOK";
+import {fetchTaskers} from './tasker_actions';
 
+export const updateFilter = (filter, value) => (dispatch, getState) => {
+  dispatch(changeFilter(filter, value));
+  return fetchTaskers(getState().filters)(dispatch);
+};
 
-export const updateFilter = (field, value) => {
+// export const updateFilter = (field, value) => {
+export const changeFilter = (field, value) => {
   let type;
   switch(field) {
     case 'location':
