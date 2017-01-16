@@ -3,7 +3,7 @@ import {fetchTaskers} from '../../actions/tasker_actions';
 import SearchResults from './search_results';
 
 const mapStateToProps = (state) => ({
-  taskers: Object.keys(state.taskers).map((id) => state.taskers[id]),
+  taskers: state.taskers,
   filters: state.filters
 });
 
@@ -15,3 +15,5 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(SearchResults);
+
+// taskers: Object.keys(state.taskers).map((id) => state.taskers[id]),

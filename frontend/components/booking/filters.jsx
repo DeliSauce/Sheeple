@@ -25,6 +25,9 @@ class Filters extends React.Component {
           console.log("autobook:", e.target.value, e.currentTarget.value);
           // this.props.updateAutoBook(e.target.value);
           break;
+        case 'sortOrder':
+          this.props.updateFilter(field, e.target.value);
+          break;
         default:
           break;
       }
@@ -94,6 +97,15 @@ class Filters extends React.Component {
             <option value="" disabled >Select a Location</option>
             <option value="SF">SF</option>
             <option value="NY">NY</option>
+          </select>
+        </label>
+
+        <label>
+          Sort results by: **Possible Feature, Need to Build Out**
+          <select name="sortOrder" value={this.props.filters.sortOrder} onChange={this.filterChangeHandler('sortOrder')}>
+            <option value="" disabled >Select a Sort Order</option>
+            <option value="rate-low">Price: Low to High</option>
+            <option value="rate-high">Price: High to Low</option>
           </select>
         </label>
 

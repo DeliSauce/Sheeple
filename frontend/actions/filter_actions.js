@@ -1,8 +1,9 @@
 export const UPDATE_LOCATION = "UPDATE_LOCATION";
 export const UPDATE_SKILL = "UPDATE_SKILL";
 export const UPDATE_RATES = "UPDATE_MINRATE";
-// export const UPDATE_MAXRATE = "UPDATE_MAXRATE";
 export const UPDATE_AUTOBOOK = "UPDATE_AUTOBOOK";
+export const UPDATE_SORT_ORDER = "UPDATE_SORT_ORDER";
+
 import {fetchTaskers} from './tasker_actions';
 
 export const updateFilter = (filter, value) => (dispatch, getState) => {
@@ -23,6 +24,9 @@ export const changeFilter = (field, value) => {
       break;
     case 'skill':
       type = UPDATE_SKILL;
+      break;
+    case 'sortOrder':
+      type = UPDATE_SORT_ORDER;
       break;
   }
 
