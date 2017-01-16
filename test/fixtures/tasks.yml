@@ -7,6 +7,7 @@
 #  user_id     :integer          not null
 #  date        :date             not null
 #  description :text             not null
+#  status      :string           not null
 #  location    :string
 #  latitude    :float
 #  longitude   :float

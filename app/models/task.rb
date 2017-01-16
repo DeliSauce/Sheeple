@@ -7,6 +7,7 @@
 #  user_id     :integer          not null
 #  date        :date             not null
 #  description :text             not null
+#  status      :string           not null
 #  location    :string
 #  latitude    :float
 #  longitude   :float
@@ -15,7 +16,7 @@
 #
 
 class Task < ApplicationRecord
-  validates :tasker_id, :user_id, :date, :description, :location, presence: true
+  validates :tasker_id, :user_id, :date, :description, :status, :location, presence: true
 
   belongs_to :user
   belongs_to :tasker

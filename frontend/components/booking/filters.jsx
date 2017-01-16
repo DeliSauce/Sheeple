@@ -101,7 +101,7 @@ class Filters extends React.Component {
         </label>
 
         <label>
-          Sort results by: **Possible Feature, Need to Build Out**
+          Sort results by:
           <select name="sortOrder" value={this.props.filters.sortOrder} onChange={this.filterChangeHandler('sortOrder')}>
             <option value="" disabled >Select a Sort Order</option>
             <option value="rate-low">Price: Low to High</option>
