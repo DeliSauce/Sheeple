@@ -75,7 +75,6 @@ class Filters extends React.Component {
         </label>
 
         <label>
-          **slider seems to register last value instead of current value - need to fix **
           $/hr: <Rheostat
           min={0}
           max={50}

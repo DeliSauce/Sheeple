@@ -2,13 +2,16 @@ import React from 'react';
 import { Link, hashHistory, withRouter} from 'react-router';
 import Modal from 'react-modal';
 import SessionFormContainer from '../session_form/session_form_container';
+import modalStyle from './modal_style';
+
+
 
 
 class HeaderNav extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {modalIsOpen: false};
+    this.state = {formType: "", modalIsOpen: false};
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
@@ -51,30 +54,33 @@ class HeaderNav extends React.Component {
     );
   }
 
-  openModal() {
-    this.setState({modalIsOpen: true});
+  openModal(formType) {
+    return () => this.setState({formType: formType, modalIsOpen: true});
   }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
+    return () => this.setState({modalIsOpen: false});
   }
+
+
 
   loggedOutNav(loginGuest) {
     return (
       <nav className="logged-out-nav">
 
         <button className="guest-login-button" onClick={this.props.loginGuest.bind(this)}>Guest Log In</button>
-        <button onClick={this.openModal}> Modal Show </button>
-        <Link to="/login" activeClassName="current">Log In</Link>
-        <Link to="/signup" activeClassName="current">Sign up</Link>
+        <button onClick={this.openModal('login')}>Log In</button>
+        <button onClick={this.openModal('signup')}>Sign Up</button>
 
         <Modal
           isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
+          onRequestClose={this.closeModal()}
           contentLabel="Modal"
-          >
-          Hi FRom MODAL
+          style={modalStyle}>
+          <button className="session-form-close" onClick={this.closeModal()}>X</button>
+          <SessionFormContainer formType={this.state.formType} />
         </Modal>
+
       </nav>
     );
   }

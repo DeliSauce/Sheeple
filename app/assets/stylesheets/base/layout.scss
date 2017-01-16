@@ -130,28 +130,44 @@ html {
 }
 
 .session-form {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  margin-left: -300px;
+  // position: absolute;
+  // top: 10%;
+  // left: 50%;
+  // margin-left: -300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: $light-gray;
-  // border: solid 1px red;
-  width: 600px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   opacity: .8;
+  font-size: 20px;
 }
 
 .session-form > label {
   display: flex;
   flex-direction: column;
   margin: 10px;
-  // border: blue solid 1px;
 }
 
+.session-form-close {
+    float: right;
+    margin-top: -10px;
+    margin-right:-10px;
+    color: #fff;
+    border: 1px solid #AEAEAE;
+    background: #605F61;
+    font-size: 31px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 1px 4px;
+    font-size: 8px;
+}
+
+.session-form-close:hover {
+  background-color: $dark-gray;
+  border-color: $dark-gray;
+}
 //
 // button {
 // 	background-color: $button-green;
