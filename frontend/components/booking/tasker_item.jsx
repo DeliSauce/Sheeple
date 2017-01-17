@@ -62,7 +62,7 @@ class TaskerItem extends React.Component {
           </div>
         </div>
 
-        <div className="profile-description">
+        <div className="profile-description ellipsis">
           {this.props.tasker.description}
         </div>
 

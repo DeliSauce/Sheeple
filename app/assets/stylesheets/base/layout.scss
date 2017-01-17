@@ -268,3 +268,15 @@ img {
   background-color: $instant-book-hover;
   border-color: $instant-book-hover;
 }
+
+
+
+// MISCELLANEOUS
+// prevents overflow for descriptions
+.ellipsis {
+  text-overflow: clip;
+
+  /* Required for text-overflow to do anything */
+  white-space: pre-wrap;
+  overflow: hidden;
+}

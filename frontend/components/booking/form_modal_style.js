@@ -5,10 +5,12 @@ const formModalStyle = {
     left              : 0,
     right             : 0,
     bottom            : 0,
+    zIndex            : 4,
     backgroundColor   : 'rgba(255, 255, 255, 0.35)'
   },
   content : {
     position                   : 'absolute',
+    zIndex                     : 4,
     top                        : '100px',
     left                       : '50%',
     transform                  : 'translate(-50%)',
