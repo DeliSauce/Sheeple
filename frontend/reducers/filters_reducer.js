@@ -2,7 +2,7 @@ import { UPDATE_DATE, UPDATE_LOCATION, UPDATE_SKILL, UPDATE_RATES, UPDATE_AUTOBO
 import merge from 'lodash/merge';
 
 const _defaultState = {
-  location: "SF",
+  location: "",
   skill: "",
   autobook: "",
   minRate: 0,

@@ -14,8 +14,11 @@ class Api::TasksController < ApplicationController
   end
 
   def destroy
-
+    @task = Task.find_by_id(params[:id])
+    @task.delete
+    render json: @task
   end
+
 
   def task_params
     params.require(:task).permit(:tasker_id, :user_id, :description, :date, :location, :status)

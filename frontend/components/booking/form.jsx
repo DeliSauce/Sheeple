@@ -23,9 +23,8 @@ class Form extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    // const user = Object.assign({}, this.state);
     const task = {task: this.state};
-    this.props.submitBooking(task); //rename this submitBooking
+    this.props.submitBooking(task);
   }
 
   // closeModal() {

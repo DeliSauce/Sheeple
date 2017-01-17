@@ -5,3 +5,10 @@ export const createTask = (task) => (
     data: task
   })
 );
+
+export const deleteTask = (id) => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/tasks/${id}`
+  })
+);

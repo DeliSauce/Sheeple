@@ -1,5 +1,6 @@
 import React from 'react';
 import TaskerItem from './tasker_item';
+
 class SearchResults extends React.Component {
 
   //remove?
