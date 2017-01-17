@@ -1,0 +1,19 @@
+
+.button {
+	background-color: $button-green;
+	border-color: $button-green;
+	color: white;
+	font-weight: bold;
+	padding: 7px 9px;
+	border-radius: 3px;
+	transition: background-color 0.3s;
+	font-family: $sans-serif;
+	text-transform: uppercase;
+	font-size: 11px;
+	text-align: center;
+}
+
+.button:hover {
+	background-color: $button-hover-green;
+  border-color: $button-hover-green;
+}

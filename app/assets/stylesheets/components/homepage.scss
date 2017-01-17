@@ -1,0 +1,96 @@
+
+.homepage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.splash {
+  width: 100%;
+  height: 700px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.splash-tagline {
+  position: relative;
+  display: inline-block;
+  left: 130px;
+  top: 435px;
+  color: white;
+  font-weight: bold;
+  font-family: $sans-serif;
+  font-size: 38px;
+  margin: auto 0;
+}
+
+.task-selectors-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.task-selector-box {
+  // border: solid 1px red;
+  margin: 50px 0;
+  height: 400px;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+
+  // text-shadow: 1px 0px $button-green;
+}
+
+.task-selector-img {
+  width: 70%
+}
+
+.task-selector-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 400px;
+  background-color: $lightest-gray;
+  margin-left: 20px;
+}
+
+.task-selector-text {
+  // display: block;
+  // border: solid 1px red;
+  text-align: center;
+  margin: 30px;
+  color: black;
+  font-weight: bold;
+  font-family: $sans-serif;
+  font-size: 18px;
+}
+
+.book-button {
+  width: 150px;
+  height: 40px;
+  font-size: 16px;
+
+  	background-color: $button-green;
+  	border-color: $button-green;
+  	color: white;
+  	font-weight: bold;
+  	padding: 7px 9px;
+  	border-radius: 3px;
+  	transition: background-color 0.3s;
+  	font-family: $sans-serif;
+  	text-transform: uppercase;
+  	text-align: center;
+}
+
+.book-button:hover {
+	background-color: $button-hover-green;
+  border-color: $button-hover-green;
+}

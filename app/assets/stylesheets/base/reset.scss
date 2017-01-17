@@ -49,6 +49,23 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+
+button {
+	background-color: white;
+	border-color: white;
+  border-style: none;
+	// color: white;
+	// font-weight: bold;
+	// padding: 7px 9px;
+	// border-radius: 3px;
+	// transition: background-color 0.3s;
+	// font-family: $sans-serif;
+	// text-transform: uppercase;
+	// font-size: 11px;
+	// text-align: center;
+}
+
+
 /* Clearfix */
 
 .group:after {

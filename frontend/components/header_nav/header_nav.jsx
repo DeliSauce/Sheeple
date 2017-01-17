@@ -22,7 +22,7 @@ class HeaderNav extends React.Component {
 
   gotoPage(page) {
     return () => {
-      if (page === 'DASHBOARD') {
+      if (page === 'Dashboard') {
         hashHistory.push(`/dashboard`);
       } else {
         hashHistory.push(`/booking`);
@@ -40,16 +40,16 @@ class HeaderNav extends React.Component {
   loggedInNav(currentUser, logout) {
     let navButton = "";
     if (location.hash === '#/dashboard') {
-      navButton = 'BOOKING';
+      navButton = 'Booking';
     } else {
-      navButton = 'DASHBOARD';
+      navButton = 'Dashboard';
     }
 
     return (
       <hgroup className="logged-in-nav">
-        <div className="header-name">{currentUser.username}</div>
-        <button className="dashboard-button" onClick={this.gotoPage(navButton)}> {navButton} </button>
-        <button className="header-button" onClick={this.logoutAndRedirect(logout)}>Log Out</button>
+        <div className="header-name">Welcome, {currentUser.username}</div>
+        <button className="nav-button" onClick={this.gotoPage(navButton)}> {navButton} </button>
+        <button className="nav-button" onClick={this.logoutAndRedirect(logout)}>Log Out</button>
       </hgroup>
     );
   }
@@ -69,15 +69,15 @@ class HeaderNav extends React.Component {
       <nav className="logged-out-nav">
 
         <button className="guest-login-button" onClick={this.props.loginGuest.bind(this)}>Guest Log In</button>
-        <button onClick={this.openModal('login')}>Log In</button>
-        <button onClick={this.openModal('signup')}>Sign Up</button>
+        <button className="nav-button" onClick={this.openModal('login')}>Log In</button>
+        <button className="nav-button" onClick={this.openModal('signup')}>Sign Up</button>
 
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal()}
           contentLabel="Modal"
           style={modalStyle}>
-          <button className="session-form-close" onClick={this.closeModal()}>X</button>
+          <button className="form-close" onClick={this.closeModal()}>X</button>
           <SessionFormContainer formType={this.state.formType} />
         </Modal>
 

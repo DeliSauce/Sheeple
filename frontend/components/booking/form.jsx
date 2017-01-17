@@ -51,33 +51,32 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="booking-form" onSubmit={this.handleSubmit}>
         {this.renderErrors()}
 
         <div>Booking Form</div>
 
+        <div>
+          {"Warm Body: " + this.props.tasker.first_name + " " + this.props.tasker.last_name}
+        </div>
 
-          <div>
-            {"Warm Body: " + this.props.tasker.first_name + " " + this.props.tasker.last_name}
-          </div>
+        <div>
+          {"Location: "+ this.state.location}
+        </div>
 
-          <div>
-            {"Location: "+ this.state.location}
-          </div>
+        <div>
+          {"Rate: $" + this.props.tasker.rate + "/hr"}
+        </div>
 
-          <div>
-            {"Rate: $" + this.props.tasker.rate + "/hr"}
-          </div>
+        <label> Task Date:
+          <input type="date" value={this.state.date} onChange={this.update('date')} />
+        </label>
 
-          <label> Task Date:
-            <input type="date" value={this.state.date} onChange={this.update('date')} />
-          </label>
+        <label> Task Description:
+          <textarea value={this.state.description} onChange={this.update('description')} />
+        </label>
 
-          <label> Task Description:
-            <textarea value={this.state.description} onChange={this.update('description')} />
-          </label>
-
-          <input type="submit" />
+        <input type="submit" />
       </form>
     );
   }

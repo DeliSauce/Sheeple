@@ -1,0 +1,75 @@
+
+.header {
+  // border: solid 1px blue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  width: 100%;
+  margin: 0;
+}
+
+
+.hero-image {
+  height: 30px;
+  width: 160px;
+  margin: 10px;
+  background-image: url(http://res.cloudinary.com/delisauce/image/upload/v1484206007/WB_logo_hgtqai.png);
+  background-size: cover;
+}
+
+.logged-out-nav {
+  // border: solid 1px green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logged-out-nav > * {
+  margin: 10px;
+}
+
+.logged-in-nav {
+  // border: solid 1px green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logged-in-nav > * {
+  margin: 10px;
+}
+
+.nav-button {
+  color: $button-green;
+  transition: color 1.1s;
+
+}
+
+.nav-button:hover {
+  color: $button-hover-green;
+}
+
+
+.guest-login-button {
+  width: 150px;
+  height: 40px;
+  font-size: 16px;
+
+  	background-color: $button-green;
+  	border-color: $button-green;
+  	color: white;
+  	font-weight: bold;
+  	padding: 7px 9px;
+  	border-radius: 3px;
+  	transition: background-color 0.3s;
+  	font-family: $sans-serif;
+  	text-transform: uppercase;
+  	text-align: center;
+}
+
+.guest-login-button:hover {
+	background-color: $button-hover-green;
+  border-color: $button-hover-green;
+}

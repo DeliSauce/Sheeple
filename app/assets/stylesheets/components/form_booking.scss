@@ -1,0 +1,17 @@
+
+.booking-form {
+  width: 350px;
+  height: 350px;
+}
+
+.booking-form > label  {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.booking-form >  div {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}

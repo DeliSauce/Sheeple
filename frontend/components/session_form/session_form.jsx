@@ -93,7 +93,7 @@ class SessionForm extends React.Component {
   render (){
     return (
 
-        <form onSubmit={this.handleSubmit} className="session-form">
+        <form onSubmit={this.handleSubmit} className="form session-form">
           {this.header()}
           {this.renderErrors()}
           <label> Username:

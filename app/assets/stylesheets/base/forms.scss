@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: .8;
+  font-size: 20px;
+}
+
+.form-close {
+    float: right;
+    margin-top: -10px;
+    margin-right:-10px;
+    color: #fff;
+    border: 1px solid #AEAEAE;
+    background: #605F61;
+    font-size: 31px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 1px 4px;
+    font-size: 8px;
+}
+
+
+.form-close:hover {
+  background-color: $dark-gray;
+  border-color: $dark-gray;
+}

@@ -20,13 +20,13 @@ class TaskerItem extends React.Component {
   bookingButtonToggle(bool){
     if (bool) {
       return (
-        <button onClick={this.openModal()} className="instant-book">
+        <button onClick={this.openModal()} className="button instant-book">
           Instant Booking
         </button>
       );
     } else {
       return (
-        <button onClick={this.openModal()} className="normal-book">
+        <button onClick={this.openModal()} className="button normal-book">
           Request Booking
         </button>
       );
@@ -77,7 +77,7 @@ class TaskerItem extends React.Component {
           onRequestClose={this.closeModal()}
           contentLabel="Modal"
           style={formModalStyle}>
-          <button className="session-form-close" onClick={this.closeModal()}>X</button>
+          <button className="form-close" onClick={this.closeModal()}>X</button>
           <FormContainer tasker={this.props.tasker}/>
         </Modal>
 

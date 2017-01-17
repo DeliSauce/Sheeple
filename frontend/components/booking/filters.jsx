@@ -59,11 +59,6 @@ class Filters extends React.Component {
           <input type="date" value={this.props.filters.date} onChange={this.filterChangeHandler('date')}/>
         </label>
 
-        <label>
-          Max Results [5,10,15,20,50]
-          **perhaps put this in user settings**
-
-        </label>
 
         <label>
           Skill:
@@ -75,11 +70,6 @@ class Filters extends React.Component {
           </select>
         </label>
 
-        <label>
-          AutoBook Only
-          **need to see if I can set to state or maybe even change to a button**
-          <input type="checkbox" onClick={this.filterChangeHandler('autobook')}/>
-        </label>
 
         <label>
           $/hr: <Rheostat
@@ -111,6 +101,18 @@ class Filters extends React.Component {
             <option value="rate-low">Price: Low to High</option>
             <option value="rate-high">Price: High to Low</option>
           </select>
+        </label>
+
+        <label>
+          Max Results [5,10,15,20,50]
+          **perhaps put this in user settings**
+
+        </label>
+
+        <label>
+          AutoBook Only
+          **need to see if I can set to state or maybe even change to a button**
+          <input type="checkbox" onClick={this.filterChangeHandler('autobook')}/>
         </label>
 
       </div>
