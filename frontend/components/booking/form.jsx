@@ -6,16 +6,26 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      tasker_id: props.tasker.id,
+      user_id: props.user_id,
       description: "",
+      date: props.filters.date,
+      location: props.tasker.location,
+      status: 'pending'
+
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
 
     // date: props.filters.date
 
 
   }
 
-  handleSubmit(){
-
+  handleSubmit(e){
+    e.preventDefault();
+    // const user = Object.assign({}, this.state);
+    const task = {task: this.state};
+    this.props.submitBooking(task); //rename this submitBooking
   }
 
   // closeModal() {
@@ -28,9 +38,23 @@ class Form extends React.Component {
     };
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        {this.renderErrors()}
+
         <div>Booking Form</div>
 
 
@@ -39,7 +63,7 @@ class Form extends React.Component {
           </div>
 
           <div>
-            {"Location: "+ this.props.tasker.location}
+            {"Location: "+ this.state.location}
           </div>
 
           <div>
@@ -47,7 +71,7 @@ class Form extends React.Component {
           </div>
 
           <label> Task Date:
-            <textarea value={this.state.description} onChange={this.update('description')} />
+            <input type="date" value={this.state.date} onChange={this.update('date')} />
           </label>
 
           <label> Task Description:

@@ -12,6 +12,9 @@ class Filters extends React.Component {
   filterChangeHandler(field) {
     return (e) => {
       switch (field) {
+        case 'date':
+          this.props.updateFilter(field, e.target.value);
+          break;
         case 'location':
           this.props.updateFilter(field, e.target.value);
           break;
@@ -52,7 +55,8 @@ class Filters extends React.Component {
 
         <label>
           Date:
-          <input type="date" />
+
+          <input type="date" value={this.props.filters.date} onChange={this.filterChangeHandler('date')}/>
         </label>
 
         <label>

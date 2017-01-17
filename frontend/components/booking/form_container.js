@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
-import {submitTask} from '../../actions/task_actions';
+import {submitBooking} from '../../actions/booking_actions';
 import Form from './form';
 
 const mapStateToProps = (state, ownProps) => ({
   filters: state.filters,
-  tasker: ownProps.tasker
+  tasker: ownProps.tasker,
+  user_id: state.session.currentUser.id,
+  errors: state.booking.errors
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  submitTask: (task) => dispatch(submitTask(task))
+  submitBooking: (task) => dispatch(submitBooking(task))
 });
 
 export default connect(

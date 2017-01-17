@@ -74,7 +74,6 @@ class SessionForm extends React.Component {
 
   update(field) {
     return (e) => {
-      console.log('hit entry field', e.target.value);
       this.setState({[field]: e.currentTarget.value});
     };
   }
