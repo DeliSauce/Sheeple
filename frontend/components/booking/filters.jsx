@@ -1,12 +1,30 @@
 import React from 'react';
 import Rheostat from 'rheostat';
+import { SingleDatePicker } from 'react-dates';
+import merge from 'lodash/merge';
+
+// import SingleDatePicker from '../../../node_modules/react-dates/src/components/SingleDatePicker';
+
 
 class Filters extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.filters;
+    this.state = merge({}, this.props.filters, {
+    focused: false,
+    date: null
+  });
     this.filterChangeHandler = this.filterChangeHandler.bind(this);
     this.updateSliderMinMax = this.updateSliderMinMax.bind(this);
+
+    this.onDateChange = this.onDateChange.bind(this);
+    this.onFocusChange = this.onFocusChange.bind(this);
+  }
+  onDateChange(date) {
+    this.setState({ date });
+  }
+
+  onFocusChange({ focused }) {
+    this.setState({ focused });
   }
 
   filterChangeHandler(field) {
@@ -49,7 +67,7 @@ class Filters extends React.Component {
   }
 
   render() {
-
+    const { focused, date } = this.state;
     return (
       <div className="filters-container">
 
@@ -59,6 +77,18 @@ class Filters extends React.Component {
           <input type="date" value={this.props.filters.date} onChange={this.filterChangeHandler('date')}/>
         </label>
 
+        <label>
+          Date:
+          <SingleDatePicker
+
+            id="date_input"
+            date={this.state.date}
+            focused={this.state.focused}
+
+            onDateChange={this.onDateChange}
+            onFocusChange={this.onFocusChange}
+          />
+        </label>
 
         <label>
           Skill:
