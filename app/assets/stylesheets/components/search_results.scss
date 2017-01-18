@@ -57,9 +57,16 @@ img {
 .instant-book {
   background-color: $instant-book;
   border-color: $instant-book;
+  width: 70px;
+  height: 40px;
 }
 
 .instant-book:hover {
   background-color: $instant-book-hover;
   border-color: $instant-book-hover;
+}
+
+.normal-book {
+  width: 70px;
+  height: 40px;
 }

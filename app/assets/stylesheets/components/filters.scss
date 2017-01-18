@@ -22,3 +22,15 @@
   font-family: $sans-serif;
   font-size: 18px;
 }
+
+.checkbox-checked {
+  background-image: image-url("check_box_black_18x18.png");
+  width: 18px;
+  height: 18px;
+}
+
+.checkbox-empty {
+  background-image: image-url("check_box_outline_blank_black_18x18.png");
+  width: 18px;
+  height: 18px;
+}

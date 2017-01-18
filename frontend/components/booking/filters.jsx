@@ -56,8 +56,8 @@ class Filters extends React.Component {
     };
   }
 
-  checkedAutoBook(){
-    return (this.props.filters.autobook ? "checked" : "");
+  autoBookStatus(){
+    return (this.props.filters.autobook ? "checkbox-checked" : "checkbox-empty");
   }
 
 
@@ -142,8 +142,8 @@ class Filters extends React.Component {
         </label>
 
         <label>
-          AutoBook Only
-          <button onClick={this.filterChangeHandler('autobook')}>CHECKBOX</button>
+          Instant Booking: 
+          <button className={this.autoBookStatus()} onClick={this.filterChangeHandler('autobook')}></button>
         </label>
 
       </div>

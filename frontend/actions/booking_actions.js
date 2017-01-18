@@ -11,10 +11,10 @@ export const receiveBookingErrors = (errors) => {
   };
 };
 
-export const submitBooking = (task) => (dispatch) => (
+export const submitBooking = (task, successCallback) => (dispatch) => (
     APIUtil.createTask(task)
     .then(
-      (success) => console.log("SUCCESS", success),
+      (success) => successCallback(),
       (errors) => dispatch(receiveBookingErrors(errors.responseJSON))
     )
 );

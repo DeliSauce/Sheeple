@@ -3,13 +3,7 @@ import FormContainer from './form_container';
 import Modal from 'react-modal';
 import formModalStyle from './form_modal_style';
 
-
-
-
-
-
 class TaskerItem extends React.Component {
-
   constructor(props){
     super(props);
     this.state = {modalIsOpen: false};
@@ -21,13 +15,13 @@ class TaskerItem extends React.Component {
     if (bool) {
       return (
         <button onClick={this.openModal()} className="button instant-book">
-          Instant Booking
+          Instant<br/>Booking
         </button>
       );
     } else {
       return (
         <button onClick={this.openModal()} className="button normal-book">
-          Request Booking
+          Request<br/>Booking
         </button>
       );
     }
@@ -77,8 +71,11 @@ class TaskerItem extends React.Component {
           onRequestClose={this.closeModal()}
           contentLabel="Modal"
           style={formModalStyle}>
+
           <button className="form-close" onClick={this.closeModal()}>X</button>
-          <FormContainer tasker={this.props.tasker}/>
+
+          <FormContainer tasker={this.props.tasker} closeModal={this.closeModal}/>
+
         </Modal>
 
 

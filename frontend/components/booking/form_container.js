@@ -4,13 +4,12 @@ import Form from './form';
 
 const mapStateToProps = (state, ownProps) => ({
   filters: state.filters,
-  tasker: ownProps.tasker,
   user_id: state.session.currentUser.id,
   errors: state.booking.errors
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  submitBooking: (task) => dispatch(submitBooking(task))
+  submitBooking: (task, successCallback) => dispatch(submitBooking(task, successCallback))
 });
 
 export default connect(

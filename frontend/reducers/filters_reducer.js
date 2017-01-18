@@ -8,7 +8,7 @@ const _defaultState = {
   minRate: 0,
   maxRate: 50,
   sortOrder: "",
-  date: "2015-05-12"
+  date: ""
 };
 
 

@@ -10,13 +10,14 @@
 
 .rheostat-progress {
   background-color: #abc4e8;
+  // background-color: $slider-green;
   position: absolute;
 }
 
 .rheostat-handle {
   background-color: #fff;
   border: 1px solid #d8d8d8;
-  border-radius: 20%;
+  border-radius: 70%;
   height: 24px;
   outline: none;
   z-index: 2;
@@ -42,7 +43,7 @@
 }
 
 .rheostat-horizontal .rheostat-progress {
-  height: 13px;
+  height: 11px;
   top: 2px;
 }
 

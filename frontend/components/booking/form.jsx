@@ -5,13 +5,14 @@ import Modal from 'react-modal';
 class Form extends React.Component {
   constructor(props) {
     super(props);
+    let status = props.tasker.auto_book ? 'booked' : 'pending';
     this.state = {
       tasker_id: props.tasker.id,
       user_id: props.user_id,
       description: "",
       date: props.filters.date,
       location: props.tasker.location,
-      status: 'pending'
+      status: status
 
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,7 +25,7 @@ class Form extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     const task = {task: this.state};
-    this.props.submitBooking(task);
+    this.props.submitBooking(task, this.props.closeModal());
   }
 
   // closeModal() {
@@ -49,12 +50,20 @@ class Form extends React.Component {
     );
   }
 
+  formSubmitType() {
+    if (this.props.tasker.auto_book) {
+      return "Confirm Booking";
+    } else {
+      return "Send Booking Confirmation";
+    }
+  }
+
   render() {
     return (
       <form className="booking-form" onSubmit={this.handleSubmit}>
         {this.renderErrors()}
 
-        <div>Booking Form</div>
+        <h2>Booking Form</h2>
 
         <div>
           {"Warm Body: " + this.props.tasker.first_name + " " + this.props.tasker.last_name}
@@ -76,7 +85,7 @@ class Form extends React.Component {
           <textarea value={this.state.description} onChange={this.update('description')} />
         </label>
 
-        <input type="submit" />
+        <input type="submit" value={this.formSubmitType()}/>
       </form>
     );
   }
