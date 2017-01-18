@@ -4,7 +4,7 @@ import merge from 'lodash/merge';
 const _defaultState = {
   location: "",
   skill: "",
-  autobook: "",
+  autobook: false,
   minRate: 0,
   maxRate: 50,
   sortOrder: "",

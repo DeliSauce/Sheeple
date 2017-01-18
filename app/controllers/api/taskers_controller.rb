@@ -11,6 +11,10 @@ class Api::TaskersController < ApplicationController
       @taskers = @taskers.where('skill LIKE ?', "%#{skill}")
     end
 
+    if autobook == 'true'
+      @taskers = @taskers.where('auto_book IS true')
+    end
+
     @taskers = @taskers.where('rate BETWEEN ? AND ?', "#{minRate}", "#{maxRate}")
 
     if sortOrder
@@ -21,9 +25,6 @@ class Api::TaskersController < ApplicationController
       end
     end
 
-    # if autobook
-    #   @taskers = @taskers.where('auto_book LIKE ?', true)
-    # end
 
     render :index
   end
@@ -46,6 +47,10 @@ class Api::TaskersController < ApplicationController
 
   def sortOrder
     params[:sortOrder]
+  end
+
+  def autobook
+    params[:autobook]
   end
 
   # def autobook

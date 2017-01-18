@@ -8,4 +8,6 @@ export const fetchTaskers = (filters) => {
     })
   );
 
-}
+};
+
+// window.fetch = fetchTaskers;

@@ -21,6 +21,7 @@ class Filters extends React.Component {
   }
   onDateChange(date) {
     this.setState({ date });
+    this.props.updateFilter('date', date.format("YYYY-MM-DD"));
   }
 
   onFocusChange({ focused }) {
@@ -30,9 +31,9 @@ class Filters extends React.Component {
   filterChangeHandler(field) {
     return (e) => {
       switch (field) {
-        case 'date':
-          this.props.updateFilter(field, e.target.value);
-          break;
+        // case 'date':
+        //   this.props.updateFilter(field, e.target.value);
+        //   break;
         case 'location':
           this.props.updateFilter(field, e.target.value);
           break;
@@ -44,7 +45,7 @@ class Filters extends React.Component {
           break;
         case 'autobook':
           console.log("autobook:", e.target.value, e.currentTarget.value);
-          // this.props.updateAutoBook(e.target.value);
+          this.props.updateFilter(field, !this.props.filters.autobook);
           break;
         case 'sortOrder':
           this.props.updateFilter(field, e.target.value);
@@ -65,30 +66,18 @@ class Filters extends React.Component {
       this.setState({minRate: e.values[0], maxRate: e.values[1]});
     };
   }
+  // <label>
+  //   Date:
+  //
+  //   <input type="date" value={this.props.filters.date} onChange={this.filterChangeHandler('date')}/>
+  // </label>
 
   render() {
     const { focused, date } = this.state;
+
     return (
       <div className="filters-container">
 
-        <label>
-          Date:
-
-          <input type="date" value={this.props.filters.date} onChange={this.filterChangeHandler('date')}/>
-        </label>
-
-        <label>
-          Date:
-          <SingleDatePicker
-
-            id="date_input"
-            date={this.state.date}
-            focused={this.state.focused}
-
-            onDateChange={this.onDateChange}
-            onFocusChange={this.onFocusChange}
-          />
-        </label>
 
         <label>
           Skill:
@@ -102,7 +91,7 @@ class Filters extends React.Component {
 
 
         <label>
-          $/hr: <Rheostat
+          Rate ($/hr): <Rheostat
           min={0}
           max={50}
           values={[this.state.minRate,this.state.maxRate]}
@@ -113,6 +102,19 @@ class Filters extends React.Component {
           <div> {this.state.minRate} </div>
           <div> {this.state.maxRate} </div>
         </div>
+        </label>
+
+        <label>
+          Date:
+          <SingleDatePicker
+
+            id="date_input"
+            date={this.state.date}
+            focused={this.state.focused}
+            numberOfMonths={1}
+            onDateChange={this.onDateChange}
+            onFocusChange={this.onFocusChange}
+            />
         </label>
 
         <label>
@@ -141,8 +143,7 @@ class Filters extends React.Component {
 
         <label>
           AutoBook Only
-          **need to see if I can set to state or maybe even change to a button**
-          <input type="checkbox" onClick={this.filterChangeHandler('autobook')}/>
+          <button onClick={this.filterChangeHandler('autobook')}>CHECKBOX</button>
         </label>
 
       </div>

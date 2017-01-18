@@ -4,7 +4,7 @@ $caret-top: $react-dates-spacing-vertical-picker - $react-dates-width-tooltip-ar
   // font
   font-weight: 200;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 20px;
   color: $react-dates-color-placeholder-text;
   margin: 0;
   padding: 8px;
@@ -67,6 +67,7 @@ $caret-top: $react-dates-spacing-vertical-picker - $react-dates-width-tooltip-ar
   padding: 4px 8px;
   white-space: nowrap;
   overflow: hidden;
+  text-align: center;
 }
 
 .DateInput__display-text--has-input {

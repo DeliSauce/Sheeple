@@ -14,12 +14,17 @@
  */
 
 
+//constants
+@import url('https://fonts.googleapis.com/css?family=Lato|Raleway|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans');
+
+@import "base/fonts.scss";
+@import "base/colors.scss";
+
  // CSS Reset
  @import "base/reset.scss";
 
  // Core
- @import "base/fonts.scss";
- @import "base/colors.scss";
  @import "base/layout.scss";
  @import "base/buttons.scss";
  @import "base/forms.scss";

@@ -32,6 +32,9 @@ export const changeFilter = (field, value) => {
     case 'sortOrder':
       type = UPDATE_SORT_ORDER;
       break;
+    case 'autobook':
+      type = UPDATE_AUTOBOOK;
+      break;
   }
 
   return ({
