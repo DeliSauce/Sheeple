@@ -1,14 +1,14 @@
 // FILTERS CONTAINER
 .filters-container {
   flex: 0 0 350px;
-  // border: solid red 1px;
+  border: solid red 1px;
   display: flex;
   margin: 0 20px;
   flex-direction: column;
   border-right: solid 1px $light-gray;
 }
 
-.filters-container > label {
+.filters-container > div {
   padding: 10px;
   box-sizing: border-box;
   border-bottom: 1px solid $light-gray;

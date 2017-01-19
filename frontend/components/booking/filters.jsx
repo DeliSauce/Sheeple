@@ -147,83 +147,96 @@ class Filters extends React.Component {
     return (
       <div className="filters-container">
 
-        <label>
-          Location:
-
-          <label>New York City
-            <button className={this.checkBoxStatus('location-NY')} onClick={this.filterChangeHandler('location-NY')}></button>
-          </label>
-          <label>San Francisco
-            <button className={this.checkBoxStatus('location-SF')} onClick={this.filterChangeHandler('location-SF')}></button>
-          </label>
-
-        </label>
-
-        <label>
-          Skill:
-
-          <label>Standing
-            <button className={this.checkBoxStatus('skill-standing')} onClick={this.filterChangeHandler('skill-standing')}></button>
-          </label>
-          <label>Sitting
-            <button className={this.checkBoxStatus('skill-sitting')} onClick={this.filterChangeHandler('skill-sitting')}></button>
-          </label>
-          <label>Moving
-            <button className={this.checkBoxStatus('skill-moving')} onClick={this.filterChangeHandler('skill-moving')}></button>
-          </label>
-
-        </label>
-
-        <label>
-          Sort results by:
-          <label>Low to High
-            <button className={this.checkBoxStatus('sortOrder-rate-low')} onClick={this.filterChangeHandler('sortOrder-rate-low')}></button>
-          </label>
-          <label>High to Low
-            <button className={this.checkBoxStatus('sortOrder-rate-high')} onClick={this.filterChangeHandler('sortOrder-rate-high')}></button>
-          </label>
-
-
-        </label>
-
-
-
-        <label>
-          Rate ($/hr): <Rheostat
-          min={0}
-          max={30}
-          values={[this.state.minRate,this.state.maxRate]}
-          onChange={this.filterChangeHandler('rates')}
-          onValuesUpdated={this.updateSliderMinMax()}
-          />
-        <div className="slider-min-max">
-          <div> {this.state.minRate} </div>
-          <div> {this.state.maxRate} </div>
+        <div className="location-filter-container">
+          <div className="location-filter-description">
+            Location:
+          </div>
+          <div className="location-filter-checkboxes">
+            <label>New York City
+              <button className={this.checkBoxStatus('location-NY')} onClick={this.filterChangeHandler('location-NY')}></button>
+            </label>
+            <label>San Francisco
+              <button className={this.checkBoxStatus('location-SF')} onClick={this.filterChangeHandler('location-SF')}></button>
+            </label>
+          </div>
         </div>
-        </label>
 
-        <label>
-          Date:
+        <div className="skill-filter-container">
+          <div className="skill-filter-description">
+            Skill:
+          </div>
+          <div className="skill-filter-checkboxes">
+            <label>Standing
+              <button className={this.checkBoxStatus('skill-standing')} onClick={this.filterChangeHandler('skill-standing')}></button>
+            </label>
+            <label>Sitting
+              <button className={this.checkBoxStatus('skill-sitting')} onClick={this.filterChangeHandler('skill-sitting')}></button>
+            </label>
+            <label>Moving
+              <button className={this.checkBoxStatus('skill-moving')} onClick={this.filterChangeHandler('skill-moving')}></button>
+            </label>
+          </div>
+        </div>
+
+
+        <div className="sort-filter-container">
+          <div className="sort-filter-description">
+            Sort results by:
+          </div>
+          <div className="sort-filter-checkboxes">
+            <label>Low to High
+              <button className={this.checkBoxStatus('sortOrder-rate-low')} onClick={this.filterChangeHandler('sortOrder-rate-low')}></button>
+            </label>
+            <label>High to Low
+              <button className={this.checkBoxStatus('sortOrder-rate-high')} onClick={this.filterChangeHandler('sortOrder-rate-high')}></button>
+            </label>
+          </div>
+        </div>
+
+
+
+        <div className="rate-filter-container">
+          <div className="rate-filter-description">
+            Rate ($/hr):
+          </div>
+          <div className="rate-filter-slider">
+            <Rheostat
+              min={0}
+              max={30}
+              values={[this.state.minRate,this.state.maxRate]}
+              onChange={this.filterChangeHandler('rates')}
+              onValuesUpdated={this.updateSliderMinMax()}
+            />
+          </div>
+          <div className="rate-filter-min-max">
+            <div> {this.state.minRate} </div>
+            <div> {this.state.maxRate} </div>
+          </div>
+        </div>
+
+
+        <div className="date-filter-container">
           <SingleDatePicker
-
             id="date_input"
             date={this.state.date}
             focused={this.state.focused}
             numberOfMonths={1}
             onDateChange={this.onDateChange}
             onFocusChange={this.onFocusChange}
-            />
-        </label>
+          />
+        </div>
 
-        <label>
-          Instant Booking:
-          <button className={this.checkBoxStatus('autobook')} onClick={this.filterChangeHandler('autobook')}></button>
-        </label>
+        <div className="instant-book-filter-container">
+          <div className="instant-book-filter-description">
+            Instant Booking: </div>
+          <div className="instant-book-filter-checkbox">
+            <button className={this.checkBoxStatus('autobook')} onClick={this.filterChangeHandler('autobook')}></button>
+          </div>
+        </div>
 
         <label>
           Max Results [5,10,15,20,50]
           **TBD**
-
         </label>
 
 
