@@ -16,12 +16,31 @@
   div[class*='-description'] {
     font-size: 20px;
   }
-  button {
+
+  div[class*='-checkboxes'] {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  label {
+    display: flex;
+
+    background-color: #EDEFED;
+    border: #DCE0E0 solid 1px;
     margin: 10px;
+    box-sizing: border-box;
+    padding: 6px;
+
+    button {
+      margin-left: 15px;
+    }
+
+  }
+  div[class*='-slider'] {
+    margin: 10px 10px 0 10px;
   }
 
 }
-
 
 .rate-filter-min-max {
     display: flex;
