@@ -51,12 +51,17 @@ class Filters extends React.Component {
           break;
 
         case 'location-SF':
-          console.log('LOCATION SF');
           this.props.updateFilter('location', 'SF');
           break;
         case 'location-NY':
-          console.log('LOCATION SF');
           this.props.updateFilter('location', 'NY');
+          break;
+
+        case 'sortOrder-rate-low':
+          this.props.updateFilter('sortOrder', 'rate-low');
+          break;
+        case 'sortOrder-rate-high':
+          this.props.updateFilter('sortOrder', 'rate-high');
           break;
 
         // case 'skill':
@@ -92,6 +97,11 @@ class Filters extends React.Component {
       case 'location-NY':
         return (this.props.filters.location === 'NY' ? "checkbox-checked" : "checkbox-empty");
 
+      case 'sortOrder-rate-low':
+        return (this.props.filters.sortOrder === 'rate-low' ? "checkbox-checked" : "checkbox-empty");
+      case 'sortOrder-rate-high':
+        return (this.props.filters.sortOrder === 'rate-high' ? "checkbox-checked" : "checkbox-empty");
+
       default:
         return "checkbox-checked";
     }
@@ -117,6 +127,11 @@ class Filters extends React.Component {
   //   <option value="moving">Moving</option>
   // </select>
 
+  // <select name="sortOrder" value={this.props.filters.sortOrder} onChange={this.filterChangeHandler('sortOrder')}>
+  //   <option value="" disabled >Select a Sort Order</option>
+  //   <option value="rate-low">Price: Low to High</option>
+  //   <option value="rate-high">Price: High to Low</option>
+  // </select>
 
 
   // <select name="location" value={this.props.filters.location} onChange={this.filterChangeHandler('location')}>
@@ -161,11 +176,14 @@ class Filters extends React.Component {
 
         <label>
           Sort results by:
-          <select name="sortOrder" value={this.props.filters.sortOrder} onChange={this.filterChangeHandler('sortOrder')}>
-            <option value="" disabled >Select a Sort Order</option>
-            <option value="rate-low">Price: Low to High</option>
-            <option value="rate-high">Price: High to Low</option>
-          </select>
+          <label>Low to High
+            <button className={this.checkBoxStatus('sortOrder-rate-low')} onClick={this.filterChangeHandler('sortOrder-rate-low')}></button>
+          </label>
+          <label>High to Low
+            <button className={this.checkBoxStatus('sortOrder-rate-high')} onClick={this.filterChangeHandler('sortOrder-rate-high')}></button>
+          </label>
+
+
         </label>
 
 
@@ -197,17 +215,17 @@ class Filters extends React.Component {
             />
         </label>
 
-
-        <label>
-          Max Results [5,10,15,20,50]
-          **perhaps put this in user settings**
-
-        </label>
-
         <label>
           Instant Booking:
           <button className={this.checkBoxStatus('autobook')} onClick={this.filterChangeHandler('autobook')}></button>
         </label>
+
+        <label>
+          Max Results [5,10,15,20,50]
+          **TBD**
+
+        </label>
+
 
       </div>
     );

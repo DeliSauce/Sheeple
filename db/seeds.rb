@@ -54,7 +54,7 @@ profile_description = [
   "Ruff. I identify as a dog so don't be surprised if I come in costume.",
   "Meow. I'm a 'cat'. I will not work with that guy who dresses in dog costumes. He bit me last time we worked together.",
   "I'm free pretty much all the time. Except when I'm not.",
-  "I'm a lizard. This website is pure descrimination towards my cold-blooded breathren. Don't even think about contacting me.",
+  "I'm a lizard. This website is pure discrimination towards my cold-blooded breathren. Don't even think about contacting me.",
   "AAAAAAAAAAAAAAAAAAAAAAAAAAAAH! I need a job quick! I'm getting evicted tomorrow if I can't make my rent."
 ]
 
