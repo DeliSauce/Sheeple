@@ -4,6 +4,7 @@ export const UPDATE_RATES = "UPDATE_MINRATE";
 export const UPDATE_AUTOBOOK = "UPDATE_AUTOBOOK";
 export const UPDATE_SORT_ORDER = "UPDATE_SORT_ORDER";
 export const UPDATE_DATE = "UPDATE_DATE";
+export const CLEAR_FILTERS = "CLEAR_FILTERS";
 
 import {fetchTaskers} from './tasker_actions';
 
@@ -34,6 +35,9 @@ export const changeFilter = (field, value) => {
       break;
     case 'autobook':
       type = UPDATE_AUTOBOOK;
+      break;
+    case 'clear':
+      type = CLEAR_FILTERS;
       break;
   }
 

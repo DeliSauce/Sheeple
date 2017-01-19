@@ -1,4 +1,4 @@
-import { UPDATE_DATE, UPDATE_LOCATION, UPDATE_SKILL, UPDATE_RATES, UPDATE_AUTOBOOK, UPDATE_SORT_ORDER } from '../actions/filter_actions';
+import { UPDATE_DATE, UPDATE_LOCATION, UPDATE_SKILL, UPDATE_RATES, UPDATE_AUTOBOOK, UPDATE_SORT_ORDER, CLEAR_FILTERS } from '../actions/filter_actions';
 import merge from 'lodash/merge';
 
 const _defaultState = {
@@ -35,6 +35,9 @@ const FiltersReducer = (state = _defaultState, action) => {
     case UPDATE_SORT_ORDER:
       console.log("hit the sort order in filters reducer");
       return merge(newState, {sortOrder: action.sortOrder});
+    case CLEAR_FILTERS:
+      console.log("hit CLEAR in filters reducer");
+      return _defaultState;
     default:
       return state;
   }

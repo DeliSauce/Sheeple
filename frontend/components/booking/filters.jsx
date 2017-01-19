@@ -74,6 +74,9 @@ class Filters extends React.Component {
         case 'sortOrder':
           this.props.updateFilter(field, e.target.value);
           break;
+        case 'clear':
+          this.props.updateFilter(field, 'clear');
+          break;
         default:
           break;
       }
@@ -234,10 +237,16 @@ class Filters extends React.Component {
           </div>
         </div>
 
-        <label>
+        <div>
+          <button className="button-clear-filters" onClick={this.filterChangeHandler('clear')} >Clear Search Filters</button>
+        </div>
+
+        <div>
           Max Results [5,10,15,20,50]
           **TBD**
-        </label>
+        </div>
+
+
 
 
       </div>

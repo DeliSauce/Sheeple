@@ -1,18 +1,40 @@
-// FILTERS CONTAINER
 .filters-container {
   flex: 0 0 350px;
-  border: solid red 1px;
   display: flex;
   margin: 0 20px;
   flex-direction: column;
   border-right: solid 1px $light-gray;
+  border: solid red 1px;
 }
 
-.filters-container > div {
-  padding: 10px;
-  box-sizing: border-box;
-  border-bottom: 1px solid $light-gray;
+.filters-container {
+  div[class*='-filter-container'] {
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $light-gray;
+  }
+  div[class*='-description'] {
+    font-size: 20px;
+  }
+  button {
+    margin: 10px;
+  }
+
 }
+
+
+.rate-filter-min-max {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      display: inline;
+    }
+}
+
+// .rate-filter-min-max > div {
+//   display: inline;
+// }
 
 .checkbox-checked {
   background-image: image-url("check_box_black_18x18.png");
