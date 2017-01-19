@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-    render json: @user.tasks
+    # render json: @user.tasks
     # "api/users/dashboard"
   end
 

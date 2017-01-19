@@ -35,14 +35,25 @@ class TaskerItem extends React.Component {
     return () => this.setState({modalIsOpen: false});
   }
 
+  // renderProfilePic(){
+  //   var list = document.getElementsByClassName('thumb');
+  //
+  //   for (var i = 0; i < list.length; i++) {
+  //     var src = list[i].getAttribute('data-image-src');
+  //     list[i].style.backgroundImage="url('" + src + "')";
+  //   }
+  //
+  //   return ()
+  // }
+
  render (){
 
     return (
       <li className="search-result-item">
 
-        <div className="profile-img">
-          <img src={"http://res.cloudinary.com/delisauce/image/upload/c_crop,h_1100,w_1000/v1484780832/Profile/" + this.props.tasker.profile_img_link} />
-        </div>
+
+        <img className="profile-img" src={"http://res.cloudinary.com/delisauce/image/upload/c_crop,h_1100,w_1000/v1484780832/Profile/" + this.props.tasker.profile_img_link} />
+
 
         <div className="profile-data">
           <div>
@@ -51,8 +62,8 @@ class TaskerItem extends React.Component {
           <div>
             {"Rate: $" + this.props.tasker.rate + "/hr"}
           </div>
-          <div>
-            {"Skillset: " + this.props.tasker.skill}
+          <div className="tasker-item-skill">
+            {this.props.tasker.skill}
           </div>
         </div>
 

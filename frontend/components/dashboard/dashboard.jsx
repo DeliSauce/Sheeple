@@ -13,6 +13,9 @@ class Dashboard extends React.Component {
   }
 
   render() {
+
+    let pendingTasks = []
+    let completedTasks = []
     let tasks = [];
     if (this.props.tasks.length !== undefined) {
       tasks = this.props.tasks.map((task, idx) => <TaskItem key={idx} deleteTask={this.props.deleteTask} task={task}/>);
@@ -26,6 +29,7 @@ class Dashboard extends React.Component {
         <div className="dashboard-header">
           <span className="dashboard-header-title">Bookings Dashboard</span>
         </div>
+
         {tasks}
       </div>
     );

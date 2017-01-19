@@ -4,6 +4,7 @@
   // flex: 1 1 900px;
   // border: solid blue 2px;
   display: flex;
+  margin-right: 20px;
   flex-grow: 1;
   flex-direction: column;
 }
@@ -11,39 +12,45 @@
 
 
 // Search result items
+.search-result-item * {
+  border: red 1px solid;
+}
+
+
 .search-result-item {
   width: 900px;
   display: flex;
   justify-content: space-between;
   width: auto;
   padding: 10px;
-  border-radius: 3px;
-  // border: solid black 1px;
   height: 130px;
   box-sizing: border-box;
 
   border-bottom: solid 1px $light-gray;
-}
 
-.profile-img {
-  width: 100px;
-  // border: black solid 3px;
-  background-image: url(data);
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+  .profile-img {
+    width: 100px;
+    object-fit: cover;
+    background-image: url(data);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 
-img {
-  width: 100%;
-  height: 100%;
-}
+  .profile-data {
+    width: auto;
+    display: flex;
+    flex-direction: column;
 
-.profile-data {
-  width: auto;
-}
-
-.profile-description {
-  width: 40%;
+    .tasker-item-skill {
+      background-color: $light-blue;
+      color: white;
+      border-radius: 3px;
+      display: flex;
+    }
+  }
+  .profile-description {
+    width: 40%;
+  }
 }
 
 
