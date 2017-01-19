@@ -23,7 +23,8 @@ Tasker.create({
   skill: "sitting",
   location: "SF",
   latitude: 37.773972,
-  longitude: -122.431297
+  longitude: -122.431297,
+  profile_img_link: "sitting_0"
 })
 
 Tasker.create({
@@ -37,8 +38,25 @@ Tasker.create({
   skill: "standing",
   location: "NY",
   latitude: 40.7128,
-  longitude: -74.0059
+  longitude: -74.0059,
+  profile_img_link: "standing_0"
 })
+
+profile_description = [
+  "I havent held a job for 10 years and live in my mothers basement. So...Im pretty good at sitting around and doing nothing.",
+  "I once stood in line for 10 hours just to get Justin Bieber tickets.",
+  "Will work for food!!",
+  "OMG, people tell me all the time to just 'Sit there are look pretty'. Now I get paid for it!",
+  "I'm a health nut so standing for hours is no problem. I only work in non-smoking environments.",
+  "I don't get out a lot so I'm happy to just get some interaction with other people.",
+  "I'll do anything. Literally, anything.",
+  "Is this site for real? Paying people to just 'be present'? Hello dot com bubble 2.0.",
+  "Ruff. I identify as a dog so don't be surprised if I come in costume.",
+  "Meow. I'm a 'cat'. I will not work with that guy who dresses in dog costumes. He bit me last time we worked together.",
+  "I'm free pretty much all the time. Except when I'm not.",
+  "I'm a lizard. This website is pure descrimination towards my cold-blooded breathren. Don't even think about contacting me.",
+  "AAAAAAAAAAAAAAAAAAAAAAAAAAAAH! I need a job quick! I'm getting evicted tomorrow if I can't make my rent."
+]
 
   FactoryGirl.define do
     factory :tasker do
@@ -46,18 +64,27 @@ Tasker.create({
       last_name {Faker::Name.last_name}
       username {"#{first_name.downcase}#{rand(100.999)}_#{last_name}"}
       email {"#{first_name}.#{last_name}@example.com".downcase}
-      description 'placeholder description'
+      description {profile_description.sample}
       rate {Faker::Number.between(0,30)}
       auto_book {[false, true].sample}
-      skill {['sitting', 'standing', 'wandering'].sample}
+      skill {['sitting', 'standing', 'moving'].sample}
       location {['NY', 'SF'].sample}
       longitude {Faker::Address.longitude}
       latitude {Faker::Address.latitude}
+      profile_img_link {"#{skill}_#{rand(0..15)}.jpg"}
     end
   end
+
+# http://res.cloudinary.com/delisauce/image/upload/v1484337646/default-profile-img_c1ir5w.png
+
 
   100.times do
     FactoryGirl.create(:tasker)
   end
+
+  # profile_pic = []
+
+
+
   # email {Faker::Internet.email}
 # password {Faker::Number.number(1,2)}

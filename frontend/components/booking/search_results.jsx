@@ -11,8 +11,6 @@ class SearchResults extends React.Component {
 
   render() {
     let taskers = [];
-
-
     if (this.props.taskers.length !== undefined) {
       taskers = this.props.taskers.map((tasker, idx) => <TaskerItem key={idx} tasker={tasker}/>);
     }

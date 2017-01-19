@@ -60,7 +60,7 @@ class Homepage extends React.Component {
                 <h3> Pump Up Your Base </h3>
                 Concerts are more fun when there are people cheering. BAAAAAA!! Sheeple!!
               </div>
-              <button onClick={this.gotoBooking('wandering')} className="book-button">BOOK Concert Goers</button>
+              <button onClick={this.gotoBooking('moving')} className="book-button">BOOK Concert Goers</button>
             </div>
           </div>
 
@@ -105,7 +105,7 @@ export default Homepage;
 //
 //         <div className="task-selector concert-background">
 //           <div className="task-selector-text">Concert Goers</div>
-//           <button onClick={gotoBooking('wandering')} className="book-button">BOOK</button>
+//           <button onClick={gotoBooking('moving')} className="book-button">BOOK</button>
 //         </div>
 //
 //       </div>

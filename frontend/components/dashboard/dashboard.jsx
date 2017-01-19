@@ -17,9 +17,15 @@ class Dashboard extends React.Component {
     if (this.props.tasks.length !== undefined) {
       tasks = this.props.tasks.map((task, idx) => <TaskItem key={idx} deleteTask={this.props.deleteTask} task={task}/>);
     }
+    if (this.props.tasks.length === 0){
+      tasks = <div className="empty-dashboard-response">You don't appear to have any bookings yet. Why don't you go find yourself a warm body.</div>
+    }
 
     return (
-      <div>
+      <div className="dashboard-container">
+        <div className="dashboard-header">
+          <span className="dashboard-header-title">Bookings Dashboard</span>
+        </div>
         {tasks}
       </div>
     );

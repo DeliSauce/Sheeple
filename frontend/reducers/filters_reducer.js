@@ -6,7 +6,7 @@ const _defaultState = {
   skill: "",
   autobook: false,
   minRate: 0,
-  maxRate: 50,
+  maxRate: 30,
   sortOrder: "",
   date: ""
 };

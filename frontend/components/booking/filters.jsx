@@ -85,7 +85,7 @@ class Filters extends React.Component {
             <option value="" disabled>Select a Task Type</option>
             <option value="standing">Standing</option>
             <option value="sitting">Sitting</option>
-            <option value="wandering">Wandering</option>
+            <option value="moving">Moving</option>
           </select>
         </label>
 
@@ -93,7 +93,7 @@ class Filters extends React.Component {
         <label>
           Rate ($/hr): <Rheostat
           min={0}
-          max={50}
+          max={30}
           values={[this.state.minRate,this.state.maxRate]}
           onChange={this.filterChangeHandler('rates')}
           onValuesUpdated={this.updateSliderMinMax()}
@@ -142,7 +142,7 @@ class Filters extends React.Component {
         </label>
 
         <label>
-          Instant Booking: 
+          Instant Booking:
           <button className={this.autoBookStatus()} onClick={this.filterChangeHandler('autobook')}></button>
         </label>
 

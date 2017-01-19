@@ -25,7 +25,7 @@ class Tasker < ApplicationRecord
   # validates :longitude, :latitude, presence: true
   # TODO possibly add auto_book feature
   # validates :auto_book, inclusion: [true, false]
-  validates :skill, presence: true, inclusion: ['standing', 'sitting', 'wandering']
+  validates :skill, presence: true, inclusion: ['standing', 'sitting', 'moving']
 
   has_many :tasks
   #TODO if I want to allow taskers to have multiple skills I'll either have to create another table + join table (ala movies, actors, castings)(tasker creation would be tricky -- entry in the skills table would rely on tasker_id from the new entry in the tasker table -- how to do both simultaneously) or look at the todo list taggings project
