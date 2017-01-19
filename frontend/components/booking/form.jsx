@@ -8,7 +8,7 @@ class Form extends React.Component {
     let status = props.tasker.auto_book ? 'booked' : 'pending';
     this.state = {
       tasker_id: props.tasker.id,
-      user_id: props.user_id,
+
       description: "",
       date: props.filters.date,
       location: props.tasker.location,
@@ -16,7 +16,7 @@ class Form extends React.Component {
 
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    // user_id: props.user_id,
     // date: props.filters.date
 
 

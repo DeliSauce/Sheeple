@@ -17,8 +17,8 @@ export const removeTask = (task) => ({
 
 export const fetchTasks = (userId) => (dispatch) => (
   DashboardAPIUtil.fetchUserTasks(userId).then((tasks) => dispatch(receiveTasks(tasks)))
-  // DashboardAPIUtil.fetchUserTasks(userId).then((success) => console.log(success))
 );
+// DashboardAPIUtil.fetchUserTasks(userId).then((success) => console.log(success))
 
 export const deleteTask = (taskId) => (dispatch) => (
   TaskAPIUtil.deleteTask(taskId).then((task) => dispatch(removeTask(task)))

@@ -59,13 +59,13 @@
 }
 
 .nav-button {
-  color: $button-green;
+  color: $nav-link;
   transition: color 1.1s;
 
 }
 
 .nav-button:hover {
-  color: $button-hover-green;
+  color: $nav-link-hover;
 }
 
 
@@ -74,8 +74,8 @@
   height: 40px;
   font-size: 16px;
 
-  	background-color: $button-green;
-  	border-color: $button-green;
+  	background-color: $guest-login-button-background;
+  	border-color: $guest-login-button-background;
   	color: white;
   	font-weight: bold;
   	padding: 7px 9px;
@@ -87,6 +87,6 @@
 }
 
 .guest-login-button:hover {
-	background-color: $button-hover-green;
-  border-color: $button-hover-green;
+	background-color: $guest-login-button-background-hover;
+  border-color: $guest-login-button-background-hover;
 }

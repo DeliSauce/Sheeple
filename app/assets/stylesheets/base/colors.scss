@@ -1,4 +1,4 @@
-//TODO need to adjust these according to needs
+//COLORS
 $lightest-gray: #F9FAFB;
 $light-gray: #e2e2e2;
 $gray: #999;
@@ -11,8 +11,54 @@ $dark-blue: #4d7b9f;
 $darkest-blue: #265e8b;
 
 $slider-green: #8aed6a;
-$button-green: #47912f;
-$button-hover-green: #23630e;
+$green: #47912f;
+$darker-green: #23630e;
 
-$instant-book: #f26c32;
-$instant-book-hover: #af4d23;
+
+//TASKER ITEMS
+$tasker-skill: $light-blue;
+$tasker-border: $light-gray;
+
+$instant-book-button: #f26c32;
+$instant-book-button-border: #f26c32;
+
+$instant-book-button-hover: #af4d23;
+$instant-book-button-border-hover: #af4d23;
+
+//TASK ITEMS
+$task-completed-background: $light-gray;
+$task-pending-background: $light-blue;
+$task-booked-background: $blue;
+
+$task-status-header: $light-gray;
+$task-border: $light-gray;
+
+$cancel-book-button: $blue;
+$cancel-book-button-hover: $dark-blue;
+
+
+//DASHBOARD
+$dashboard-header-background: $light-gray;
+
+
+// BOOKING
+$booking-header-background: $light-gray;
+
+
+//HOMEPAGE
+$task-selector-details-background: $light-gray;
+$task-selector-book-button: $green;
+$task-selector-book-button-border: $green;
+$task-selector-book-button-hover: $darker-green;
+$task-selector-book-button-border-hover: $darker-green;
+
+$nav-link: $green;
+$nav-link-hover: $darker-green;
+$guest-login-button-background: $green;
+$guest-login-button-background-hover: $darker-green;
+
+
+//BOOKING FORM
+
+
+//SIGN IN FORM

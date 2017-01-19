@@ -12,8 +12,10 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(params[:id])
+    # @user = User.find_by_id(params[:id])
+    @user = User.find_by_id(current_user.id)
     # render json: @user.tasks
+    render :show
     # "api/users/dashboard"
   end
 

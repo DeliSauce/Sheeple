@@ -22,7 +22,7 @@
   color: white;
   font-weight: bold;
   font-family: $sans-serif;
-  font-size: 38px;
+  font-size: $splash-tagline-font-size;
   margin: auto 0;
 }
 
@@ -58,7 +58,7 @@
   justify-content: center;
   align-items: center;
   flex: 0 0 400px;
-  background-color: $lightest-gray;
+  background-color: $task-selector-details-background;
   margin-left: 20px;
 }
 
@@ -70,16 +70,16 @@
   color: black;
   font-weight: bold;
   font-family: $sans-serif;
-  font-size: 18px;
+  font-size: $task-selector-font-size;
 }
 
 .book-button {
   width: 150px;
   height: 40px;
-  font-size: 16px;
+  font-size: $task-selector-book-button-font-size;
 
-  	background-color: $button-green;
-  	border-color: $button-green;
+  	background-color: $task-selector-book-button;
+  	border-color: $task-selector-book-button-border;
   	color: white;
   	font-weight: bold;
   	padding: 7px 9px;
@@ -91,6 +91,6 @@
 }
 
 .book-button:hover {
-	background-color: $button-hover-green;
-  border-color: $button-hover-green;
+	background-color: $task-selector-book-button-hover;
+  border-color: $task-selector-book-button-border-hover;
 }

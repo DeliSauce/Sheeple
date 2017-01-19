@@ -10,7 +10,9 @@ class TaskItem extends React.Component {
   }
 
   cancelRequestButton() {
-    if (this.props.task.status === 'pending'){
+    let today = new Date();
+    let taskDate = new Date(this.props.task.date);
+    if (this.props.task.status === 'pending' && today >= taskDate){
       return (
         <button className="task-button-enabled" onClick={this.cancelTaskRequest()} >Cancel Booking</button>
       );
@@ -20,8 +22,14 @@ class TaskItem extends React.Component {
   }
 
  render (){
+  //  <div className="task-item-tasker-details">
+  //    <img className="profile-img" src={"http://res.cloudinary.com/delisauce/image/upload/c_crop,h_1100,w_1000/v1484780832/Profile/" + this.props.task.tasker.profile_img_link} />
+  //    <div>
+  //      {this.props.task.tasker.first_name + " " + this.props.task.tasker.last_name}
+  //    </div>
+  //  </div>
     return (
-      <li className="task-item">
+      <li className={"task-item " + this.props.className}>
         <div className="task-item-task-details">
           <div>
             {"Location: " + this.props.task.location}
@@ -30,21 +38,16 @@ class TaskItem extends React.Component {
             {"Date: " + this.props.task.date}
           </div>
           <div>
-            {"Status: " + this.props.task.status}
-          </div>
+             {"Body: " + this.props.task.tasker.first_name + " " + this.props.task.tasker.last_name}
+           </div>
           {this.cancelRequestButton()}
         </div>
 
-        <div className="task-item-tasker-details">
-          <img className="profile-img" src={"http://res.cloudinary.com/delisauce/image/upload/c_crop,h_1100,w_1000/v1484780832/Profile/" + this.props.task.tasker.profile_img_link} />
-          <div>
-            {this.props.task.tasker.first_name + " " + this.props.task.tasker.last_name}
-          </div>
-        </div>
 
 
         <div className="task-item-task-description">
-          {"Task Description " + this.props.task.description}
+          <div>Description</div>
+          <div>{this.props.task.description}</div>
         </div>
 
 

@@ -1,7 +1,7 @@
 
 .button {
-	background-color: $button-green;
-	border-color: $button-green;
+	background-color: $green;
+	border-color: $green;
 	color: white;
 	font-weight: bold;
 	padding: 7px 9px;
@@ -14,6 +14,6 @@
 }
 
 .button:hover {
-	background-color: $button-hover-green;
-  border-color: $button-hover-green;
+	background-color: $darker-green;
+  border-color: $darker-green;
 }

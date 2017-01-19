@@ -13,63 +13,110 @@
   justify-content: center;
   align-items: center;
 
-  background-color: $light-gray;
+  background-color: $dashboard-header-background;
 }
 .dashboard-header-title {
   font-size: 40px;
 }
 
-.task-item * {
+
+
+
+
+.dashboard-tasks-container * {
   border: red 1px solid;
+}
+
+.dashboard-tasks-container {
+  display: flex;
+  justify-content: space-between;
+
+  .task-status-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 33.333333%;
+
+    .task-status-header {
+      width: 100%;
+      height: 50px;
+      background-color: $task-status-header;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+}
+
+.task-item.status-completed {
+  background-color: $task-completed-background;
+}
+
+.task-item.status-pending {
+  background-color: $task-pending-background;
+}
+
+.task-item.status-booked {
+  background-color: $task-booked-background;
 }
 
 .task-item {
   display: flex;
-  justify-content: space-between;
-  width: auto;
+  flex-direction: row;
+  width: 100%;
   padding: 10px;
-  margin: 0 30px;
+  margin: 15px 30px;
   height: 200px;
   box-sizing: border-box;
-  border-bottom: solid 1px $light-gray;
+  border: solid 1px $task-border;
+
+
 
   div[class*='-task-details'] {
-    width: auto;
+    // width: auto;
     display: flex;
     flex-direction: column;
+
     .task-button-enabled {
-      background-color: $instant-book;
-      border-color: $instant-book;
+      background-color: $cancel-book-button;
+      border-color: $cancel-book-button;
       width: 70px;
       height: 40px;
+      align-items: center;
     }
+
     .task-button-enabled:hover {
-      background-color: $instant-book-hover;
-      border-color: $instant-book-hover;
+      background-color: $cancel-book-button-hover;
+      border-color: $cancel-book-button-hover;
     }
-  }
-
-  div[class*='-tasker-details'] {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .profile-img {
-      width: 150px;
-      object-fit: cover;
-      background-image: url(data);
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-
   }
 
   div[class*='-task-description'] {
-    // width: 60%;
+    width: auto;
+    display: flex;
+    margin-left: 5px;
+    flex-grow: 1;
+    flex-direction: column;
   }
-
-
 }
+  // div[class*='-tasker-details'] {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //
+  //   .profile-img {
+  //     width: 150px;
+  //     object-fit: cover;
+  //     background-image: url(data);
+  //     background-repeat: no-repeat;
+  //     background-size: contain;
+  //   }
+  //
+  // }
+
 
 .empty-dashboard-response {
   text-align: center;

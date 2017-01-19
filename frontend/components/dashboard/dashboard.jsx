@@ -14,12 +14,31 @@ class Dashboard extends React.Component {
 
   render() {
 
-    let pendingTasks = []
-    let completedTasks = []
+    let pendingTasks = [];
+    let completedTasks = [];
+    let bookedTasks = [];
+
     let tasks = [];
+
     if (this.props.tasks.length !== undefined) {
-      tasks = this.props.tasks.map((task, idx) => <TaskItem key={idx} deleteTask={this.props.deleteTask} task={task}/>);
+      this.props.tasks.forEach(
+        (task, idx) => {
+          let cutoffDate = new Date();
+          cutoffDate.setDate(cutoffDate.getDate() - 1);
+          let taskDate = new Date(task.date);
+          if (taskDate < cutoffDate) {
+            completedTasks.push(<TaskItem key={idx} className="status-completed" deleteTask={this.props.deleteTask} task={task}/>);
+          } else if (task.status === 'pending')  {
+            pendingTasks.push(<TaskItem key={idx} className="status-pending" deleteTask={this.props.deleteTask} task={task}/>);
+          } else if (task.status === 'booked')  {
+            bookedTasks.push(<TaskItem key={idx} className="status-booked" deleteTask={this.props.deleteTask} task={task}/>);
+          }
+        }
+    );
     }
+
+
+
     if (this.props.tasks.length === 0){
       tasks = <div className="empty-dashboard-response">You don't appear to have any bookings yet. Why don't you go find yourself a warm body.</div>
     }
@@ -30,7 +49,21 @@ class Dashboard extends React.Component {
           <span className="dashboard-header-title">Bookings Dashboard</span>
         </div>
 
-        {tasks}
+        <div className="dashboard-tasks-container">
+          <div className="task-status-container">
+            <div className="task-status-header">Booked</div>
+            {bookedTasks}
+          </div>
+          <div className="task-status-container">
+            <div className="task-status-header">Pending</div>
+            {pendingTasks}
+          </div>
+          <div className="task-status-container">
+            <div className="task-status-header">Completed</div>
+            {completedTasks}
+          </div>
+        </div>
+
       </div>
     );
   }
