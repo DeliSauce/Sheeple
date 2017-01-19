@@ -18,6 +18,7 @@ class Filters extends React.Component {
 
     this.onDateChange = this.onDateChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
+    this.handleClearFilter = this.handleClearFilter.bind(this);
   }
   onDateChange(date) {
     this.setState({ date });
@@ -26,6 +27,11 @@ class Filters extends React.Component {
 
   onFocusChange({ focused }) {
     this.setState({ focused });
+  }
+
+  handleClearFilter(){
+    this.props.updateFilter('clear', 'clear');
+    this.setState({date: null, minRate: 0, maxRate: 30});
   }
 
   filterChangeHandler(field) {
@@ -74,9 +80,9 @@ class Filters extends React.Component {
         case 'sortOrder':
           this.props.updateFilter(field, e.target.value);
           break;
-        case 'clear':
-          this.props.updateFilter(field, 'clear');
-          break;
+        // case 'clear':
+        //   this.props.updateFilter(field, 'clear');
+        //   break;
         default:
           break;
       }
@@ -166,7 +172,7 @@ class Filters extends React.Component {
 
         <div className="skill-filter-container">
           <div className="skill-filter-description">
-            Skill:
+            Task:
           </div>
           <div className="skill-filter-checkboxes">
             <label>Standing
@@ -184,7 +190,7 @@ class Filters extends React.Component {
 
         <div className="sort-filter-container">
           <div className="sort-filter-description">
-            Sort results by:
+            Rate:
           </div>
           <div className="sort-filter-checkboxes">
             <label>Low to High
@@ -212,8 +218,8 @@ class Filters extends React.Component {
             />
           </div>
           <div className="rate-filter-min-max">
-            <div> {this.state.minRate} </div>
-            <div> {this.state.maxRate} </div>
+            <div> {"$" + this.state.minRate} </div>
+            <div> {"$" + this.state.maxRate} </div>
           </div>
         </div>
 
@@ -237,17 +243,19 @@ class Filters extends React.Component {
           </div>
         </div>
 
-        <div>
-          <button className="button-clear-filters" onClick={this.filterChangeHandler('clear')} >Clear Search Filters</button>
+        <div className="max-results-filter-container">
+          <div className="max-results-filter-description">
+            Max Results [5,10,15,20,50]
+            **TBD**
+          </div>
         </div>
 
-        <div>
-          Max Results [5,10,15,20,50]
-          **TBD**
+        <div className="clear-filter-container">
+          <button
+            className="button-clear-filters" onClick={this.handleClearFilter} >
+            Clear Filters
+          </button>
         </div>
-
-
-
 
       </div>
     );

@@ -42,6 +42,11 @@
   margin: 15px;
 }
 
+.header-user-container {
+  display: flex;
+  align-items: center;
+}
+
 .nav-button {
   color: $button-green;
   transition: color 1.1s;

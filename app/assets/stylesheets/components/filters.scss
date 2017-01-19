@@ -5,14 +5,15 @@
   flex-direction: column;
   border-right: solid 1px $light-gray;
   border: solid red 1px;
-}
+  color: #484848;
+  font-weight: bold;
 
-.filters-container {
   div[class*='-filter-container'] {
     padding: 10px;
     box-sizing: border-box;
     border-bottom: 1px solid $light-gray;
   }
+
   div[class*='-description'] {
     font-size: 20px;
   }
@@ -40,6 +41,12 @@
     margin: 10px 10px 0 10px;
   }
 
+}
+
+.button-clear-filters {
+  padding: 10px;
+  border: #484848 solid 1px;
+  border-radius: 3px;
 }
 
 .rate-filter-min-max {

@@ -33,17 +33,20 @@
 }
 
 .rheostat-horizontal {
-  height: 24px;
+  // height: 24px;
+  height: 8px;
 }
 
 .rheostat-horizontal .rheostat-background {
-  height: 15px;
-  top: 0px;
+  // height: 15px;
+  height: 2px;
+  top: 4px;
   width: 100%;
 }
 
 .rheostat-horizontal .rheostat-progress {
-  height: 11px;
+  // height: 11px;
+  height: 7px;
   top: 2px;
 }
 
