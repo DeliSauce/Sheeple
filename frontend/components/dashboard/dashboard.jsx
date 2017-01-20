@@ -36,7 +36,7 @@ class Dashboard extends React.Component {
     );
     }
 
-    console.log(this.props.tasks.length);
+    // console.log(this.props.tasks.length);
 
     if (this.props.tasks.length === 0){
       pendingTasks = <div className="empty-dashboard-response">You don't appear to have any bookings yet. Why don't you hit up the <Link to="/booking">Search Page</Link>.</div>

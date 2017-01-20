@@ -1,25 +1,55 @@
-.booking-form * {
-  border: 1px red solid;
-}
+// .booking-form * {
+//   border: 1px red solid;
+// }
+
 
 .booking-form {
-  width: 550px;
-  height: 250px;
-}
+  justify-content: space-between;
 
-.booking-form > label {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-}
+  div[class*='form-header-'] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex: 0 0 60px;
+    background-color: $form-booking-header-background;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
 
-.booking-form >  div {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-}
+  }
 
-.booking-form > h2 {
-  text-align: center;
-  margin: 10px;
+  label {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+  }
+
+  input {
+    width: 200px;
+    height: 40px;
+    // border-radius: 6px;
+    // background-color: $lightest-gray;
+  }
+  textarea {
+    width: 300px;
+    height: 100px;
+    resize: none;
+    font-size: 12px;
+    // border-radius: 6px;
+    background-color: $lightest-gray;
+  }
+
+  .form-errors {
+    flex: 0 0 40px;
+  }
+
+  .booking-submit-button  {
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    margin-bottom: 5px;
+    padding: 0;
+  }
+
 }

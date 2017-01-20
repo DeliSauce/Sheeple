@@ -74,7 +74,7 @@ class Filters extends React.Component {
         //   this.props.updateFilter(field, e.target.value);
         //   break;
         case 'autobook':
-          console.log("autobook:", e.target.value, e.currentTarget.value);
+          // console.log("autobook:", e.target.value, e.currentTarget.value);
           this.props.updateFilter(field, !this.props.filters.autobook);
           break;
         case 'sortOrder':

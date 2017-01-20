@@ -6,7 +6,7 @@ const TasksReducer = (state = [], action) => {
 
   switch(action.type) {
     case RECEIVE_TASKS:
-      console.log("task reducer: receive tasks");
+      // console.log("task reducer: receive tasks");
       return action.tasks;
     case REMOVE_TASK:
       let newState = [];
@@ -15,7 +15,7 @@ const TasksReducer = (state = [], action) => {
           newState.push(task);
         }
       });
-      console.log("task reducer: remove task");
+      // console.log("task reducer: remove task");
       return newState; //need to figure out the structure of state
     default:
       return state;

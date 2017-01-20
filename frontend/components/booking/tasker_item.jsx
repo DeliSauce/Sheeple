@@ -82,8 +82,6 @@ class TaskerItem extends React.Component {
           contentLabel="Modal"
           style={formModalStyle}>
 
-          <button className="form-close" onClick={this.closeModal()}>X</button>
-
           <FormContainer tasker={this.props.tasker} closeModal={this.closeModal}/>
 
         </Modal>

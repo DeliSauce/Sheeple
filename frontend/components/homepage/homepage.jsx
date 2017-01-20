@@ -10,7 +10,7 @@ class Homepage extends React.Component {
 
   gotoBooking(type) {
     return () => {
-      console.log("button click");
+      // console.log("button click");
       this.props.updateFilter('skill', type);
       hashHistory.push(`/booking`);
     };

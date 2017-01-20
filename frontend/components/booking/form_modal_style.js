@@ -14,7 +14,7 @@ const formModalStyle = {
     top                        : '100px',
     left                       : '50%',
     transform                  : 'translate(-50%)',
-    width                      : '550px',
+    width                      : '400px',
     height                     : '550px',
     border                     : '1px solid #ccc',
     background                 : '#eee',
@@ -22,7 +22,8 @@ const formModalStyle = {
     WebkitOverflowScrolling    : 'touch',
     borderRadius               : '6px',
     outline                    : 'none',
-    padding                    : '20px'
+    padding                    : '0px',
+    display :'flex'
   }
 };
 

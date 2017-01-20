@@ -17,26 +17,26 @@ const FiltersReducer = (state = _defaultState, action) => {
   let newState = merge({}, state);
   switch(action.type) {
     case UPDATE_SKILL:
-      console.log("hit the skill in filters reducer");
+      // console.log("hit the skill in filters reducer");
       return merge(newState, {skill: action.skill});
     case UPDATE_DATE:
-      console.log("hit the date in filters reducer");
+      // console.log("hit the date in filters reducer");
       return merge(newState, {date: action.date});
     case UPDATE_RATES:
-      console.log("hit the rates in filters reducer");
+      // console.log("hit the rates in filters reducer");
       newState = merge(newState, {minRate: action.rates[0], maxRate: action.rates[1]});
       return newState;
     case UPDATE_LOCATION:
-      console.log("hit the location in filters reducer");
+      // console.log("hit the location in filters reducer");
       return merge(newState, {location: action.location});
     case UPDATE_AUTOBOOK:
-      console.log("hit the autobook in filters reducer");
+      // console.log("hit the autobook in filters reducer");
       return merge(newState, {autobook: action.autobook});
     case UPDATE_SORT_ORDER:
-      console.log("hit the sort order in filters reducer");
+      // console.log("hit the sort order in filters reducer");
       return merge(newState, {sortOrder: action.sortOrder});
     case CLEAR_FILTERS:
-      console.log("hit CLEAR in filters reducer");
+      // console.log("hit CLEAR in filters reducer");
       return _defaultState;
     default:
       return state;

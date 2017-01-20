@@ -1,7 +1,7 @@
 
-.session-form * {
-  // border: red 1px solid;
-}
+// .session-form * {
+//   border: red 1px solid;
+// }
 
 .session-form {
   justify-content: space-between;
@@ -32,14 +32,14 @@
   }
 
   .form-errors {
-    flex: 0 0 40px;
+    flex: 0 0 50px;
   }
 
   .form-submit-button  {
     width: 80px;
     height: 40px;
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 
   }
 

@@ -39,7 +39,7 @@ class Form extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="form-errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`} className="form-error">
             {error}
@@ -59,32 +59,38 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form className="booking-form" onSubmit={this.handleSubmit}>
+      <form className="form booking-form" onSubmit={this.handleSubmit}>
+
+
+        <div className="form-header-booking">Booking Form</div>
+
+
+        <div className="form-inputs-booking">
+          <div>
+            {"Who: " + this.props.tasker.first_name + " " + this.props.tasker.last_name}
+          </div>
+
+          <div>
+            {"Where: "+ this.state.location}
+          </div>
+
+          <div>
+            {"Rate: $" + this.props.tasker.rate + "/hr"}
+          </div>
+
+          <label> When:
+            <input type="date" value={this.state.date} onChange={this.update('date')} />
+          </label>
+
+          <label> Description:
+            <textarea value={this.state.description} onChange={this.update('description')} />
+          </label>
+        </div>
+
+        <input type="submit" className="booking-submit-button button" value={this.formSubmitType()}/>
+
         {this.renderErrors()}
 
-        <div className="booking-form-header">Booking Form</div>
-
-        <div>
-          {"Warm Body: " + this.props.tasker.first_name + " " + this.props.tasker.last_name}
-        </div>
-
-        <div>
-          {"Location: "+ this.state.location}
-        </div>
-
-        <div>
-          {"Rate: $" + this.props.tasker.rate + "/hr"}
-        </div>
-
-        <label> Task Date:
-          <input type="date" value={this.state.date} onChange={this.update('date')} />
-        </label>
-
-        <label> Task Description:
-          <textarea value={this.state.description} onChange={this.update('description')} />
-        </label>
-
-        <input type="submit" value={this.formSubmitType()}/>
       </form>
     );
   }
