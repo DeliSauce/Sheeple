@@ -15,7 +15,7 @@ User.create({username: "GUEST", password: "password", email: "guest@example.com"
 Tasker.create({
   first_name: "John",
   last_name: "Doe",
-  username: "JD3000",
+  username: "JD30002#{rand(100.999)}",
   email: "jd3000@example.com",
   description: "I haven't held a job for 10 years and live in my mothers basement. So...I'm pretty good at sitting around and doing nothing.",
   rate: 10,
@@ -30,7 +30,7 @@ Tasker.create({
 Tasker.create({
   first_name: "Jane",
   last_name: "Johson",
-  username: "sparklecat",
+  username: "sparklecat#{rand(100.999)}",
   email: "sparklecat@example.com",
   description: "I once stood in line for 10 hours just to get Justin Bieber tickets.",
   rate: 15,

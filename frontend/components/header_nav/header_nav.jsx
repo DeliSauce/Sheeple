@@ -49,7 +49,7 @@ class HeaderNav extends React.Component {
       <hgroup className="logged-in-nav">
         <div className="header-user-container">
           <div className="avatar-image"></div>
-          <div>{currentUser.username}</div>
+          <div>{this.props.currentUser.username}</div>
         </div>
         <button className="nav-button" onClick={this.gotoPage(navButton)}> {navButton} </button>
         <button className="nav-button" onClick={this.logoutAndRedirect(logout)}>Log Out</button>
