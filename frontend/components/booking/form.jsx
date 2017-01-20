@@ -1,30 +1,50 @@
 import React from 'react';
 import Modal from 'react-modal';
-
+import { SingleDatePicker } from 'react-dates';
+import merge from 'lodash/merge';
+import Moment from 'moment';
 
 class Form extends React.Component {
   constructor(props) {
     super(props);
     let status = props.tasker.auto_book ? 'booked' : 'pending';
+    let date = null;
+    if (props.filters.date) {
+      date = new Moment(props.filters.date);
+    }
+    console.log(props.filters.date, date);
     this.state = {
       tasker_id: props.tasker.id,
       description: "",
-      date: props.filters.date,
+      date,
       location: props.tasker.location,
       status: status
 
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    // user_id: props.user_id,
-    // date: props.filters.date
 
+    this.onDateChange = this.onDateChange.bind(this);
+    this.onFocusChange = this.onFocusChange.bind(this);
+  }
 
+  onDateChange(date) {
+    this.setState({ date });
+  }
+
+  onFocusChange({ focused }) {
+    this.setState({ focused });
   }
 
   handleSubmit(e){
     e.preventDefault();
-    const task = {task: this.state};
-    this.props.submitBooking(task, this.props.closeModal());
+    // let task = {task: this.state};
+    let date = "";
+    if (this.state.date) {
+      date = this.state.date.format("YYYY-MM-DD");
+    }
+    let task = merge({}, this.state, {date});
+
+    this.props.submitBooking({task}, this.props.closeModal());
   }
 
   // closeModal() {
@@ -79,7 +99,16 @@ class Form extends React.Component {
           </div>
 
           <label> When:
-            <input type="date" value={this.state.date} onChange={this.update('date')} />
+            <SingleDatePicker
+              id="date_input"
+              date={this.state.date}
+              focused={this.state.focused}
+              numberOfMonths={1}
+              onDateChange={this.onDateChange}
+              onFocusChange={this.onFocusChange}
+              />
+
+
           </label>
 
           <label> Description:
