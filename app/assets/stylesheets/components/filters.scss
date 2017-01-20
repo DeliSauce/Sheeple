@@ -57,6 +57,10 @@
   padding: 10px;
   border: $filter-clear-button-border solid 1px;
   border-radius: 3px;
+  background-color: $secondary-light;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
 }
 
 .rate-filter-min-max {
