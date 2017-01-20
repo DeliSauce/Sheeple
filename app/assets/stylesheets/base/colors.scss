@@ -15,10 +15,6 @@ $salmon: #DA7F5B;
 $salmon-darker: #BB5B35;
 $salmon-dark: #933A17;
 
-$slider-green: #8aed6a;
-$green: #47912f;
-$darker-green: #23630e;
-
 $secondary: #236D5F;
 $secondary-light: #418779;
 $secondary-dark: #0E5345;
@@ -28,7 +24,7 @@ $secondary-dark: #0E5345;
 $tasker-skill: $light-blue;
 $tasker-border: $light-gray;
 
-$instant-book-button: #f26c32;
+$instant-book-button: $salmon-dark;
 $instant-book-button-border: #f26c32;
 
 $instant-book-button-hover: #af4d23;
@@ -49,7 +45,7 @@ $instant-book-button-border-hover: #af4d23;
   $cancel-book-button: $salmon;
   $cancel-book-button-border: $salmon-dark;
   $cancel-book-button-hover: $salmon-darker;
-  $cancel-book-button-border-hover: $salmon-dark;
+  $cancel-book-button-border-hover: $salmon-darker;
 
 
 
@@ -60,15 +56,15 @@ $booking-header-background: $secondary-light;
 
 //HOMEPAGE
 $task-selector-details-background: $light-gray;
-$task-selector-book-button: $green;
-$task-selector-book-button-border: $green;
-$task-selector-book-button-hover: $darker-green;
-$task-selector-book-button-border-hover: $darker-green;
+$task-selector-book-button: $salmon;
+$task-selector-book-button-border: $salmon;
+$task-selector-book-button-hover: $salmon-darker;
+$task-selector-book-button-border-hover: $salmon-darker;
 
-$nav-link: $green;
-$nav-link-hover: $darker-green;
-$guest-login-button-background: $green;
-$guest-login-button-background-hover: $darker-green;
+$nav-link: $salmon;
+$nav-link-hover: $salmon-darker;
+$guest-login-button-background: $salmon;
+$guest-login-button-background-hover: $salmon-darker;
 
 
 //FILTERS
@@ -80,4 +76,14 @@ $filters-text-color: #484848;
 //BOOKING FORM
 
 
-//SIGN IN FORM
+//SIGN IN/LOG IN FORM
+$form-session-header-background: $salmon;
+
+
+//MISC
+$default-button-color: $salmon;
+$default-button-border-color: $salmon;
+$default-button-hover-color: $salmon-darker;
+$default-button-border-hover-color: $salmon-darker;
+
+$link-color: $salmon;

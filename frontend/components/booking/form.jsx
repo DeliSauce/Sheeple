@@ -41,7 +41,7 @@ class Form extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li key={`error-${i}`} className="form-error">
             {error}
           </li>
         ))}
@@ -62,7 +62,7 @@ class Form extends React.Component {
       <form className="booking-form" onSubmit={this.handleSubmit}>
         {this.renderErrors()}
 
-        <h2>Booking Form</h2>
+        <div className="booking-form-header">Booking Form</div>
 
         <div>
           {"Warm Body: " + this.props.tasker.first_name + " " + this.props.tasker.last_name}

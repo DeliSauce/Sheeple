@@ -12,15 +12,16 @@ const modalStyle = {
     top                        : '100px',
     left                       : '50%',
     transform                  : 'translate(-50%)',
-    width                      : '550px',
-    height                     : '550px',
+    width                      : '400px',
+    height                     : '450px',
     border                     : '1px solid #ccc',
     background                 : '#eee',
     overflow                   : 'auto',
     WebkitOverflowScrolling    : 'touch',
-    borderRadius               : '4px',
+    borderRadius               : '10px',
     outline                    : 'none',
-    padding                    : '20px'
+    padding                    : '0px',
+    display :'flex'
   }
 };
 

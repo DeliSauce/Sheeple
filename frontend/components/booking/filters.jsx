@@ -156,6 +156,24 @@ class Filters extends React.Component {
     return (
       <div className="filters-container">
 
+        <div className="date-and-clear-filter-container">
+
+          <SingleDatePicker
+            id="date_input"
+            date={this.state.date}
+            focused={this.state.focused}
+            numberOfMonths={1}
+            onDateChange={this.onDateChange}
+            onFocusChange={this.onFocusChange}
+            />
+
+          <button
+            className="button-clear-filters" onClick={this.handleClearFilter} >
+            Clear Filters
+          </button>
+
+        </div>
+
         <div className="location-filter-container">
           <div className="location-filter-description">
             Location:
@@ -188,9 +206,18 @@ class Filters extends React.Component {
         </div>
 
 
+        <div className="instant-book-filter-container">
+          <div className="instant-book-filter-checkboxes">
+            <label>Instant Booking
+              <button className={this.checkBoxStatus('autobook')} onClick={this.filterChangeHandler('autobook')}></button>
+            </label>
+          </div>
+        </div>
+
+
         <div className="sort-filter-container">
           <div className="sort-filter-description">
-            Rate:
+            Rate (Sort Order):
           </div>
           <div className="sort-filter-checkboxes">
             <label>Low to High
@@ -202,7 +229,6 @@ class Filters extends React.Component {
 
           </div>
         </div>
-
 
 
         <div className="rate-filter-container">
@@ -222,36 +248,6 @@ class Filters extends React.Component {
             <div> {"$" + this.state.minRate} </div>
             <div> {"$" + this.state.maxRate} </div>
           </div>
-        </div>
-
-
-        <div className="date-filter-container">
-          <SingleDatePicker
-            id="date_input"
-            date={this.state.date}
-            focused={this.state.focused}
-            numberOfMonths={1}
-            onDateChange={this.onDateChange}
-            onFocusChange={this.onFocusChange}
-          />
-        </div>
-
-        <div className="instant-book-filter-container">
-          <div className="instant-book-filter-description">
-
-            <label>Instant Booking
-              <button className={this.checkBoxStatus('autobook')} onClick={this.filterChangeHandler('autobook')}></button>
-            </label>
-          </div>
-
-          <button
-            className="button-clear-filters" onClick={this.handleClearFilter} >
-            Clear Filters
-          </button>
-        </div>
-
-
-        <div className="clear-filter-container">
         </div>
 
       </div>

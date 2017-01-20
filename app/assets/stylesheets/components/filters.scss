@@ -11,6 +11,12 @@
   color: $filters-text-color;
   font-weight: bold;
 
+  // *{border: red solid 1px;}
+
+  .date-and-clear-filter-container {
+    display: flex;
+    justify-content: space-around;
+  }
   div[class*='-filter-container'] {
     padding: 10px;
     box-sizing: border-box;
@@ -18,7 +24,8 @@
   }
 
   div[class*='-description'] {
-    font-size: 20px;
+    text-align: left;
+    font-size: 16px;
   }
 
   div[class*='-checkboxes'] {
@@ -41,7 +48,7 @@
 
   }
   div[class*='-slider'] {
-    margin: 10px 10px 0 10px;
+    margin: 10px;
   }
 
 }

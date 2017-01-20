@@ -52,15 +52,15 @@
 
 .rheostat-horizontal .rheostat-handle {
   margin-left: -12px;
-  top: -5px;
+  top: -7px;
 }
 
-.rheostat-horizontal .rheostat-handle:before,
-.rheostat-horizontal .rheostat-handle:after {
-  top: 7px;
-  height: 10px;
-  width: 1px;
-}
+// .rheostat-horizontal .rheostat-handle:before,
+// .rheostat-horizontal .rheostat-handle:after {
+//   top: 7px;
+//   height: 10px;
+//   width: 1px;
+// }
 
 .rheostat-horizontal .rheostat-handle:before {
   left: 10px;

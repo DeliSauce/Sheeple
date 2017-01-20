@@ -80,13 +80,13 @@ class HeaderNav extends React.Component {
           onRequestClose={this.closeModal()}
           contentLabel="Modal"
           style={modalStyle}>
-          <button className="form-close" onClick={this.closeModal()}>X</button>
           <SessionFormContainer formType={this.state.formType} />
         </Modal>
 
       </nav>
     );
   }
+  // <button className="form-close" onClick={this.closeModal()}>X</button>
 
   render () {
     return (
