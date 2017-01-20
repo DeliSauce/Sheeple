@@ -25,19 +25,20 @@
     margin: 10px 0;
   }
 
-  input {
-    width: 200px;
-    height: 40px;
-    // border-radius: 6px;
-    // background-color: $lightest-gray;
-  }
+  // input {
+  //   width: 200px;
+  //   height: 40px;
+  //   // border-radius: 6px;
+  //   // background-color: $lightest-gray;
+  // }
   textarea {
     width: 300px;
     height: 100px;
     resize: none;
-    font-size: 12px;
+    font-size: 16px;
     // border-radius: 6px;
     background-color: $lightest-gray;
+    border: $form-text-area-border 1px solid;
   }
 
   .form-errors {

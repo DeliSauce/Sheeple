@@ -18,9 +18,10 @@ $react-dates-color-gray-light: lighten($react-dates-color-gray, 17.8%) !default;
 $react-dates-color-gray-lighter: lighten($react-dates-color-gray, 45%) !default;     // #cacccd
 $react-dates-color-highlighted: #ffe8bc !default;
 
+// $react-dates-color-border: #dbdbdb !default;
 $react-dates-color-border: #dbdbdb !default;
 $react-dates-color-border-light: #dce0e0 !default;
-$react-dates-color-border-medium: #c4c4c4 !default;
+$react-dates-color-border-medium: $date-picker-border !default;
 $react-dates-color-placeholder-text: #757575 !default;
 $react-dates-color-text: #484848 !default;
 $react-dates-color-text-focus: #007a87 !default;

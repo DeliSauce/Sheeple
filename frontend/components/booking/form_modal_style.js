@@ -15,7 +15,7 @@ const formModalStyle = {
     left                       : '50%',
     transform                  : 'translate(-50%)',
     width                      : '400px',
-    height                     : '550px',
+    height                     : '600px',
     border                     : '1px solid #ccc',
     background                 : '#eee',
     overflow                   : 'auto',

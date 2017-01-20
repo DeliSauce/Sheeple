@@ -20,6 +20,11 @@ class Filters extends React.Component {
     this.onFocusChange = this.onFocusChange.bind(this);
     this.handleClearFilter = this.handleClearFilter.bind(this);
   }
+
+  componentWillMount() {
+    window.scrollTo(0, 0);
+  }
+
   onDateChange(date) {
     this.setState({ date });
     this.props.updateFilter('date', date.format("YYYY-MM-DD"));
