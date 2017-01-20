@@ -199,6 +199,7 @@ class Filters extends React.Component {
             <label>High to Low
               <button className={this.checkBoxStatus('sortOrder-rate-high')} onClick={this.filterChangeHandler('sortOrder-rate-high')}></button>
             </label>
+
           </div>
         </div>
 
@@ -237,24 +238,20 @@ class Filters extends React.Component {
 
         <div className="instant-book-filter-container">
           <div className="instant-book-filter-description">
-            Instant Booking: </div>
-          <div className="instant-book-filter-checkbox">
-            <button className={this.checkBoxStatus('autobook')} onClick={this.filterChangeHandler('autobook')}></button>
-          </div>
-        </div>
 
-        <div className="max-results-filter-container">
-          <div className="max-results-filter-description">
-            Max Results [5,10,15,20,50]
-            **TBD**
+            <label>Instant Booking
+              <button className={this.checkBoxStatus('autobook')} onClick={this.filterChangeHandler('autobook')}></button>
+            </label>
           </div>
-        </div>
 
-        <div className="clear-filter-container">
           <button
             className="button-clear-filters" onClick={this.handleClearFilter} >
             Clear Filters
           </button>
+        </div>
+
+
+        <div className="clear-filter-container">
         </div>
 
       </div>
@@ -263,3 +260,9 @@ class Filters extends React.Component {
 }
 
 export default Filters;
+// <div className="max-results-filter-container">
+//   <div className="max-results-filter-description">
+//     Max Results [5,10,15,20,50]
+//     **TBD**
+//   </div>
+// </div>

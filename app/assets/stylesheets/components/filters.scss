@@ -6,15 +6,15 @@
   display: flex;
   margin: 0 20px;
   flex-direction: column;
-  border-right: solid 1px $light-gray;
-  border: solid red 1px;
-  color: #484848;
+  border-right: solid 1px $filters-border;
+  // border: solid red 1px;
+  color: $filters-text-color;
   font-weight: bold;
 
   div[class*='-filter-container'] {
     padding: 10px;
     box-sizing: border-box;
-    border-bottom: 1px solid $light-gray;
+    border-bottom: 1px solid $filters-border;
   }
 
   div[class*='-description'] {
@@ -29,8 +29,8 @@
   label {
     display: flex;
 
-    background-color: #EDEFED;
-    border: #DCE0E0 solid 1px;
+    background-color: $checkbox-background;
+    border: $checkbox-border solid 1px;
     margin: 10px;
     box-sizing: border-box;
     padding: 6px;
@@ -48,7 +48,7 @@
 
 .button-clear-filters {
   padding: 10px;
-  border: #484848 solid 1px;
+  border: $filter-clear-button-border solid 1px;
   border-radius: 3px;
 }
 

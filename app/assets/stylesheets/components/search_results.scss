@@ -10,9 +10,9 @@
 
 
 // Search result items
-.search-result-item * {
-  border: red 1px solid;
-}
+// .search-result-item * {
+//   border: red 1px solid;
+// }
 
 
 .search-result-item {
@@ -26,8 +26,14 @@
 
   border-bottom: solid 1px $tasker-border;
 
+  .profile-img-data-container {
+    display: flex;
+    justify-content: flex-start;
+  }
+
   .profile-img {
     width: 100px;
+    margin-right: 10px;
     object-fit: cover;
     background-image: url(data);
     background-repeat: no-repeat;
@@ -39,15 +45,22 @@
     display: flex;
     flex-direction: column;
 
-    .tasker-item-skill {
-      background-color: $tasker-skill;
-      color: white;
-      border-radius: 3px;
-      display: flex;
+    div[class*='skill-icon-'] {
+      width: 30px;
+      height: 30px;
+      background-size: contain;
     }
+    .skill-icon-sitting {background-image: image-url("skill_icons/sitting_2.png")}
+    .skill-icon-standing {background-image: image-url("skill_icons/standing_1.png")}
+    .skill-icon-moving {background-image: image-url("skill_icons/moving_2.png")}
   }
   .profile-description {
     width: 40%;
+  }
+  .profile-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

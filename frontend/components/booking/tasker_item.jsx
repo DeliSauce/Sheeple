@@ -51,19 +51,18 @@ class TaskerItem extends React.Component {
     return (
       <li className="search-result-item">
 
+        <div className="profile-img-data-container">
+          <img className="profile-img" src={"http://res.cloudinary.com/delisauce/image/upload/c_crop,h_1100,w_1000/v1484780832/Profile/" + this.props.tasker.profile_img_link} />
 
-        <img className="profile-img" src={"http://res.cloudinary.com/delisauce/image/upload/c_crop,h_1100,w_1000/v1484780832/Profile/" + this.props.tasker.profile_img_link} />
 
-
-        <div className="profile-data">
-          <div>
-            {this.props.tasker.first_name + " " + this.props.tasker.last_name + " (" + this.props.tasker.location + ")"  }
-          </div>
-          <div>
-            {"Rate: $" + this.props.tasker.rate + "/hr"}
-          </div>
-          <div className="tasker-item-skill">
-            {this.props.tasker.skill}
+          <div className="profile-data">
+            <div>
+              {this.props.tasker.first_name + " " + this.props.tasker.last_name + " (" + this.props.tasker.location + ")"  }
+            </div>
+            <div>
+              {"Rate: $" + this.props.tasker.rate + "/hr"}
+            </div>
+            <div className={"skill-icon-" + this.props.tasker.skill}></div>
           </div>
         </div>
 

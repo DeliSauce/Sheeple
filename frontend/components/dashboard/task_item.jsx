@@ -10,11 +10,12 @@ class TaskItem extends React.Component {
   }
 
   cancelRequestButton() {
-    let today = new Date();
+    let cutoffDate = new Date();
+    cutoffDate.setDate(cutoffDate.getDate() - 1);
     let taskDate = new Date(this.props.task.date);
-    if (this.props.task.status === 'pending' && today >= taskDate){
+    if (this.props.task.status === 'pending' && taskDate >= cutoffDate){
       return (
-        <button className="task-button-enabled" onClick={this.cancelTaskRequest()} >Cancel Booking</button>
+        <button className="task-button-enabled button" onClick={this.cancelTaskRequest()} >Cancel Booking</button>
       );
     } else {
       return (<div className="task-button-disabled" ></div>);

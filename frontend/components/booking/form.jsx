@@ -8,7 +8,6 @@ class Form extends React.Component {
     let status = props.tasker.auto_book ? 'booked' : 'pending';
     this.state = {
       tasker_id: props.tasker.id,
-
       description: "",
       date: props.filters.date,
       location: props.tasker.location,

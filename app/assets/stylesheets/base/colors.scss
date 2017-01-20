@@ -5,14 +5,23 @@ $gray: #999;
 $dark-gray: #6f6f6f;
 
 $lightest-blue: #f0f8fc;
+$lighter-blue: #93B0C9;
 $light-blue: #6288a5;
-$blue: #326891;
+$blue: #406B8C;
 $dark-blue: #4d7b9f;
 $darkest-blue: #265e8b;
+
+$salmon: #DA7F5B;
+$salmon-darker: #BB5B35;
+$salmon-dark: #933A17;
 
 $slider-green: #8aed6a;
 $green: #47912f;
 $darker-green: #23630e;
+
+$secondary: #236D5F;
+$secondary-light: #418779;
+$secondary-dark: #0E5345;
 
 
 //TASKER ITEMS
@@ -25,24 +34,28 @@ $instant-book-button-border: #f26c32;
 $instant-book-button-hover: #af4d23;
 $instant-book-button-border-hover: #af4d23;
 
-//TASK ITEMS
-$task-completed-background: $light-gray;
-$task-pending-background: $light-blue;
-$task-booked-background: $blue;
-
-$task-status-header: $light-gray;
-$task-border: $light-gray;
-
-$cancel-book-button: $blue;
-$cancel-book-button-hover: $dark-blue;
-
-
 //DASHBOARD
-$dashboard-header-background: $light-gray;
+  //Header
+  $dashboard-header-background: $secondary-light;
+
+  //Tasks
+  $task-completed-background: $lighter-blue;
+  $task-pending-background: $light-blue;
+  $task-booked-background: $blue;
+
+  $task-status-header: $light-gray;
+  $task-border: $light-gray;
+
+  $cancel-book-button: $salmon;
+  $cancel-book-button-border: $salmon-dark;
+  $cancel-book-button-hover: $salmon-darker;
+  $cancel-book-button-border-hover: $salmon-dark;
+
+
 
 
 // BOOKING
-$booking-header-background: $light-gray;
+$booking-header-background: $secondary-light;
 
 
 //HOMEPAGE
@@ -58,6 +71,12 @@ $guest-login-button-background: $green;
 $guest-login-button-background-hover: $darker-green;
 
 
+//FILTERS
+$filters-border: $light-gray;
+$checkbox-background: #EDEFED;
+$checkbox-border: #DCE0E0;
+$filter-clear-button-border: #484848;
+$filters-text-color: #484848;
 //BOOKING FORM
 
 
