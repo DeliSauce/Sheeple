@@ -17,7 +17,7 @@ Tasker.create({
   last_name: "Doe",
   username: "JD3000",
   email: "jd3000@example.com",
-  description: "I havent held a job for 10 years and live in my mothers basement. So...Im pretty good at sitting around and doing nothing.",
+  description: "I haven't held a job for 10 years and live in my mothers basement. So...I'm pretty good at sitting around and doing nothing.",
   rate: 10,
   auto_book: true,
   skill: "sitting",
@@ -50,12 +50,14 @@ profile_description = [
   "I'm a health nut so standing for hours is no problem. I only work in non-smoking environments.",
   "I don't get out a lot so I'm happy to just get some interaction with other people.",
   "I'll do anything. Literally, anything.",
-  "Is this site for real? Paying people to just 'be present'? Hello dot com bubble 2.0.",
+  "Is this site for real? Paying people to just stand around and do nothing? Hello dot com bubble 2.0.",
   "Ruff. I identify as a dog so don't be surprised if I come in costume.",
-  "Meow. I'm a 'cat'. I will not work with that guy who dresses in dog costumes. He bit me last time we worked together.",
+  "I'm a cat person. I will not work with that guy who dresses in dog costumes. He bit me last time we worked together.",
   "I'm free pretty much all the time. Except when I'm not.",
-  "I'm a lizard. This website is pure discrimination towards my cold-blooded breathren. Don't even think about contacting me.",
-  "AAAAAAAAAAAAAAAAAAAAAAAAAAAAH! I need a job quick! I'm getting evicted tomorrow if I can't make my rent."
+  "This website is a hate crime against my cold-blooded breathren. Don't even think about contacting me.",
+  "AAAAAAAAAAAAAAAAAAAAAAAAAAAAH! I need a job quick! I'm getting evicted tomorrow if I can't make my rent.",
+  "Hmmm. My favorite color is green. Ping me if you want to know more.",
+  "Yo yo yo. Hook me up!"
 ]
 
   FactoryGirl.define do
@@ -66,9 +68,9 @@ profile_description = [
       email {"#{first_name}.#{last_name}@example.com".downcase}
       description {profile_description.sample}
       rate {Faker::Number.between(0,30)}
-      auto_book {[false, true].sample}
+      auto_book {[false, false, false, true].sample}
       skill {['sitting', 'standing', 'moving'].sample}
-      location {['NY', 'SF'].sample}
+      location {['NY', 'NY', 'SF', 'SF', 'SF'].sample}
       longitude {Faker::Address.longitude}
       latitude {Faker::Address.latitude}
       profile_img_link {"#{skill}_#{rand(0..15)}.jpg"}

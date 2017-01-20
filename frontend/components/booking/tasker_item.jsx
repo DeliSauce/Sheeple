@@ -52,7 +52,7 @@ class TaskerItem extends React.Component {
       <li className="search-result-item">
 
         <div className="profile-img-data-container">
-          <img className="profile-img" src={"http://res.cloudinary.com/delisauce/image/upload/c_crop,h_1100,w_1000/v1484780832/Profile/" + this.props.tasker.profile_img_link} />
+          <img className="profile-img" src={"http://res.cloudinary.com/delisauce/image/upload/v1484881848/Profile/" + this.props.tasker.profile_img_link} />
 
 
           <div className="profile-data">

@@ -31,26 +31,28 @@ class TaskItem extends React.Component {
   //  </div>
     return (
       <li className={"task-item " + this.props.className}>
-        <div className="task-item-task-details">
-          <div>
-            {"Location: " + this.props.task.location}
+        <div className="task-item-top">
+
+          <div className="task-item-task-left">
+            <div>
+              {"Who: " + this.props.task.tasker.first_name + " " + this.props.task.tasker.last_name}
+            </div>
+            <div>
+              {"When: " + this.props.task.date}
+            </div>
+            <div>
+              {"Where: " + this.props.task.location}
+            </div>
           </div>
-          <div>
-            {"Date: " + this.props.task.date}
-          </div>
-          <div>
-             {"Body: " + this.props.task.tasker.first_name + " " + this.props.task.tasker.last_name}
-           </div>
-          {this.cancelRequestButton()}
+
+
+            {this.cancelRequestButton()}
+
         </div>
 
-
-
-        <div className="task-item-task-description">
-          <div>Description</div>
-          <div>{this.props.task.description}</div>
+        <div className="task-item-bottom ellipsis">
+          <div>{"What: " + this.props.task.description}</div>
         </div>
-
 
       </li>
     );

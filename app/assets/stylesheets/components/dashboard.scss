@@ -47,6 +47,7 @@
       justify-content: center;
       align-items: center;
       font-size: 20px;
+      margin-bottom: 5px;
     }
   }
 
@@ -66,57 +67,77 @@
 
 .task-item {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   padding: 10px;
-  margin: 15px 30px;
+  margin: 5px 0;
   height: 200px;
   box-sizing: border-box;
   border: solid 1px $task-border;
 
-
-
-  div[class*='-task-details'] {
-    // width: auto;
+  * {
+    // border: red solid 1px;
     display: flex;
-    flex-direction: column;
+  }
+  div[class*='-top'] {
+    // display: flex;
+    flex: 0 0 70px;
+    flex-direction: row;
+    justify-content: space-between;
 
-    .task-button-enabled {
-      background-color: $cancel-book-button;
-      border-color: $cancel-book-button-border;
-      width: 70px;
-      height: 40px;
-      align-items: center;
-    }
-
-    .task-button-enabled:hover {
-      background-color: $cancel-book-button-hover;
-      border-color: $cancel-book-button-border-hover;
-    }
   }
 
-  div[class*='-task-description'] {
-    width: auto;
-    display: flex;
-    margin-left: 5px;
-    flex-grow: 1;
+  div[class*='-left'] {
+    // display: flex;
+    // flex: 0 0 150px;
+    width: 100%;
     flex-direction: column;
   }
-}
-  // div[class*='-tasker-details'] {
+
+  // div[class*='-right'] {
+  //   // display: flex;
+  //   flex-direction: column;
+  //   width: 100%;
+  //   height: auto;
+  //   align-items: flex-end;
+  //   // justify-content: center;
+  // }
+
+  div[class*='-bottom'] {
+    display: flex;
+    width: 100%;
+    height: auto;
+  }
+
+  .task-button-enabled {
+    background-color: $cancel-book-button;
+    border-color: $cancel-book-button-border;
+    width: 70px;
+    height: 40px;
+    align-items: center;
+  }
+
+  .task-button-enabled:hover {
+    background-color: $cancel-book-button-hover;
+    border-color: $cancel-book-button-border-hover;
+  }
+
+  // div[class*='-task-details'] {
+  //   // width: auto;
   //   display: flex;
   //   flex-direction: column;
-  //   align-items: center;
-  //
-  //   .profile-img {
-  //     width: 150px;
-  //     object-fit: cover;
-  //     background-image: url(data);
-  //     background-repeat: no-repeat;
-  //     background-size: contain;
-  //   }
   //
   // }
+  //
+  // div[class*='-bottom'] {
+  //   width: auto;
+  //   display: flex;
+  //   margin-left: 5px;
+  //   flex-grow: 1;
+  //   flex-direction: column;
+  // }
+}
+
 
 
 .empty-dashboard-response {
@@ -126,4 +147,9 @@
   font-weight: bold;
   font-family: $sans-serif;
   font-size: 18px;
+
+  * {
+    color: $green;
+    text-decoration: underline;
+  }
 }

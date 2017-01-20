@@ -1,5 +1,6 @@
 import React from 'react';
 import TaskItem from './task_item';
+import {Link} from 'react-router';
 
 
 class Dashboard extends React.Component {
@@ -18,8 +19,6 @@ class Dashboard extends React.Component {
     let completedTasks = [];
     let bookedTasks = [];
 
-    let tasks = [];
-
     if (this.props.tasks.length !== undefined) {
       this.props.tasks.forEach(
         (task, idx) => {
@@ -37,10 +36,10 @@ class Dashboard extends React.Component {
     );
     }
 
-
+    console.log(this.props.tasks.length);
 
     if (this.props.tasks.length === 0){
-      tasks = <div className="empty-dashboard-response">You don't appear to have any bookings yet. Why don't you go find yourself a warm body.</div>
+      pendingTasks = <div className="empty-dashboard-response">You don't appear to have any bookings yet. Why don't you hit up the <Link to="/booking">Search Page</Link>.</div>
     }
 
     return (
