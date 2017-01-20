@@ -6,7 +6,6 @@
 
 [Trello link][trello]
 
-** NEED TO UPDATE THESE LINKS WITH MY LINKS
 [heroku]: http://www.warmbody.herokuapp.com
 [trello]: https://trello.com/b/D1odaUNy/warmbody
 
