@@ -24,7 +24,7 @@ class BookingHeader extends React.Component {
           1. Narrow Your Search
         </div>
         <div className={this.getHighlighting('task')}>
-          2. Choose a Warm Body
+          2. Choose a Sheeple
         </div>
         <div className={this.getHighlighting('date')}>
           3. Fill Out Booking Form

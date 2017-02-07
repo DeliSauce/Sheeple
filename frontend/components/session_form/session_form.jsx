@@ -26,7 +26,6 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const user = Object.assign({}, this.state);
     const user = {user: this.state};
     this.setState({
         username: "",
@@ -34,12 +33,11 @@ class SessionForm extends React.Component {
         email: ""
     });
     this.props.processForm(user);
-    // .then(() => this.redirect());
   }
 
   header() {
     if (this.props.formType === 'login') {
-      return (<div className="form-header-login">Log In To WarmBody</div>);
+      return (<div className="form-header-login">Log In To Sheeple</div>);
     } else {
       return (<div className="form-header-signup">Sign Up For A New Account</div>);
     }

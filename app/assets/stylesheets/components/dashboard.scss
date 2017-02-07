@@ -41,7 +41,7 @@
     .task-status-header {
       width: 100%;
       height: 50px;
-      background-color: $task-status-header;
+      background-color: $dashboard-header-background;//$task-status-header;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -68,12 +68,14 @@
 .task-item {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   padding: 10px;
-  margin: 5px 0;
+  margin: 10px;
   height: 200px;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   border: solid 1px $task-border;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #888888;
 
   * {
     // border: red solid 1px;

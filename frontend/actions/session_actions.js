@@ -2,6 +2,7 @@ import * as SessionApiUtil from '../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 // regular actions creators:
 export const receiveCurrentUser = (currentUser) => {
@@ -17,12 +18,13 @@ export const receiveErrors = (errors) => {
     errors
   };
 };
-// export const receiveErrors = (errors) => ({
-//   type: RECEIVE_ERRORS,
-//   errors
-// });
 
-// thunk actions creators:
+export const clearErrors = () => {
+  return {
+    type: CLEAR_ERRORS
+  };
+};
+
 export const signup = (newUser) => dispatch => (
     SessionApiUtil.signup(newUser)
     .then(

@@ -62,7 +62,12 @@ class HeaderNav extends React.Component {
   }
 
   closeModal() {
-    return () => this.setState({modalIsOpen: false});
+
+    // console.log("closing modal");
+    return () => {
+      this.props.clearErrors();
+      this.setState({modalIsOpen: false});
+    };
   }
 
 

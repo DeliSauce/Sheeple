@@ -12,7 +12,7 @@ class SearchResults extends React.Component {
   render() {
     let taskers = [];
     if (this.props.taskers.length !== undefined) {
-      taskers = this.props.taskers.map((tasker, idx) => <TaskerItem key={idx} tasker={tasker}/>);
+      taskers = this.props.taskers.map((tasker, idx) => <TaskerItem key={idx} tasker={tasker} clearBookingErrors={this.props.clearBookingErrors}/>);
     }
     if (this.props.taskers.length === 0){
       taskers = <div className="empty-search-response">Sorry, there is no one matching your search. Please try again. </div>

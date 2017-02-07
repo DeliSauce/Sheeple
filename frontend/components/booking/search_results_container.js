@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import {fetchTaskers} from '../../actions/tasker_actions';
+import {clearBookingErrors} from '../../actions/booking_actions';
 import SearchResults from './search_results';
 
 const mapStateToProps = (state) => ({
@@ -8,7 +9,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchTaskers: (filters) => dispatch(fetchTaskers(filters))
+  fetchTaskers: (filters) => dispatch(fetchTaskers(filters)),
+  clearBookingErrors: () => dispatch(clearBookingErrors())
 });
 
 export default connect(

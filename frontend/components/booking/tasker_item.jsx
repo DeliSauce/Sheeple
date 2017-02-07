@@ -32,19 +32,12 @@ class TaskerItem extends React.Component {
   }
 
   closeModal() {
-    return () => this.setState({modalIsOpen: false});
+    return () => {
+      this.props.clearBookingErrors();
+      this.setState({modalIsOpen: false});
+    };
   }
 
-  // renderProfilePic(){
-  //   var list = document.getElementsByClassName('thumb');
-  //
-  //   for (var i = 0; i < list.length; i++) {
-  //     var src = list[i].getAttribute('data-image-src');
-  //     list[i].style.backgroundImage="url('" + src + "')";
-  //   }
-  //
-  //   return ()
-  // }
 
  render (){
 
