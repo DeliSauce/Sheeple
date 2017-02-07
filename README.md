@@ -1,17 +1,17 @@
-![warmbody-logo]
-[warmbody-logo]: ./app/assets/images/hero_image_2
-[live][warmbody]
-[warmbody]: https://warmbody.herokuapp.com/
+![sheeple-logo]
+[sheeple-logo]: ./app/assets/images/hero_image_2
+[live link!][sheeple]
+[sheeple]: https://sheeple.herokuapp.com/
 
 
-# WarmBody
-WarmBody is a web application that allows new businesses to create buzz by hiring people to create a crowd.
+# Sheeple
+Sheeple is a web application that allows new businesses to create buzz by hiring people to create a crowd.
 
 
 ## Features
 
 #### Logging In
-WarmBody allows you to log in as a new user or test out the site as a guest.<br>
+Sheeple allows you to log in as a new user or test out the site as a guest.<br>
 
 Your data will be saved for future visits.
 
@@ -20,18 +20,18 @@ Your password is secured using backend encryption.
 
 
 #### Search
-WarmBody lets you quickly sort through "bodies" with a simple search filter. A handy "Clear Filters" button quickly and easily resets the filters: <br>
+Sheeple lets you quickly sort through "bodies" with a simple search filter. A handy "Clear Filters" button quickly and easily resets the filters: <br>
 
 ![search-filters-cleared-screenshot] ![search-filters-selected-screenshot]
 [search-filters-selected-screenshot]: ./docs/screenshots/search-filters-selected-screenshot.png
 [search-filters-cleared-screenshot]: ./docs/screenshots/search-filters-cleared-screenshot.png
 
 <br>
-Search listings include relevant information about the Warm Body to help you make your decision.
+Search listings include relevant information about the Sheeple to help you make your decision.
 - Icons help to distinguish between sitters, movers, and standers.
 <br>
 - "Instant Booking" allows for booking without the need for confirmation first.
-- Booking buttons change dynamically depending each Warm Body's preferences.
+- Booking buttons change dynamically depending each Sheeple's preferences.
 
 ![search-listing-sitting-screenshot]
 [search-listing-sitting-screenshot]: ./docs/screenshots/search-listing-sitting-screenshot.png
