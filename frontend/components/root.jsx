@@ -47,7 +47,3 @@ const Root = ({ store }) => {
 };
 
 export default Root;
-// <Route component={Homepage}>
-//   <Route path="/login" component={ SessionFormContainer } onEnter={ _redirectIfLoggedIn } />
-//   <Route path="/signup" component={ SessionFormContainer } onEnter={ _redirectIfLoggedIn } />
-// </Route>
