@@ -1,7 +1,7 @@
 ![sheeple-logo]
-[sheeple-logo]: ./app/assets/images/hero_image_2
+[sheeple-logo]: ./app/assets/images/sheeple_logo.png
 [live link!][sheeple]
-[sheeple]: https://sheeple.herokuapp.com/
+[sheeple]: https://www.sheeple.co
 
 
 # Sheeple
