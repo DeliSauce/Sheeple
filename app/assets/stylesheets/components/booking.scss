@@ -19,10 +19,30 @@
   background-color: $booking-header-background;
   font-size: $booking-header-font-size;
 
-  .highlighted {
-    font-size: 26px;
-    font-weight: bold;
+  .booking-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 20px;
+    color: $booking-header-text;
   }
+
+  .booking-heading-number {
+    display: flex;
+    border: $booking-header-text 3px solid;
+    height: 22px;
+    width: 22px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+  }
+  .booking-heading-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 }
 
 

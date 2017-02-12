@@ -20,14 +20,29 @@ class BookingHeader extends React.Component {
   render() {
     return (
       <div className="booking-header">
-        <div className={this.getHighlighting('location')}>
-          1. Narrow Your Search
+        <div className="booking-heading">
+          <div className="booking-heading-number">
+            1
+          </div>
+          <div className="booking-heading-text">
+            Narrow Your Search
+          </div>
         </div>
-        <div className={this.getHighlighting('task')}>
-          2. Choose a Sheeple
+        <div className="booking-heading">
+          <div className="booking-heading-number">
+            2
+          </div>
+          <div className="booking-heading-text">
+            Choose a Sheeple
+          </div>
         </div>
-        <div className={this.getHighlighting('date')}>
-          3. Fill Out Booking Form
+        <div className="booking-heading">
+          <div className="booking-heading-number">
+            3
+          </div>
+          <div className="booking-heading-text">
+            Fill Out Booking Form
+          </div>
         </div>
       </div>
 

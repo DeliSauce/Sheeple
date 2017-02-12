@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "heroku-postbuild": "webpack --config webpack.config.js"
+    "heroku-postbuild": "webpack --config webpack.config.doc.js"
   },
   "repository": {
     "type": "git",

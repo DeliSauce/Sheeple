@@ -17,13 +17,13 @@
 
 .search-result-item {
   width: 900px;
+  color: $booking-item-text;
   display: flex;
   justify-content: space-between;
   width: auto;
   padding: 10px;
   height: 130px;
   box-sizing: border-box;
-
   border-bottom: solid 1px $tasker-border;
 
   .profile-img-data-container {
@@ -54,6 +54,7 @@
     .skill-icon-standing {background-image: image-url("skill_icons/standing_1.png")}
     .skill-icon-moving {background-image: image-url("skill_icons/moving_2.png")}
   }
+
   .profile-description {
     width: 40%;
   }
@@ -85,7 +86,7 @@
 .empty-search-response {
   text-align: center;
   margin: 30px;
-  color: black;
+  color: $booking-item-text;
   font-weight: bold;
   font-family: $sans-serif;
   font-size: 18px;
