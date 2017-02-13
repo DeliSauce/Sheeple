@@ -41,7 +41,7 @@
   }
 
   .profile-data {
-    width: auto;
+    width: 180px;
     display: flex;
     flex-direction: column;
 
@@ -56,7 +56,9 @@
   }
 
   .profile-description {
-    width: 40%;
+    width: 100%;
+    padding: 0 25px 0 15px;
+
   }
   .profile-buttons {
     display: flex;
