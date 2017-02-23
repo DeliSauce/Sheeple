@@ -20,34 +20,40 @@
 }
 
 .splash-tagline {
-  left: 130px;
-  top: 385px;
-  font-size: 38px;
-}
-
-// @media (min-width: 1250px) {
-//   .splash-tagline {
-//     transform: translateX(-50%);
-//     top: 400px;
-//   }
-// }
-
-// @media (min-width: 1500px) {
-//   .splash-tagline {
-//     left: 170px;
-//     top: 415px;
-//   }
-// }
-
-.splash-tagline {
   animation: fade-in 7s;
   position: relative;
   display: inline-block;
+
   color: white;
   font-weight: bold;
-  font-family: $sans-serif;
+  font-family: Roboto;
+  // font-family: $sans-serif;
+  font-size: 38px;
+
   margin: auto 0;
+  left: 135px;
+  top: 380px;
 }
+
+
+.splash-tagline {
+    @media (min-width: 1150px) {
+    transform: translateY(-100%);
+    top: 465px;
+    font-size: 3.3vw;
+  }
+  @media (min-width: 1200px) {top: 460px}
+  @media (min-width: 1250px) {top: 440px}
+  @media (min-width: 1350px) {top: 425px; left: 140px}
+  @media (min-width: 1450px) {top: 410px; left: 150px}
+  @media (min-width: 1550px) {top: 400px; left: 160px}
+  @media (min-width: 1650px) {top: 390px; left: 170px}
+  @media (min-width: 1750px) {top: 370px; left: 180px}
+  @media (min-width: 1850px) {top: 350px; left: 190px}
+  @media (min-width: 2000px) {top: 330px; left: 200px}
+}
+
+
 
 .task-selectors-container {
   display: flex;
