@@ -20,16 +20,32 @@
 }
 
 .splash-tagline {
+  left: 130px;
+  top: 385px;
+  font-size: 38px;
+}
+
+// @media (min-width: 1250px) {
+//   .splash-tagline {
+//     transform: translateX(-50%);
+//     top: 400px;
+//   }
+// }
+
+// @media (min-width: 1500px) {
+//   .splash-tagline {
+//     left: 170px;
+//     top: 415px;
+//   }
+// }
+
+.splash-tagline {
   animation: fade-in 7s;
   position: relative;
   display: inline-block;
-
-  left: 130px;
-  top: 385px;
   color: white;
   font-weight: bold;
   font-family: $sans-serif;
-  font-size: $splash-tagline-font-size;
   margin: auto 0;
 }
 
