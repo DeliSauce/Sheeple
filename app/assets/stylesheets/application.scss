@@ -20,28 +20,18 @@
 @import "base/fonts.scss";
 @import "base/colors.scss";
 
- // CSS Reset
- @import "base/reset.scss";
+// CSS Reset
+@import "base/reset.scss";
 
- // Core
- @import "base/layout.scss";
- @import "base/buttons.scss";
- @import "base/forms.scss";
+// Core
+@import "base/layout.scss";
+@import "base/buttons.scss";
+@import "base/forms.scss";
 
-
-
-  //
+//Filters
 @import "base/rheostat_slider.scss";
 @import "datepicker/*";
-// $react-dates-color-primary: $some-color-specific-to-my-project;
-// $react-dates-color-primary-dark: $some-other-color-specific-to-my-project;
-// @import '~react-dates/css/variables.scss';
-// @import '~react-dates/css/styles.scss';
 
- // Grid
- // @import "base/grid.scss";
-
- //Components
- @import "components/*";
-
- @import "images/*";
+//Components
+@import "components/*";
+@import "images/*";
