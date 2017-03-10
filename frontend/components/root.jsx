@@ -5,11 +5,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import HomepageContainer from './homepage/homepage_container';
 import Booking from './booking/booking';
 import DashboardContainer from './dashboard/dashboard_container';
-
-// react router
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-
-
 
 const Root = ({ store }) => {
 
@@ -33,9 +29,7 @@ const Root = ({ store }) => {
         <Route path="/" component={ App }>
 
           <IndexRoute component={HomepageContainer} />
-
-          <Route component={HomepageContainer}>
-          </Route>
+          <Route component={HomepageContainer}></Route>
 
           <Route path='/booking' component={Booking} onEnter={_ensureLoggedIn}/>
           <Route path='/dashboard' component={DashboardContainer} onEnter={_ensureLoggedIn}/>

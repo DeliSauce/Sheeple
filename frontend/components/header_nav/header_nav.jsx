@@ -4,9 +4,6 @@ import Modal from 'react-modal';
 import SessionFormContainer from '../session_form/session_form_container';
 import modalStyle from './modal_style';
 
-
-
-
 class HeaderNav extends React.Component {
   constructor(props) {
     super(props);
@@ -15,10 +12,6 @@ class HeaderNav extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
-
-  // const setModal = () => {
-  //
-  // };
 
   gotoPage(page) {
     return () => {
@@ -70,8 +63,6 @@ class HeaderNav extends React.Component {
     };
   }
 
-
-
   loggedOutNav(loginGuest) {
     return (
       <nav className="logged-out-nav">
@@ -91,7 +82,6 @@ class HeaderNav extends React.Component {
       </nav>
     );
   }
-  // <button className="form-close" onClick={this.closeModal()}>X</button>
 
   render () {
     return (
@@ -102,61 +92,3 @@ class HeaderNav extends React.Component {
 }
 
 export default withRouter(HeaderNav);
-
-
-
-// import React from 'react';
-// import { Link, hashHistory, withRouter} from 'react-router';
-// import Modal from 'react-modal';
-//
-// const setModal = () => {
-//
-// };
-//
-// const loggedOutNav = (loginGuest) => (
-//   <nav className="logged-out-nav">
-//
-//     <button className="guest-login-button" onClick={loginGuest}>Guest Log In</button>
-// <Link to="/login" activeClassName="current">Log In</Link>
-// <Link to="/signup" activeClassName="current">Sign up</Link>
-//
-//   </nav>
-// );
-//
-// const gotoPage = (page) => () => {
-//   if (page === 'DASHBOARD') {
-//     hashHistory.push(`/dashboard`);
-//   } else {
-//     hashHistory.push(`/booking`);
-//   }
-// };
-//
-// const logoutAndRedirect = (logout) => () => {
-//   logout();
-//   hashHistory.push(`/`);
-// };
-//
-// const loggedInNav = (currentUser, logout) => {
-//   let navButton = "";
-//   if (location.hash === '#/dashboard') {
-//     navButton = 'BOOKING';
-//   } else {
-//     navButton = 'DASHBOARD';
-//   }
-//
-//   return (
-//     <hgroup className="logged-in-nav">
-//       <div className="header-name">{currentUser.username}</div>
-//       <button className="dashboard-button" onClick={gotoPage(navButton)}> {navButton} </button>
-//       <button className="header-button" onClick={logoutAndRedirect(logout)}>Log Out</button>
-//     </hgroup>
-//   );
-// };
-//
-//
-//
-// const HeaderNav = ({ currentUser, logout, loginGuest}) => (
-//   currentUser ? loggedInNav(currentUser, logout) : loggedOutNav(loginGuest)
-// );
-//
-// export default withRouter(HeaderNav);
