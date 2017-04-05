@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import Homepage from './homepage';
 import {updateFilter} from '../../actions/filter_actions';
 
-const mapStateToProps = () => ({
+const mapStateToProps = (state) => ({
+  // currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

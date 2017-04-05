@@ -18,7 +18,3 @@ const SessionReducer = (state = nullState, action) => {
 };
 
 export default SessionReducer;
-
-//didn't include this from the solution
-// case LOGOUT:
-//   return merge({}, _nullUser);

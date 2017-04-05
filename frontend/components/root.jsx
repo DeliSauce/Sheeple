@@ -9,12 +9,12 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 const Root = ({ store }) => {
 
-  const _redirectIfLoggedIn = (nextState, replace) => {
-    const currentUser = store.getState().session.currentUser;
-    if (currentUser) {
-      replace('/');
-    }
-  };
+  // const _redirectIfLoggedIn = (nextState, replace) => {
+  //   const currentUser = store.getState().session.currentUser;
+  //   if (currentUser) {
+  //     replace('/');
+  //   }
+  // };
 
   const _ensureLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
