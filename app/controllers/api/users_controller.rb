@@ -12,14 +12,6 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  # def show
-  #   # @user = User.find_by_id(params[:id])
-  #   @user = User.find_by_id(current_user.id)
-  #   # render json: @user.tasks
-  #
-  #   render :show
-  # end
-
   private
   def user_params
     params.require(:user).permit(:username, :password, :email)

@@ -10,7 +10,7 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchTasks(this.props.userId); // TODO need to actually change this to currentUser id #
+    this.props.fetchTasks(); // TODO need to actually change this to currentUser id #
   }
 
   render() {
