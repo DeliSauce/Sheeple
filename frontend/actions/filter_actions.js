@@ -8,12 +8,13 @@ export const CLEAR_FILTERS = "CLEAR_FILTERS";
 
 import {fetchTaskers} from './tasker_actions';
 
+// asynch action
 export const updateFilter = (filter, value) => (dispatch, getState) => {
   dispatch(changeFilter(filter, value));
   return fetchTaskers(getState().filters)(dispatch);
 };
 
-// export const updateFilter = (field, value) => {
+// synchronous action
 export const changeFilter = (field, value) => {
   let type;
   switch(field) {

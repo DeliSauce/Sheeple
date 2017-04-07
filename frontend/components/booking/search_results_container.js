@@ -5,13 +5,15 @@ import SearchResults from './search_results';
 
 const mapStateToProps = (state) => ({
   taskers: state.taskers,
-  filters: state.filters
+  filters: state.filters,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchTaskers: (filters) => dispatch(fetchTaskers(filters)),
-  clearBookingErrors: () => dispatch(clearBookingErrors())
+  fetchTaskers: (filters) => dispatch(fetchTaskers(filters))
 });
+
+// ,
+// clearBookingErrors: () => dispatch(clearBookingErrors()),
 
 export default connect(
   mapStateToProps,

@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import formModalStyle from './form_modal_style';
 import { SingleDatePicker } from 'react-dates';
 import merge from 'lodash/merge';
 import Moment from 'moment';
@@ -7,24 +8,47 @@ import Moment from 'moment';
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    let status = props.tasker.auto_book ? 'booked' : 'pending';
-    let date = null;
-    if (props.filters.date) {
-      date = new Moment(props.filters.date);
-    }
-    console.log(props.filters.date, date);
-    this.state = {
-      tasker_id: props.tasker.id,
+
+    this.defaultState = {
+      location: "",
+      tasker_id: "",
       description: "",
-      date,
-      location: props.tasker.location,
-      status: status
-
+      date: null,
+      status: ""
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
 
+    this.state = this.defaultState;
+
+    this.closeModal = this.closeModal.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.onDateChange = this.onDateChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+  }
+
+  afterOpenModal () {
+    console.log('onAfterOpen');
+    let date = null;
+    if (this.props.filters.date) {
+      date = new Moment(this.props.filters.date);
+    }
+    let status = this.props.tasker.auto_book ? 'booked' : 'pending';
+    this.setState({
+      date,
+      status,
+      location: this.props.tasker.location,
+      tasker_id: this.props.tasker.id,
+    });
+  }
+
+  closeModal() {
+    this.clearForm();
+    this.props.toggleBookingForm();
+  }
+
+  clearForm() {
+    this.setState(this.defaultState);
+    this.props.clearBookingErrors();
   }
 
   onDateChange(date) {
@@ -37,19 +61,11 @@ class Form extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    // let task = {task: this.state};
-    let date = "";
-    if (this.state.date) {
-      date = this.state.date.format("YYYY-MM-DD");
-    }
+    this.props.clearBookingErrors();
+    let date = this.state.date ? this.state.date.format("YYYY-MM-DD") : '';
     let task = merge({}, this.state, {date});
-
-    this.props.submitBooking({task}, this.props.closeModal());
+    this.props.submitBooking({task}, this.closeModal);
   }
-
-  // closeModal() {
-  //   return () => this.setState({modalIsOpen: false});
-  // }
 
   update(field) {
     return (e) => {
@@ -77,50 +93,69 @@ class Form extends React.Component {
     }
   }
 
+  renderForm() {
+    if (this.props.tasker) {
+      return (
+        <form className="form booking-form" onSubmit={this.handleSubmit}>
+
+
+          <div className="form-header-booking">Booking Form</div>
+
+
+          <div className="form-inputs-booking">
+            <div>
+              {"Who: " + this.props.tasker.first_name + " " + this.props.tasker.last_name}
+            </div>
+
+            <div>
+              {"Where: "+ this.state.location}
+            </div>
+
+            <div>
+              {"Rate: $" + this.props.tasker.rate + "/hr"}
+            </div>
+
+            <label> When:
+              <SingleDatePicker
+                id="date_input"
+                date={this.state.date}
+                focused={this.state.focused}
+                numberOfMonths={1}
+                onDateChange={this.onDateChange}
+                onFocusChange={this.onFocusChange}
+              />
+            </label>
+
+            <label> Description:
+              <textarea value={this.state.description} onChange={this.update('description')} />
+            </label>
+          </div>
+
+          <input type="submit" className="booking-submit-button button" value={this.formSubmitType()}/>
+
+          {this.renderErrors()}
+
+        </form>
+      );
+    } else {
+      // Before the form modal is opened, 'tasker' is null so we must
+      // include this empty return statement so that we don't get any
+      // errors.
+      return;
+    }
+  }
+
   render() {
     return (
-      <form className="form booking-form" onSubmit={this.handleSubmit}>
-
-
-        <div className="form-header-booking">Booking Form</div>
-
-
-        <div className="form-inputs-booking">
-          <div>
-            {"Who: " + this.props.tasker.first_name + " " + this.props.tasker.last_name}
-          </div>
-
-          <div>
-            {"Where: "+ this.state.location}
-          </div>
-
-          <div>
-            {"Rate: $" + this.props.tasker.rate + "/hr"}
-          </div>
-
-          <label> When:
-            <SingleDatePicker
-              id="date_input"
-              date={this.state.date}
-              focused={this.state.focused}
-              numberOfMonths={1}
-              onDateChange={this.onDateChange}
-              onFocusChange={this.onFocusChange}
-              />
-
-
-          </label>
-
-          <label> Description:
-            <textarea value={this.state.description} onChange={this.update('description')} />
-          </label>
-        </div>
-
-        <input type="submit" className="booking-submit-button button" value={this.formSubmitType()}/>
-
-        {this.renderErrors()}
-
-      </form>
+      <Modal
+        isOpen={this.props.bookingModalStatus}
+        onRequestClose={this.closeModal}
+        onAfterOpen={this.afterOpenModal}
+        contentLabel="Modal"
+        style={formModalStyle}
+      >
+        {this.renderForm()}
+      </Modal>
     );
   }
 

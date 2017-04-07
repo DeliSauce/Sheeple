@@ -1,43 +1,33 @@
 import React from 'react';
 import FormContainer from './form_container';
-import Modal from 'react-modal';
-import formModalStyle from './form_modal_style';
+
 
 class TaskerItem extends React.Component {
   constructor(props){
     super(props);
-    this.state = {modalIsOpen: false};
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.openBookingForm = this.openBookingForm.bind(this);
+  }
+
+  openBookingForm(){
+    this.props.updateBookingTasker(this.props.tasker);
+    this.props.toggleBookingForm();
   }
 
   bookingButtonToggle(bool){
     if (bool) {
       return (
-        <button onClick={this.openModal()} className="button instant-book">
+        <button onClick={this.openBookingForm} className="button instant-book">
           Instant<br/>Booking
         </button>
       );
     } else {
       return (
-        <button onClick={this.openModal()} className="button normal-book">
+        <button onClick={this.openBookingForm} className="button normal-book">
           Request<br/>Booking
         </button>
       );
     }
   }
-
-  openModal() {
-    return () => this.setState({modalIsOpen: true});
-  }
-
-  closeModal() {
-    return () => {
-      this.props.clearBookingErrors();
-      this.setState({modalIsOpen: false});
-    };
-  }
-
 
  render (){
 
@@ -68,18 +58,6 @@ class TaskerItem extends React.Component {
             {this.bookingButtonToggle(this.props.tasker.auto_book)}
           </div>
         </div>
-
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal()}
-          contentLabel="Modal"
-          style={formModalStyle}>
-
-          <FormContainer tasker={this.props.tasker} closeModal={this.closeModal}/>
-
-        </Modal>
-
-
       </li>
     );
   }
