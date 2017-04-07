@@ -1,4 +1,4 @@
-json.extract! @user, :id, :username
+# json.extract! @user, :id, :username
 
 # # json.partial! "api/users/user", user: @user
 # json.array! @user.tasks do |task|
@@ -11,3 +11,9 @@ json.extract! @user, :id, :username
 #   json.status task.status
 #   json.tasker task.tasker
 # end
+
+
+
+json.partial! "api/users/user", user: @user
+# json.extract! @user, :id, :username
+# json.favorite_benches user.favorite_benches.pluck(:id)

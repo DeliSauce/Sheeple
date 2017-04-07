@@ -25,7 +25,6 @@ class Api::TaskersController < ApplicationController
       end
     end
 
-
     render :index
   end
 
@@ -52,9 +51,5 @@ class Api::TaskersController < ApplicationController
   def autobook
     params[:autobook]
   end
-
-  # def autobook
-  #   params[:autobook]
-  # end
 
 end

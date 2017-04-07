@@ -2,6 +2,7 @@ class Api::UsersController < ApplicationController
 
   def create
     # debugger
+    p "HIT THE USER CONTROLLER --- CREATE"
     @user = User.new(user_params)
     if @user.save
       login(@user)
@@ -11,13 +12,13 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def show
-    # @user = User.find_by_id(params[:id])
-    @user = User.find_by_id(current_user.id)
-    # render json: @user.tasks
-    p "HIT THE USER CONTROLLER --- SHOW"
-    render :show
-  end
+  # def show
+  #   # @user = User.find_by_id(params[:id])
+  #   @user = User.find_by_id(current_user.id)
+  #   # render json: @user.tasks
+  #
+  #   render :show
+  # end
 
   private
   def user_params

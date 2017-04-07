@@ -13,8 +13,6 @@ class Api::TasksController < ApplicationController
   def index
     # TODO
     @tasks = Task.joins(:tasker).where("user_id = ?", current_user.id)
-    p "HIT THE TASK CONTROLLER --- INDEX"
-    # render json: @tasks
     render :index
   end
 
