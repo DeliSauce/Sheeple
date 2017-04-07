@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link, hashHistory, withRouter} from 'react-router';
-import Modal from 'react-modal';
+
 import SessionFormContainer from '../session_form/session_form_container';
-import modalStyle from './modal_style';
+
 
 class HeaderNav extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {formType: "", modalIsOpen: false};
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.state = {formType: ""};
+    // this.state = {formType: "", modalIsOpen: false};
+    // this.openModal = this.openModal.bind(this);
+    // this.closeModal = this.closeModal.bind(this);
   }
 
   gotoPage(page) {
@@ -53,15 +54,13 @@ class HeaderNav extends React.Component {
   }
 
   openModal(formType) {
-    return () => this.setState({formType: formType, modalIsOpen: true});
-  }
-
-  closeModal() {
     return () => {
-      this.props.clearErrors();
-      this.setState({modalIsOpen: false});
+      this.setState({formType: formType});
+      this.props.toggleSessionForm();
+      console.log('openModal method');
     };
   }
+
 
   loggedOutNav(loginGuest) {
     return (
@@ -71,14 +70,7 @@ class HeaderNav extends React.Component {
         <button className="nav-button" onClick={this.openModal('login')}>Log In</button>
         <button className="nav-button" onClick={this.openModal('signup')}>Sign Up</button>
 
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal()}
-          contentLabel="Modal"
-          style={modalStyle}>
-          <SessionFormContainer formType={this.state.formType} />
-        </Modal>
-
+        <SessionFormContainer formType={this.state.formType} />
       </nav>
     );
   }

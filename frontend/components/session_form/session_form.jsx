@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import Modal from 'react-modal';
+import modalStyle from './modal_style';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -95,8 +97,22 @@ class SessionForm extends React.Component {
     }
   }
 
+
+  closeModal() {
+    return () => {
+      this.props.clearErrors();
+      this.props.toggleSessionForm();
+    };
+  }
+
   render (){
     return (
+      <Modal
+        isOpen={this.props.sessionModalStatus}
+        onRequestClose={this.closeModal()}
+        contentLabel="Modal"
+        style={modalStyle}
+      >
         <form onSubmit={this.handleSubmit} className="form session-form">
           {this.header()}
 
@@ -124,6 +140,7 @@ class SessionForm extends React.Component {
           {this.renderErrors()}
 
         </form>
+      </Modal>
     );
   }
 }
