@@ -9,13 +9,13 @@ class Homepage extends React.Component {
 
   gotoBooking(type) {
     return () => {
-      console.log(window.currentUser);
-      // if (this.props.currentUser) {
+      console.log(this.props.currentUser);
+      if (this.props.currentUser) {
         this.props.updateFilter('skill', type);
         hashHistory.push(`/booking`);
-      // } else {
-      //   hashHistory.push(`/dashboard`);
-      // }
+      } else {
+        this.props.toggleSessionForm();
+      }
     };
   }
 

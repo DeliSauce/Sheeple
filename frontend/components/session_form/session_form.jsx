@@ -97,7 +97,6 @@ class SessionForm extends React.Component {
     }
   }
 
-
   closeModal() {
     return () => {
       this.props.clearErrors();

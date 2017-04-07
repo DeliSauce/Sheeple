@@ -1,13 +1,16 @@
 import { connect } from 'react-redux';
-import Homepage from './homepage';
 import {updateFilter} from '../../actions/filter_actions';
+import {toggleSessionForm} from '../../actions/modal_actions';
+import Homepage from './homepage';
+
 
 const mapStateToProps = (state) => ({
-  // currentUser: state.session.currentUser
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
   updateFilter: (field, value) => dispatch(updateFilter(field, value)),
+  toggleSessionForm: () => dispatch(toggleSessionForm()),
 });
 
 export default connect(

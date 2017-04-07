@@ -61,7 +61,6 @@ class HeaderNav extends React.Component {
     };
   }
 
-
   loggedOutNav(loginGuest) {
     return (
       <nav className="logged-out-nav">
@@ -80,7 +79,6 @@ class HeaderNav extends React.Component {
       this.props.currentUser ? this.loggedInNav(this.props.currentUser, this.props.logout) : this.loggedOutNav(this.props.loginGuest)
     );
   }
-
 }
 
 export default withRouter(HeaderNav);
