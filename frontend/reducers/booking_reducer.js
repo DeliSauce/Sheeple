@@ -10,11 +10,10 @@ const BookingReducer = (state = nullState, action) => {
     case UPDATE_BOOKING_TASKER:
       return merge({}, state, {tasker: action.tasker});
     case RECEIVE_BOOKING_ERRORS:
-      console.log('receive book errors');
       return merge({}, state, {errors: action.errors});
     case CLEAR_BOOKING_ERRORS:
       // 'merge' won't work with an obect with only one value that is an
-      //empty array (it will be ignored) so we must return this object
+      //empty array (it will be ignored) so have to return this object
       //instead.
       return {tasker: state.tasker, errors: []};
     default:

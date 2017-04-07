@@ -12,3 +12,10 @@ export const deleteTask = (id) => (
     url: `api/tasks/${id}`
   })
 );
+
+export const fetchTasks = () => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/tasks'
+  })
+);

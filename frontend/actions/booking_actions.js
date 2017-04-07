@@ -32,6 +32,3 @@ export const submitBooking = (task, successCallback) => (dispatch) => (
       (errors) => dispatch(receiveBookingErrors(errors.responseJSON))
     )
 );
-
-// (user) => dispatch(receiveCurrentUser(user)),
-// (errors) => dispatch(receiveErrors(errors.responseJSON))

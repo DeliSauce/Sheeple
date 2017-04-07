@@ -1,5 +1,4 @@
 export const fetchTaskers = (filters) => {
-  // debugger;
   return (
     $.ajax({
       method: 'GET',
@@ -7,7 +6,4 @@ export const fetchTaskers = (filters) => {
       data: filters
     })
   );
-
 };
-
-// window.fetch = fetchTaskers;

@@ -1,7 +1,6 @@
 import React from 'react';
 import FormContainer from './form_container';
 
-
 class TaskerItem extends React.Component {
   constructor(props){
     super(props);
@@ -30,7 +29,6 @@ class TaskerItem extends React.Component {
   }
 
  render (){
-
     return (
       <li className="search-result-item">
 

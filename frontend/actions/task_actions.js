@@ -15,9 +15,28 @@ export const removeTask = (task) => ({
 });
 
 
+// export const fetchTasks = (userId) => (dispatch) => (
+//   TaskAPIUtil.fetchTasks().then((tasks) => dispatch(receiveTasks(tasks)))
+// );
+// export const fetchTasks = (userId) => (dispatch) => (
+//   DashboardAPIUtil.fetchUserTasks(userId).then((tasks) => dispatch(receiveTasks(tasks)))
+// );
 export const fetchTasks = (userId) => (dispatch) => (
-  DashboardAPIUtil.fetchUserTasks(userId).then((tasks) => dispatch(receiveTasks(tasks)))
+  TaskAPIUtil.fetchTasks().then(
+    (tasks) => {
+      console.log("these are the tasks: ", tasks);
+      dispatch(receiveTasks(tasks));
+    },
+    (errors) => console.log("couldn't receive tasks: ", errors)
+  )
 );
+
+// (
+//   (success) => successCallback(),
+//   (errors) => dispatch(receiveBookingErrors(errors.responseJSON))
+// )
+
+
 // DashboardAPIUtil.fetchUserTasks(userId).then((success) => console.log(success))
 
 export const deleteTask = (taskId) => (dispatch) => (

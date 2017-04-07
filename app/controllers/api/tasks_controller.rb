@@ -11,7 +11,11 @@ class Api::TasksController < ApplicationController
   end
 
   def index
-
+    # TODO
+    @tasks = Task.joins(:tasker).where("user_id = ?", current_user.id)
+    p "HIT THE TASK CONTROLLER --- INDEX"
+    # render json: @tasks
+    render :index
   end
 
   def destroy

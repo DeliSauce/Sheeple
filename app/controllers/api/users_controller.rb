@@ -15,8 +15,8 @@ class Api::UsersController < ApplicationController
     # @user = User.find_by_id(params[:id])
     @user = User.find_by_id(current_user.id)
     # render json: @user.tasks
+    p "HIT THE USER CONTROLLER --- SHOW"
     render :show
-    # "api/users/dashboard"
   end
 
   private
