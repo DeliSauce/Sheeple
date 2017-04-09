@@ -8,7 +8,7 @@ class HeaderNav extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {formType: ""};
+    // this.state = {formType: ""};
     // this.state = {formType: "", modalIsOpen: false};
     // this.openModal = this.openModal.bind(this);
     // this.closeModal = this.closeModal.bind(this);
@@ -55,8 +55,7 @@ class HeaderNav extends React.Component {
 
   openModal(formType) {
     return () => {
-      this.setState({formType: formType});
-      this.props.toggleSessionForm();
+      this.props.toggleSessionForm(formType);
       console.log('openModal method');
     };
   }
@@ -69,7 +68,7 @@ class HeaderNav extends React.Component {
         <button className="nav-button" onClick={this.openModal('login')}>Log In</button>
         <button className="nav-button" onClick={this.openModal('signup')}>Sign Up</button>
 
-        <SessionFormContainer formType={this.state.formType} />
+        <SessionFormContainer />
       </nav>
     );
   }

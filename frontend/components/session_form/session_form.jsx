@@ -36,8 +36,16 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
+  formType(){
+    if (this.props.loginModalStatus) {
+      return 'login';
+    } else if (this.props.signupModalStatus) {
+      return 'signup';
+    } else {console.log('Error: modal status not set');}
+  }
+
   header() {
-    if (this.props.formType === 'login') {
+    if (this.formType() === 'login') {
       return (<div className="form-header-login">Log In To Sheeple</div>);
     } else {
       return (<div className="form-header-signup">Sign Up For A New Account</div>);
@@ -46,7 +54,7 @@ class SessionForm extends React.Component {
 
 
   email() {
-    if (this.props.formType === 'signup') {
+    if (this.formType() === 'signup') {
       return (
         <label> Email
           <input
@@ -90,7 +98,7 @@ class SessionForm extends React.Component {
   }
 
   buttonText() {
-    if (this.props.formType === 'login') {
+    if (this.formType() === 'login') {
       return "LOGIN";
     } else {
       return "SIGN UP";
@@ -100,14 +108,14 @@ class SessionForm extends React.Component {
   closeModal() {
     return () => {
       this.props.clearErrors();
-      this.props.toggleSessionForm();
+      this.props.toggleSessionForm(this.formType());
     };
   }
 
   render (){
     return (
       <Modal
-        isOpen={this.props.sessionModalStatus}
+        isOpen={this.props.loginModalStatus || this.props.signupModalStatus}
         onRequestClose={this.closeModal()}
         contentLabel="Modal"
         style={modalStyle}

@@ -10,7 +10,7 @@ const mapStateToProps = ({ session }) => ({
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   loginGuest: () => dispatch(login({user: {username: "GUEST", password: "password"}})),
-  toggleSessionForm: () => dispatch(toggleSessionForm()),
+  toggleSessionForm: (formType) => dispatch(toggleSessionForm(formType)),
 });
 
 export default connect(

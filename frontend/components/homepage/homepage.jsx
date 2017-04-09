@@ -14,7 +14,7 @@ class Homepage extends React.Component {
         this.props.updateFilter('skill', type);
         hashHistory.push(`/booking`);
       } else {
-        this.props.toggleSessionForm();
+        this.props.toggleSessionForm('signup');
       }
     };
   }
