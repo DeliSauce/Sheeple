@@ -41,7 +41,10 @@ class SessionForm extends React.Component {
       return 'login';
     } else if (this.props.signupModalStatus) {
       return 'signup';
-    } else {console.log('Error: modal status not set');}
+    } else {
+      console.log('Error: modal status not set');
+      return 'error';
+    }
   }
 
   header() {
@@ -51,7 +54,6 @@ class SessionForm extends React.Component {
       return (<div className="form-header-signup">Sign Up For A New Account</div>);
     }
   }
-
 
   email() {
     if (this.formType() === 'signup') {
@@ -67,17 +69,29 @@ class SessionForm extends React.Component {
     }
   }
 
-  // switchforms() {
-  //   if (this.props.formType === 'signup') {
-  //     return (
-  //       <Link to="/login"> Already have an account? Log in. </Link>
-  //     );
-  //   } else {
-  //     return (
-  //       <Link to="/signup"> Dont have an account? Sign up. </Link>
-  //     );
-  //   }
-  // }
+  switchForms () {
+    let newForm = (this.formType() === 'signup' ? 'login' : 'signup');
+    this.closeModal();
+    this.props.toggleSessionForm(newForm);
+  }
+
+  switchFormLink() {
+    if (this.formType() === 'signup') {
+      return (
+        <div>
+          Already have an account?
+          <a onClick={this.switchForms.bind(this)}> Log in. </a>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          Dont have an account?
+          <a onClick={this.switchForms.bind(this)}> Sign up. </a>
+        </div>
+      );
+    }
+  }
 
   update(field) {
     return (e) => {
@@ -143,7 +157,7 @@ class SessionForm extends React.Component {
           </div>
 
           <input type="submit" className="form-submit-button button" value={this.buttonText()}/>
-
+          {this.switchFormLink()}
           {this.renderErrors()}
 
         </form>
