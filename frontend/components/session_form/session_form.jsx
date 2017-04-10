@@ -6,11 +6,13 @@ import modalStyle from './modal_style';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.defaultState = {
         username: "",
         password: "",
         email: ""
     };
+
+    this.state = this.defaultState;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -27,13 +29,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.clearErrors();
     const user = {user: this.state};
-    this.setState({
-        username: "",
-        password: "",
-        email: ""
-    });
     if (this.formType() === 'login') {
       this.props.processLoginForm(user);
     } else {
@@ -47,7 +43,6 @@ class SessionForm extends React.Component {
     } else if (this.props.signupModalStatus) {
       return 'signup';
     } else {
-      console.log('Error: modal status not set');
       return 'error';
     }
   }
@@ -81,6 +76,7 @@ class SessionForm extends React.Component {
   }
 
   closeModal() {
+    this.setState(this.defaultState);
     this.props.clearErrors();
     this.props.toggleSessionForm(this.formType());
   }
@@ -88,17 +84,17 @@ class SessionForm extends React.Component {
   switchFormLink() {
     if (this.formType() === 'signup') {
       return (
-        <div>
-          Already have an account?
-          <a onClick={this.switchForms.bind(this)}> Log in. </a>
-        </div>
+        <p>
+          Already have an account? <a onClick={this.switchForms.bind(this)}>Log in</a>
+          .
+        </p>
       );
     } else {
       return (
-        <div>
-          Dont have an account?
-          <a onClick={this.switchForms.bind(this)}> Sign up. </a>
-        </div>
+        <p>
+          Dont have an account? <a onClick={this.switchForms.bind(this)}>Sign up</a>
+          .
+        </p>
       );
     }
   }
@@ -110,6 +106,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
+    this.props.errors.forEach((error) => console.log(error));
     return(
       <ul className="form-errors">
         {this.props.errors.map((error, i) => (
@@ -133,7 +130,7 @@ class SessionForm extends React.Component {
     return (
       <Modal
         isOpen={this.props.loginModalStatus || this.props.signupModalStatus}
-        onRequestClose={this.closeModal}
+        onRequestClose={this.closeModal.bind(this)}
         contentLabel="Modal"
         style={modalStyle}
       >
@@ -148,6 +145,7 @@ class SessionForm extends React.Component {
                 onChange={this.update('username')}
                 />
             </label>
+
 
             <label> Password
               <input
