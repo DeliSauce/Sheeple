@@ -69,34 +69,10 @@ class SessionForm extends React.Component {
     }
   }
 
-  switchForms () {
-    let newForm = (this.formType() === 'signup' ? 'login' : 'signup');
-    this.closeModal();
-    this.props.toggleSessionForm(newForm);
-  }
-
   closeModal() {
     this.setState(this.defaultState);
     this.props.clearErrors();
     this.props.toggleSessionForm(this.formType());
-  }
-
-  switchFormLink() {
-    if (this.formType() === 'signup') {
-      return (
-        <p>
-          Already have an account? <a onClick={this.switchForms.bind(this)}>Log in</a>
-          .
-        </p>
-      );
-    } else {
-      return (
-        <p>
-          Dont have an account? <a onClick={this.switchForms.bind(this)}>Sign up</a>
-          .
-        </p>
-      );
-    }
   }
 
   update(field) {
@@ -105,18 +81,18 @@ class SessionForm extends React.Component {
     };
   }
 
-  renderErrors() {
-    this.props.errors.forEach((error) => console.log(error));
-    return(
-      <ul className="form-errors">
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`} className="form-error">
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   this.props.errors.forEach((error) => console.log(error));
+  //   return(
+  //     <ul className="form-errors">
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`} className="form-error">
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   renderUsernameError() {
     if (this.props.errors.some((error) => (error === 'Username can\'t be blank'))) {
@@ -124,10 +100,6 @@ class SessionForm extends React.Component {
         <div className='form-error'>
           Username cant be blank
         </div>
-      );
-    } else {
-      return (
-        <div className='form-error'></div>
       );
     }
   }
@@ -139,10 +111,6 @@ class SessionForm extends React.Component {
           Password must be at least 6 characters
         </div>
       );
-    } else {
-      return (
-        <div className='form-error'></div>
-      );
     }
   }
 
@@ -152,10 +120,6 @@ class SessionForm extends React.Component {
         <div className='form-error'>
           Email cant be blank
         </div>
-      );
-    } else {
-      return (
-        <div className='form-error'></div>
       );
     }
   }
@@ -167,10 +131,6 @@ class SessionForm extends React.Component {
           Invalid username/password combination
         </div>
       );
-    } else {
-      return (
-        <div className='form-error'></div>
-      );
     }
   }
 
@@ -180,6 +140,43 @@ class SessionForm extends React.Component {
     } else {
       return "SIGN UP";
     }
+  }
+
+  switchFormLink() {
+    if (this.formType() === 'signup') {
+      return (
+        <div>
+          <p>
+            Already have an account? <a onClick={this.switchForms.bind(this)}>Log in</a>
+          </p>
+          <p>
+            or log in with a <a onClick={this.guestLogin.bind(this)}>Guest Account</a>.
+          </p>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <p>
+            Dont have an account? <a onClick={this.switchForms.bind(this)}>Sign up</a> for one
+          </p>
+          <p>
+            or log in with a <a onClick={this.guestLogin.bind(this)}>Guest Account</a>.
+          </p>
+        </div>
+      );
+    }
+  }
+
+  switchForms () {
+    let newForm = (this.formType() === 'signup' ? 'login' : 'signup');
+    this.closeModal();
+    this.props.toggleSessionForm(newForm);
+  }
+
+  guestLogin(){
+    this.props.closeModal();
+    this.props.loginGuest();
   }
 
   render (){
@@ -216,12 +213,8 @@ class SessionForm extends React.Component {
             {this.renderEmailError()}
             {this.renderLoginError()}
           </div>
-          <div>
-            <input type="submit" className="form-submit-button button" value={this.buttonText()}/>
-              <button className="guest-login-button" onClick={this.props.loginGuest.bind(this)}>Guest Log In</button>
-          </div>
+          <input type="submit" className="form-submit-button button" value={this.buttonText()}/>
           {this.switchFormLink()}
-
 
         </form>
       </Modal>
