@@ -41,16 +41,6 @@ class Form extends React.Component {
     });
   }
 
-  closeModal() {
-    this.clearForm();
-    this.props.toggleBookingForm();
-  }
-
-  clearForm() {
-    this.setState(this.defaultState);
-    this.props.clearBookingErrors();
-  }
-
   onDateChange(date) {
     this.setState({ date });
   }
@@ -65,6 +55,12 @@ class Form extends React.Component {
     let date = this.state.date ? this.state.date.format("YYYY-MM-DD") : '';
     let task = merge({}, this.state, {date});
     this.props.submitBooking({task}, this.closeModal);
+  }
+
+  closeModal() {
+    this.setState(this.defaultState);
+    this.props.clearBookingErrors();
+    this.props.toggleBookingForm();
   }
 
   update(field) {

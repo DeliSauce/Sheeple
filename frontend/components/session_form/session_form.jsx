@@ -27,13 +27,18 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.clearErrors();
     const user = {user: this.state};
     this.setState({
         username: "",
         password: "",
         email: ""
     });
-    this.props.processForm(user);
+    if (this.formType() === 'login') {
+      this.props.processLoginForm(user);
+    } else {
+      this.props.processSignupForm(user);
+    }
   }
 
   formType(){
@@ -73,6 +78,11 @@ class SessionForm extends React.Component {
     let newForm = (this.formType() === 'signup' ? 'login' : 'signup');
     this.closeModal();
     this.props.toggleSessionForm(newForm);
+  }
+
+  closeModal() {
+    this.props.clearErrors();
+    this.props.toggleSessionForm(this.formType());
   }
 
   switchFormLink() {
@@ -119,18 +129,11 @@ class SessionForm extends React.Component {
     }
   }
 
-  closeModal() {
-    return () => {
-      this.props.clearErrors();
-      this.props.toggleSessionForm(this.formType());
-    };
-  }
-
   render (){
     return (
       <Modal
         isOpen={this.props.loginModalStatus || this.props.signupModalStatus}
-        onRequestClose={this.closeModal()}
+        onRequestClose={this.closeModal}
         contentLabel="Modal"
         style={modalStyle}
       >
