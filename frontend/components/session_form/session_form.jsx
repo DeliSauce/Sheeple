@@ -118,6 +118,62 @@ class SessionForm extends React.Component {
     );
   }
 
+  renderUsernameError() {
+    if (this.props.errors.some((error) => (error === 'Username can\'t be blank'))) {
+      return (
+        <div className='form-error'>
+          Username cant be blank
+        </div>
+      );
+    } else {
+      return (
+        <div className='form-error'></div>
+      );
+    }
+  }
+
+  renderPasswordError() {
+    if (this.props.errors.some((error) => (error === 'Password is too short (minimum is 6 characters)'))) {
+      return (
+        <div className='form-error'>
+          Password must be at least 6 characters
+        </div>
+      );
+    } else {
+      return (
+        <div className='form-error'></div>
+      );
+    }
+  }
+
+  renderEmailError(){
+    if (this.props.errors.some((error) => (error === 'Email can\'t be blank'))) {
+      return (
+        <div className='form-error'>
+          Email cant be blank
+        </div>
+      );
+    } else {
+      return (
+        <div className='form-error'></div>
+      );
+    }
+  }
+
+  renderLoginError() {
+    if (this.props.errors.some((error) => (error === 'Invalid username/password combination'))) {
+      return (
+        <div className='form-error'>
+          Invalid username/password combination
+        </div>
+      );
+    } else {
+      return (
+        <div className='form-error'></div>
+      );
+    }
+  }
+
   buttonText() {
     if (this.formType() === 'login') {
       return "LOGIN";
@@ -145,7 +201,7 @@ class SessionForm extends React.Component {
                 onChange={this.update('username')}
                 />
             </label>
-
+            {this.renderUsernameError()}
 
             <label> Password
               <input
@@ -154,12 +210,16 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')}
                 />
             </label>
+            {this.renderPasswordError()}
+
             {this.email()}
+            {this.renderEmailError()}
+            {this.renderLoginError()}
           </div>
 
           <input type="submit" className="form-submit-button button" value={this.buttonText()}/>
           {this.switchFormLink()}
-          {this.renderErrors()}
+
 
         </form>
       </Modal>
