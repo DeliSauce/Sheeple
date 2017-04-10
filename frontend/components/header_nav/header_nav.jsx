@@ -60,7 +60,7 @@ class HeaderNav extends React.Component {
     };
   }
 
-  loggedOutNav(loginGuest) {
+  loggedOutNav() {
     return (
       <nav className="logged-out-nav">
 
@@ -75,7 +75,7 @@ class HeaderNav extends React.Component {
 
   render () {
     return (
-      this.props.currentUser ? this.loggedInNav(this.props.currentUser, this.props.logout) : this.loggedOutNav(this.props.loginGuest)
+      this.props.currentUser ? this.loggedInNav(this.props.currentUser, this.props.logout) : this.loggedOutNav()
     );
   }
 }

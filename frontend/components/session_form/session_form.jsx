@@ -216,8 +216,10 @@ class SessionForm extends React.Component {
             {this.renderEmailError()}
             {this.renderLoginError()}
           </div>
-
-          <input type="submit" className="form-submit-button button" value={this.buttonText()}/>
+          <div>
+            <input type="submit" className="form-submit-button button" value={this.buttonText()}/>
+              <button className="guest-login-button" onClick={this.props.loginGuest.bind(this)}>Guest Log In</button>
+          </div>
           {this.switchFormLink()}
 
 
