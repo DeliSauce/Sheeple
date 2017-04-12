@@ -9,7 +9,10 @@ class SessionForm extends React.Component {
     this.defaultState = {
         username: "",
         password: "",
-        email: ""
+        email: "",
+        usernameError: false,
+        passwordError: false,
+        emailError: false
     };
 
     this.state = this.defaultState;
@@ -96,6 +99,7 @@ class SessionForm extends React.Component {
 
   renderUsernameError() {
     if (this.props.errors.some((error) => (error === 'Username can\'t be blank'))) {
+      this.setState({usernameError: true});
       return (
         <div className='form-error'>
           Username cant be blank
@@ -106,6 +110,7 @@ class SessionForm extends React.Component {
 
   renderPasswordError() {
     if (this.props.errors.some((error) => (error === 'Password is too short (minimum is 6 characters)'))) {
+      this.setState({passwordError: true});
       return (
         <div className='form-error'>
           Password must be at least 6 characters
@@ -116,6 +121,7 @@ class SessionForm extends React.Component {
 
   renderEmailError(){
     if (this.props.errors.some((error) => (error === 'Email can\'t be blank'))) {
+      this.setState({emailError: true});
       return (
         <div className='form-error'>
           Email cant be blank
@@ -179,7 +185,20 @@ class SessionForm extends React.Component {
     this.props.loginGuest();
   }
 
+  setInputFieldClassName(field) {
+    if (this.state.usernameError && field === 'username') {
+      return 'form-input-error';
+    } else {
+      return '';
+    }
+  }
+
+  // checkForErrors() {
+  //
+  // }
+
   render (){
+    // this.checkForErrors();
     return (
       <Modal
         isOpen={this.props.loginModalStatus || this.props.signupModalStatus}
@@ -189,33 +208,34 @@ class SessionForm extends React.Component {
       >
         <form onSubmit={this.handleSubmit} className="form session-form">
           {this.header()}
+          <div className="form-body">
+            <div className="form-inputs">
+              <label> Username
+                <input
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  className={this.setInputFieldClassName('username')}
+                  />
+              </label>
+              {this.renderUsernameError()}
 
-          <div className="form-inputs">
-            <label> Username
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                />
-            </label>
-            {this.renderUsernameError()}
+              <label> Password
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  />
+              </label>
+              {this.renderPasswordError()}
 
-            <label> Password
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                />
-            </label>
-            {this.renderPasswordError()}
-
-            {this.email()}
-            {this.renderEmailError()}
-            {this.renderLoginError()}
+              {this.email()}
+              {this.renderEmailError()}
+              {this.renderLoginError()}
+            </div>
+            <input type="submit" className="form-submit-button button" value={this.buttonText()}/>
+            {this.switchFormLink()}
           </div>
-          <input type="submit" className="form-submit-button button" value={this.buttonText()}/>
-          {this.switchFormLink()}
-
         </form>
       </Modal>
     );

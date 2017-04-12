@@ -14,14 +14,14 @@ const modalStyle = {
     transform                  : 'translate(-50%)',
     width                      : '400px',
     height                     : '450px',
-    border                     : '1px solid #ccc',
     background                 : '#eee',
     overflow                   : 'auto',
     WebkitOverflowScrolling    : 'touch',
-    borderRadius               : '10px',
+    borderRadius               : '4px',
+    border                     : 'none',
     outline                    : 'none',
     padding                    : '0px',
-    display :'flex'
+    display                    : 'flex'
   }
 };
 

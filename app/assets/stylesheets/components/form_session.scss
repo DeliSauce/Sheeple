@@ -1,46 +1,24 @@
-
-.session-form * {
-  border: red 1px solid;
-}
-
 .session-form {
-  justify-content: space-between;
-
-  div[class*='form-header-'] {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex: 0 0 60px;
-    background-color: $form-session-header-background;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-
-  }
-
   label {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 10px 0;
   }
 
   input {
-    width: 200px;
+    // width: 200px;
     height: 40px;
-    border-radius: 6px;
+    border-radius: 3px;
   }
 
-  .form-errors {
-    flex: 0 0 50px;
-  }
+  // .form-errors {
+  //   flex: 0 0 50px;
+  // }
 
   .form-submit-button  {
-    width: 80px;
+    width: 100%;
     height: 40px;
     font-size: 20px;
     margin-bottom: 5px;
-
   }
-
 }
