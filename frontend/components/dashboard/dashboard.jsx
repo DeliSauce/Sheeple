@@ -9,8 +9,8 @@ class Dashboard extends React.Component {
 
   }
 
-  componentDidMount() {
-    this.props.fetchTasks(); // TODO need to actually change this to currentUser id #
+  componentWillMount() {
+    this.props.fetchTasks();
   }
 
   render() {
@@ -39,7 +39,11 @@ class Dashboard extends React.Component {
     // console.log(this.props.tasks.length);
 
     if (this.props.tasks.length === 0){
-      pendingTasks = <div className="empty-dashboard-response">You don't appear to have any bookings yet. Why don't you hit up the <Link to="/booking">Search Page</Link>.</div>
+      pendingTasks =
+      <div className="empty-dashboard-response">
+        You don't appear to have any bookings yet
+        . Why don't you hit up the <Link to="/booking">Search Page</Link>.
+      </div>;
     }
 
     return (

@@ -99,7 +99,7 @@ class SessionForm extends React.Component {
   switchFormLink() {
     if (this.formType() === 'signup') {
       return (
-        <div>
+        <div className='session-form-footer'>
           <p>
             Already have an account? <a onClick={this.switchForms.bind(this)}>Log in</a>
           </p>
@@ -110,7 +110,7 @@ class SessionForm extends React.Component {
       );
     } else {
       return (
-        <div>
+        <div className='session-form-footer'>
           <p>
             Dont have an account? <a onClick={this.switchForms.bind(this)}>Sign up</a> for one
           </p>
