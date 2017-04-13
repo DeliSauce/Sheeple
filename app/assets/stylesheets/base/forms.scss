@@ -54,6 +54,8 @@ div[class*='form-header-'] {
   }
   input {
     border: 1px solid green;
+    text-indent: 5px;
+    font-weight: 500;
   }
   .form-input-error {
     border: 1px solid red;

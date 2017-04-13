@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   attr_reader :password
 
   validates :username, :password_digest, :session_token, :email, presence: true
+  validates :email, :email_format => { :message => 'not valid' }
   validates :username, uniqueness: true
   validates :password, length: {minimum: 6}, allow_nil: :true
 

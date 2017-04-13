@@ -75,8 +75,16 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
+    let fieldError;
     return (e) => {
-      this.setState({[field]: e.currentTarget.value});
+      if (field === 'username') {
+        fieldError = 'usernameError';
+      } else if (field === 'password' && e.currentTarget.value.length === 6) {
+        fieldError = 'passwordError';
+      } else if (field === 'email') {
+        fieldError = 'emailError';
+      }
+      this.setState({[field]: e.currentTarget.value, [fieldError]: false});
     };
   }
 
@@ -137,26 +145,35 @@ class SessionForm extends React.Component {
     }
   }
 
+  // List of error messages:
+  // "Invalid username/password combination",
+  // "Username has already been taken",
+  // "Username can't be blank",
+  // "Password is too short (minimum is 6 characters)",
+  // "Email can't be blank",
+  // "Email not a valid",
+
+  //TODO method will only account for one error per field even if there are multiple
   checkForErrors(nextProps) {
     nextProps.errors.forEach(error => {
-      if (error === 'Username can\'t be blank') {
-        this.setState({usernameError: true});
-      } else if (error === 'Password is too short (minimum is 6 characters)') {
-        this.setState({passwordError: true});
-      } else if (error === 'Email can\'t be blank') {
-        this.setState({emailError: true});
-      } else if (error === 'Invalid username/password combination') {
-        this.setState({loginError: true});
+      console.log(error);
+      if (error === 'Invalid username/password combination') {
+        this.setState({loginError: error});
+      } else if (error.toLowerCase().includes('username')) {
+        this.setState({usernameError: error});
+      } else if (error.toLowerCase().includes('password')) {
+        this.setState({passwordError: error});
+      } else if (error.toLowerCase().includes('email')) {
+        this.setState({emailError: error});
       }
     });
   }
-
 
   renderUsernameError() {
     if (this.state.usernameError) {
       return (
         <div className='form-error'>
-          Username can't be blank
+          {this.state.usernameError}
         </div>
       );
     } else {
@@ -170,13 +187,13 @@ class SessionForm extends React.Component {
     if (this.state.passwordError) {
       return (
         <div className='form-error'>
-          Password must be at least 6 characters
+          {this.state.passwordError}
         </div>
       );
     } else if (this.state.loginError) {
       return (
         <div className='form-error'>
-          Invalid username/password combination
+          {this.state.loginError}
         </div>
       );
     }
@@ -193,7 +210,7 @@ class SessionForm extends React.Component {
     } else if (this.state.emailError) {
       return (
         <div className='form-error'>
-          Email can't be blank
+          {this.state.emailError}
         </div>
       );
     } else {
@@ -214,7 +231,6 @@ class SessionForm extends React.Component {
   }
 
   render (){
-
     return (
       <Modal
         isOpen={this.props.loginModalStatus || this.props.signupModalStatus}
