@@ -129,7 +129,7 @@ class SessionForm extends React.Component {
   }
 
   guestLogin(){
-    this.props.closeModal();
+    this.closeModal();
     this.props.loginGuest();
   }
 
