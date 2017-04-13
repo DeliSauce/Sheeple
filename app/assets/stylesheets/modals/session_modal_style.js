@@ -1,4 +1,4 @@
-const modalStyle = {
+const sessionModalStyle = {
   overlay : {
     position          : 'fixed',
     top               : 0,
@@ -25,4 +25,4 @@ const modalStyle = {
   }
 };
 
-export default modalStyle;
+export default sessionModalStyle;

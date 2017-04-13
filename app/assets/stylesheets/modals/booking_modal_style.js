@@ -1,4 +1,4 @@
-const formModalStyle = {
+const bookingModalStyle = {
   overlay : {
     position          : 'fixed',
     top               : 0,
@@ -27,4 +27,4 @@ const formModalStyle = {
   }
 };
 
-export default formModalStyle;
+export default bookingModalStyle;

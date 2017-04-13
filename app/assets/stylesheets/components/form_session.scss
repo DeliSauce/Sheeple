@@ -1,20 +1,10 @@
 .session-form {
-  label {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0;
-  }
-
   input {
     // width: 200px;
     height: 40px;
     border-radius: 3px;
   }
-
-  // .form-errors {
-  //   flex: 0 0 50px;
-  // }
-
+  
   .form-submit-button  {
     width: 100%;
     height: 40px;

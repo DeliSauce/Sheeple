@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import formModalStyle from './form_modal_style';
+import bookingModalStyle from '../../../app/assets/stylesheets/modals/booking_modal_style';
 import { SingleDatePicker } from 'react-dates';
 import merge from 'lodash/merge';
 import Moment from 'moment';
@@ -148,7 +148,7 @@ class Form extends React.Component {
         onRequestClose={this.closeModal}
         onAfterOpen={this.afterOpenModal}
         contentLabel="Modal"
-        style={formModalStyle}
+        style={bookingModalStyle}
       >
         {this.renderForm()}
       </Modal>

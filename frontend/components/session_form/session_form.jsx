@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Modal from 'react-modal';
-import modalStyle from './modal_style';
+import sessionModalStyle from '../../../app/assets/stylesheets/modals/session_modal_style';
+import merge from 'lodash/merge';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class SessionForm extends React.Component {
     }
   }
 
-  email() {
+  renderEmail() {
     if (this.formType() === 'signup') {
       return (
         <label> Email
@@ -78,19 +79,6 @@ class SessionForm extends React.Component {
       this.setState({[field]: e.currentTarget.value});
     };
   }
-
-  // renderErrors() {
-  //   this.props.errors.forEach((error) => console.log(error));
-  //   return(
-  //     <ul className="form-errors">
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`} className="form-error">
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
 
   buttonText() {
     if (this.formType() === 'login') {
@@ -171,36 +159,57 @@ class SessionForm extends React.Component {
           Username can't be blank
         </div>
       );
+    } else {
+      return (
+        <div className='form-error'></div>
+      );
     }
   }
 
-  renderPasswordError() {
+  renderPasswordOrLoginError() {
     if (this.state.passwordError) {
       return (
         <div className='form-error'>
           Password must be at least 6 characters
         </div>
       );
-    }
-  }
-
-  renderEmailError(){
-    if (this.state.emailError) {
-      return (
-        <div className='form-error'>
-          Email can't be blank
-        </div>
-      );
-    }
-  }
-
-  renderLoginError() {
-    if (this.state.loginError) {
+    } else if (this.state.loginError) {
       return (
         <div className='form-error'>
           Invalid username/password combination
         </div>
       );
+    }
+    else {
+      return (
+        <div className='form-error'></div>
+      );
+    }
+  }
+
+  renderEmailError(){
+    if (this.formType() === 'login') {
+      return;
+    } else if (this.state.emailError) {
+      return (
+        <div className='form-error'>
+          Email can't be blank
+        </div>
+      );
+    } else {
+      return (
+        <div className='form-error'></div>
+      );
+    }
+  }
+
+  modalStyle() {
+    const loginHeight = {content : {height: '370px'}};
+    const signupHeight = {content : {height: '450px'}};
+    if (this.formType() === 'login') {
+      return merge(sessionModalStyle, loginHeight);
+    } else {
+      return merge(sessionModalStyle, signupHeight);
     }
   }
 
@@ -211,7 +220,7 @@ class SessionForm extends React.Component {
         isOpen={this.props.loginModalStatus || this.props.signupModalStatus}
         onRequestClose={this.closeModal.bind(this)}
         contentLabel="Modal"
-        style={modalStyle}
+        style={this.modalStyle()}
       >
         <form onSubmit={this.handleSubmit} className="form session-form">
           {this.header()}
@@ -235,11 +244,10 @@ class SessionForm extends React.Component {
                   className={this.setInputFieldClassName('password')}
                   />
               </label>
-              {this.renderPasswordError()}
+              {this.renderPasswordOrLoginError()}
 
-              {this.email()}
+              {this.renderEmail()}
               {this.renderEmailError()}
-              {this.renderLoginError()}
             </div>
             <input type="submit" className="form-submit-button button" value={this.buttonText()}/>
             {this.switchFormLink()}
