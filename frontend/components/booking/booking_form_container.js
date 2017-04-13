@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import {submitBooking, clearBookingErrors} from '../../actions/booking_actions';
 import {toggleBookingForm} from '../../actions/modal_actions';
-import Form from './form';
+import BookingForm from './booking_form';
 
 const mapStateToProps = (state, ownProps) => ({
   filters: state.filters,
@@ -20,4 +20,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Form);
+)(BookingForm);

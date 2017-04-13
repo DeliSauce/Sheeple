@@ -13,7 +13,6 @@ const sessionModalStyle = {
     left                       : '50%',
     transform                  : 'translate(-50%)',
     width                      : '400px',
-    height                     : '450px',
     background                 : '#eee',
     overflow                   : 'auto',
     WebkitOverflowScrolling    : 'touch',

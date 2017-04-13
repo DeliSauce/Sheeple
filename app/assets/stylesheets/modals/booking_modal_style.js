@@ -11,11 +11,11 @@ const bookingModalStyle = {
   content : {
     position                   : 'absolute',
     zIndex                     : 4,
-    top                        : '100px',
+    top                        : '50px',
     left                       : '50%',
     transform                  : 'translate(-50%)',
     width                      : '400px',
-    height                     : '600px',
+    height                     : '550px',
     background                 : '#eee',
     overflow                   : 'auto',
     WebkitOverflowScrolling    : 'touch',

@@ -1,9 +1,10 @@
 @import 'variables';
 
-.SingleDatePickerInput {
-  background-color: $react-dates-color-white;
-  border: 1px solid $react-dates-color-border-medium;
-}
+//moved to form_booking.scss
+// .SingleDatePickerInput {
+//   background-color: $react-dates-color-white;
+//   border: 1px solid $react-dates-color-border-medium;
+// }
 
 .SingleDatePickerInput__clear-date {
   background: none;

@@ -1,5 +1,5 @@
 import React from 'react';
-import FormContainer from './form_container';
+import FormContainer from './booking_form_container';
 
 class TaskerItem extends React.Component {
   constructor(props){
