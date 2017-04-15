@@ -142,15 +142,16 @@ class BookingForm extends React.Component {
               </div>
 
               <label> When:
-                <SingleDatePicker
-                  id="date_input"
-                  date={this.state.date}
-                  focused={this.state.focused}
-                  numberOfMonths={1}
-                  onDateChange={this.onDateChange}
-                  onFocusChange={this.onFocusChange}
-                  className={this.setInputFieldClassName('date')}
-                />
+                <div className={this.setInputFieldClassName('date')}>
+                  <SingleDatePicker
+                    id="date_input"
+                    date={this.state.date}
+                    focused={this.state.focused}
+                    numberOfMonths={1}
+                    onDateChange={this.onDateChange}
+                    onFocusChange={this.onFocusChange}
+                  />
+                </div>
               </label>
               {this.renderDateError()}
 
@@ -180,9 +181,10 @@ class BookingForm extends React.Component {
   setInputFieldClassName(field) {
     if ((this.state.descriptionError) && field === 'description') {
       return 'form-input-error';
-    }
-    if ((this.state.dateError) && field === 'date') {
-      return 'form-input-error';
+    } else if ((this.state.dateError) && field === 'date') {
+      return 'date-picker-border form-input-error';
+    } else if (field === 'date'){
+      return 'date-picker-border';
     }
   }
 

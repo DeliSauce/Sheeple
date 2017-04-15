@@ -68,15 +68,18 @@ $nav-link-hover: $salmon-darker;
 $guest-login-button-background: $salmon;
 $guest-login-button-background-hover: $salmon-darker;
 
-
 //FILTERS
 $filters-border: $light-gray;
 $checkbox-background: #EDEFED;
 $checkbox-border: #DCE0E0;
-$filter-clear-button-border: #484848;
+$filter-clear-button-border: #c4c4c4;
 $filters-text-color: #484848;
-//BOOKING FORM
 
+//DATE PICKER
+$date-picker-border: #c4c4c4;
+
+//BOOKING FORM
+$booking-form-input-border: green;
 
 //SIGN IN/LOG IN FORM
 $form-session-header-background: $salmon;
@@ -89,8 +92,3 @@ $default-button-hover-color: $salmon-darker;
 $default-button-border-hover-color: $salmon-darker;
 
 $link-color: $salmon;
-
-
-  //airbnb date picker
-  $date-picker-border: #c4c4c4;
-  $form-text-area-border: #c4c4c4;

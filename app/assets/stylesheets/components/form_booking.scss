@@ -2,14 +2,26 @@
 //   border: 1px red solid;
 // }
 
+
+//Added this div to surround DatePicker so that the border color can be
+//manipulated.
+.date-picker-border {
+  width: 206px;
+  border: 1px solid $date-picker-border;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
 .booking-form {
   textarea {
     width: 100%;
     height: 200px;
     resize: none;
     font-size: 16px;
+
     // background-color: $lightest-gray;
-    // border: $form-text-area-border 1px solid;
+    border: $booking-form-input-border 1px solid;
+    border-radius: 3px;
   }
 
   .booking-submit-button  {
@@ -20,14 +32,13 @@
     padding: 0;
   }
 
-  .SingleDatePickerInput {
-    background-color: $react-dates-color-white;
-    border: 1px solid $react-dates-color-border-medium;
+  .date-picker-border {
+    border: 1px solid $booking-form-input-border;
   }
 
-  .form-input-error {
+  .date-picker-border.form-input-error {
     border: 1px solid red;
-    background-color: pink;
+    background-color: white;
   }
 
 }

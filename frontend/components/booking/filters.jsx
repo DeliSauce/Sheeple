@@ -162,15 +162,16 @@ class Filters extends React.Component {
       <div className="filters-container">
 
         <div className="date-and-clear-filter-container">
-
-          <SingleDatePicker
-            id="date_input"
-            date={this.state.date}
-            focused={this.state.focused}
-            numberOfMonths={1}
-            onDateChange={this.onDateChange}
-            onFocusChange={this.onFocusChange}
-            />
+          <div className='date-picker-border'>
+            <SingleDatePicker
+              id="date_input"
+              date={this.state.date}
+              focused={this.state.focused}
+              numberOfMonths={1}
+              onDateChange={this.onDateChange}
+              onFocusChange={this.onFocusChange}
+              />
+          </div>
 
           <button
             className="button-clear-filters" onClick={this.handleClearFilter} >
