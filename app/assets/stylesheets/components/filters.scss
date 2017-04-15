@@ -9,7 +9,7 @@
   border-right: solid 1px $filters-border;
   // border: solid red 1px;
   color: $filters-text-color;
-  font-weight: bold;
+  font-weight: 400;
 
   // *{border: red solid 1px;}
 
@@ -26,6 +26,7 @@
   div[class*='-description'] {
     text-align: left;
     font-size: 16px;
+    // font-weight: 400;
   }
 
   div[class*='-checkboxes'] {
