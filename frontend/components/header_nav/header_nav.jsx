@@ -38,8 +38,6 @@ class HeaderNav extends React.Component {
     } else {
       navButton = 'Dashboard';
     }
-    console.log("current user: ", currentUser);
-    console.log("props: ", this.props.currentUser);
 
     return (
       <hgroup className="logged-in-nav">
@@ -56,7 +54,6 @@ class HeaderNav extends React.Component {
   openModal(formType) {
     return () => {
       this.props.toggleSessionForm(formType);
-      console.log('openModal method');
     };
   }
 

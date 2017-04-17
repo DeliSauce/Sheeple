@@ -9,7 +9,6 @@ class Homepage extends React.Component {
 
   gotoBooking(type) {
     return () => {
-      console.log(this.props.currentUser);
       if (this.props.currentUser) {
         this.props.updateFilter('skill', type);
         hashHistory.push(`/booking`);

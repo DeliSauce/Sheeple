@@ -15,7 +15,7 @@ const bookingModalStyle = {
     left                       : '50%',
     transform                  : 'translate(-50%)',
     width                      : '400px',
-    height                     : '550px',
+    height                     : '575px',
     background                 : '#eee',
     overflow                   : 'auto',
     WebkitOverflowScrolling    : 'touch',

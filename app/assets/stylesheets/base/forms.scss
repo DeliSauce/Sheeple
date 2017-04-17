@@ -30,6 +30,7 @@ div[class*='form-header-'] {
   width: 100%;
   background-color: white;
   font-size: 16px;
+  font-weight: 300;
   padding: 20px;
   * {
     box-sizing: border-box;
@@ -46,10 +47,11 @@ div[class*='form-inputs-'] {
     font-weight: 300;
     flex-direction: column;
   }
-  input {
+  input, textarea {
     border: 1px solid green;
     text-indent: 5px;
     font-weight: 500;
+    border-radius: 3px;
   }
   .form-input-error {
     border: 1px solid red;

@@ -156,7 +156,6 @@ class SessionForm extends React.Component {
   //TODO method will only account for one error per field even if there are multiple
   checkForErrors(nextProps) {
     nextProps.errors.forEach(error => {
-      console.log(error);
       if (error === 'Invalid username/password combination') {
         this.setState({loginError: error});
       } else if (error.toLowerCase().includes('username')) {

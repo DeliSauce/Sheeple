@@ -29,7 +29,6 @@ class BookingForm extends React.Component {
   }
 
   afterOpenModal () {
-    console.log('onAfterOpen');
     let date = null;
     if (this.props.filters.date) {
       date = new Moment(this.props.filters.date);
@@ -77,7 +76,6 @@ class BookingForm extends React.Component {
 
   checkForErrors(nextProps) {
     nextProps.errors.forEach(error => {
-      console.log(error);
       if (error.toLowerCase().includes('date')) {
         this.setState({dateError: error});
       } else if (error.toLowerCase().includes('description')) {
