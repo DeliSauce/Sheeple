@@ -12,6 +12,7 @@ class Api::TasksController < ApplicationController
 
   def index
     @tasks = Task.joins(:tasker).where("user_id = ?", current_user.id)
+    sleep 2
     render :index
   end
 

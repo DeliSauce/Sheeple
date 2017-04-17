@@ -13,8 +13,9 @@ class Dashboard extends React.Component {
     this.props.fetchTasks();
   }
 
-  componentWillReceiveProps() {
-    setTimeout(() => this.setState({tasksFetched: true}), 1000);
+  componentDidUpdate() {
+    if (!this.state.tasksFetched) this.setState({tasksFetched: true});
+    // setTimeout(() => this.setState({tasksFetched: true}), 1000);
   }
 
   renderLoadingSpinner() {
