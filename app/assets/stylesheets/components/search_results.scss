@@ -7,14 +7,6 @@
   flex-direction: column;
 }
 
-
-
-// Search result items
-// .search-result-item * {
-//   border: red 1px solid;
-// }
-
-
 .search-result-item {
   width: 900px;
   color: $booking-item-text;
@@ -25,6 +17,7 @@
   height: 130px;
   box-sizing: border-box;
   border-bottom: solid 1px $tasker-border;
+  background-color: $universal-background;
 
   .profile-img-data-container {
     display: flex;

@@ -1,7 +1,6 @@
 .dashboard-container {
   display: flex;
   flex-direction: column;
-  // background-color: $background-offwhite;
 }
 
 .dashboard-header {
@@ -29,6 +28,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 33.333333%;
+    background-color: $universal-background;
 
     .task-status-header {
       width: 100%;
@@ -67,7 +67,7 @@
   padding: 10px;
   margin: 10px;
   height: 200px;
-  border: solid 1px $task-border;
+  // border: solid 1px $task-border;
   border-radius: 5px;
   // box-shadow: 5px 5px 5px #888888;
 

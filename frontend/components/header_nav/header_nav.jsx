@@ -7,11 +7,6 @@ import SessionFormContainer from '../session_form/session_form_container';
 class HeaderNav extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.state = {formType: ""};
-    // this.state = {formType: "", modalIsOpen: false};
-    // this.openModal = this.openModal.bind(this);
-    // this.closeModal = this.closeModal.bind(this);
   }
 
   gotoPage(page) {
@@ -41,7 +36,7 @@ class HeaderNav extends React.Component {
 
     return (
       <hgroup className="logged-in-nav">
-        <div className="header-user-container">
+        <div className="header-nav-user">
           <div className="avatar-image"></div>
           <div>{this.props.currentUser.username}</div>
         </div>

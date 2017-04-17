@@ -23,12 +23,6 @@ class TaskItem extends React.Component {
   }
 
  render (){
-  //  <div className="task-item-tasker-details">
-  //    <img className="profile-img" src={"http://res.cloudinary.com/delisauce/image/upload/c_crop,h_1100,w_1000/v1484780832/Profile/" + this.props.task.tasker.profile_img_link} />
-  //    <div>
-  //      {this.props.task.tasker.first_name + " " + this.props.task.tasker.last_name}
-  //    </div>
-  //  </div>
     return (
       <li className={"task-item " + this.props.className}>
         <div className="task-item-top">

@@ -8,9 +8,9 @@ const gotoHomePage = () => {
 };
 
 const App = ({ children }) => (
-  <div className="top-level-change-this">
+  <div className="app-container">
 
-    <div className="header">
+    <div className="app-header">
       <button className="hero-image" onClick={gotoHomePage}> </button>
       <HeaderNavContainer />
     </div>

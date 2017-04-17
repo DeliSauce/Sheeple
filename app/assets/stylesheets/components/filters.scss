@@ -7,11 +7,9 @@
   margin: 0 20px;
   flex-direction: column;
   border-right: solid 1px $filters-border;
-  // border: solid red 1px;
+  background-color: $universal-background;
   color: $filters-text-color;
   font-weight: 400;
-
-  // *{border: red solid 1px;}
 
   .date-and-clear-filter-container {
     display: flex;
@@ -26,7 +24,6 @@
   div[class*='-description'] {
     text-align: left;
     font-size: 16px;
-    // font-weight: 400;
   }
 
   div[class*='-checkboxes'] {
@@ -36,7 +33,6 @@
 
   label {
     display: flex;
-
     background-color: $checkbox-background;
     border: $checkbox-border solid 1px;
     margin: 10px;
@@ -51,7 +47,6 @@
   div[class*='-slider'] {
     margin: 10px;
   }
-
 }
 
 .button-clear-filters {
@@ -72,10 +67,6 @@
       display: inline;
     }
 }
-
-// .rate-filter-min-max > div {
-//   display: inline;
-// }
 
 .checkbox-checked {
   background-image: image-url("check_box_black_18x18.png");

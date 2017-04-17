@@ -1,6 +1,4 @@
-
-.header {
-  // border: solid 1px blue;
+.app-header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,8 +7,8 @@
   box-sizing: border-box;
   width: 100%;
   padding: 0 20px;
+  background-color: $universal-background;
 }
-
 
 .hero-image {
   height: 30px;
@@ -18,10 +16,10 @@
   margin: 15px 0 7px 0;
   background-image: image-url("sheeple_logo");
   background-size: cover;
+  background-color: $universal-background;
 }
 
 .logged-out-nav {
-  // border: solid 1px green;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -29,8 +27,8 @@
 
 .logged-out-nav > * {
   margin: 15px;
+  background-color: $universal-background;
 }
-
 
 // Logged In
 .avatar-image {
@@ -41,9 +39,7 @@
   background-size: cover;
 }
 
-
 .logged-in-nav {
-  // border: solid 1px green;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -51,9 +47,10 @@
 
 .logged-in-nav > * {
   margin: 15px;
+  background-color: $universal-background;
 }
 
-.header-user-container {
+.header-nav-user {
   display: flex;
   align-items: center;
 }
@@ -61,29 +58,26 @@
 .nav-button {
   color: $nav-link;
   transition: color 1.1s;
-
 }
 
 .nav-button:hover {
   color: $nav-link-hover;
 }
 
-
 .guest-login-button {
   width: 150px;
   height: 40px;
   font-size: 16px;
-
-  	background-color: $guest-login-button-background;
-  	border-color: $guest-login-button-background;
-  	color: white;
-  	font-weight: bold;
-  	padding: 7px 9px;
-  	border-radius: 3px;
-  	transition: background-color 0.3s;
-  	font-family: $sans-serif;
-  	text-transform: uppercase;
-  	text-align: center;
+  background-color: $guest-login-button-background;
+  border-color: $guest-login-button-background;
+  color: white;
+  font-weight: bold;
+  padding: 7px 9px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+  font-family: $sans-serif;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .guest-login-button:hover {
