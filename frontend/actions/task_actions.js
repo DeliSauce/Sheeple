@@ -13,9 +13,9 @@ export const removeTask = (task) => ({
   task
 });
 
-export const fetchTasks = () => (dispatch) => (
-  TaskAPIUtil.fetchTasks().then((tasks) => dispatch(receiveTasks(tasks)))
-);
+export const fetchTasks = () => (dispatch) => {
+  TaskAPIUtil.fetchTasks().then((tasks) => dispatch(receiveTasks(tasks)));
+};
 
 export const deleteTask = (taskId) => (dispatch) => (
   TaskAPIUtil.deleteTask(taskId).then((task) => dispatch(removeTask(task)))

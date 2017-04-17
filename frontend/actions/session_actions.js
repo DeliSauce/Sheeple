@@ -1,4 +1,5 @@
 import * as SessionApiUtil from '../util/session_api_util';
+import {fetchTasks} from './task_actions';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
@@ -36,7 +37,10 @@ export const signup = (newUser) => dispatch => (
 export const login = (user) => dispatch => (
   SessionApiUtil.login(user)
     .then(
-      (user) => dispatch(receiveCurrentUser(user)),
+      (user) => {
+        dispatch(receiveCurrentUser(user));
+        // return fetchTasks()(dispatch);
+      },
       (errors) => dispatch(receiveErrors(errors.responseJSON))
     )
 );

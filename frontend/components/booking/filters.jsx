@@ -42,12 +42,6 @@ class Filters extends React.Component {
   filterChangeHandler(field) {
     return (e) => {
       switch (field) {
-        // case 'date':
-        //   this.props.updateFilter(field, e.target.value);
-        //   break;
-        // case 'location':
-        //   this.props.updateFilter(field, e.target.value);
-        //   break;
         case 'rates':
           this.props.updateFilter(field, [e.values[0], e.values[1]]);
           break;
@@ -60,26 +54,19 @@ class Filters extends React.Component {
         case 'skill-moving':
           this.props.updateFilter('skill', 'moving');
           break;
-
         case 'location-SF':
           this.props.updateFilter('location', 'SF');
           break;
         case 'location-NY':
           this.props.updateFilter('location', 'NY');
           break;
-
         case 'sortOrder-rate-low':
           this.props.updateFilter('sortOrder', 'rate-low');
           break;
         case 'sortOrder-rate-high':
           this.props.updateFilter('sortOrder', 'rate-high');
           break;
-
-        // case 'skill':
-        //   this.props.updateFilter(field, e.target.value);
-        //   break;
         case 'autobook':
-          // console.log("autobook:", e.target.value, e.currentTarget.value);
           this.props.updateFilter(field, !this.props.filters.autobook);
           break;
         case 'sortOrder':

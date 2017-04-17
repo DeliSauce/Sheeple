@@ -6,15 +6,35 @@ import {Link} from 'react-router';
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {tasksFetched: false};
   }
 
   componentWillMount() {
     this.props.fetchTasks();
   }
 
-  render() {
+  componentWillReceiveProps() {
+    setTimeout(() => this.setState({tasksFetched: true}), 1000);
+  }
 
+  renderLoadingSpinner() {
+    return (
+      <div className="dashboard-tasks-container">
+        <div className="task-status-container">
+          <div className="task-status-header">Booked</div>
+        </div>
+        <div className="task-status-container">
+          <div className="task-status-header">Pending</div>
+          <div className='dashboard-loading-spinner sp-3balls'></div>
+        </div>
+        <div className="task-status-container">
+          <div className="task-status-header">Completed</div>
+        </div>
+      </div>
+    );
+  }
+
+  renderTasks() {
     let pendingTasks = [];
     let completedTasks = [];
     let bookedTasks = [];
@@ -33,12 +53,11 @@ class Dashboard extends React.Component {
             bookedTasks.push(<TaskItem key={idx} className="status-booked" deleteTask={this.props.deleteTask} task={task}/>);
           }
         }
-    );
+      );
     }
 
-    // console.log(this.props.tasks.length);
-
     if (this.props.tasks.length === 0){
+      console.log('task are empty');
       pendingTasks =
       <div className="empty-dashboard-response">
         You don't appear to have any bookings yet
@@ -47,11 +66,6 @@ class Dashboard extends React.Component {
     }
 
     return (
-      <div className="dashboard-container">
-        <div className="dashboard-header">
-          <span className="dashboard-header-title">Bookings Dashboard</span>
-        </div>
-
         <div className="dashboard-tasks-container">
           <div className="task-status-container">
             <div className="task-status-header">Booked</div>
@@ -66,7 +80,17 @@ class Dashboard extends React.Component {
             {completedTasks}
           </div>
         </div>
+    );
+  }
 
+  render() {
+    return (
+      <div className="dashboard-container">
+        <div className="dashboard-header">
+          <span className="dashboard-header-title">Bookings Dashboard</span>
+        </div>
+
+        {this.state.tasksFetched ? this.renderTasks() : this.renderLoadingSpinner()}
       </div>
     );
   }
