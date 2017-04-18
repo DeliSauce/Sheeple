@@ -83,9 +83,11 @@ class SessionForm extends React.Component {
           this.props.checkUserNameAvailability({user: {username: e.currentTarget.value}});
         }
         fieldError = 'usernameError';
-      } else if (field === 'password' && e.currentTarget.value.length === 6) {
-        fieldError = 'passwordError';
-      } else if (field === 'email') {
+      }
+      if (field === 'password') {
+      fieldError = e.currentTarget.value.length >= 6 ? 'passwordError' : '';
+      }
+      if (field === 'email') {
         fieldError = 'emailError';
       }
       if (fieldError) this.setState({[fieldError]: false});

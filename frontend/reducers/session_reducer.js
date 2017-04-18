@@ -7,10 +7,7 @@ const SessionReducer = (state = nullState, action) => {
   Object.freeze(state);
   switch(action.type) {
     case USERNAME_AVAILABILITY:
-      console.log("errors before: " + state.error + " and errors username: " + action.errors);
       let errors = merge([], action.errors, state.errors);
-      console.log("errors now: " + errors);
-      // return merge({}, nullState, {errors: errors});
       return merge({}, nullState, {errors: action.errors});
     case RECEIVE_CURRENT_USER:
       return merge({}, nullState, {currentUser: action.currentUser});

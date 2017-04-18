@@ -10,18 +10,14 @@ const mapStateToProps = (state) => ({
   errors: state.session.errors,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  // const processForm = (ownProps.loginModalStatus) ? login : signup;
-
-  return {
-    toggleSessionForm: (formType) => dispatch(toggleSessionForm(formType)),
-    clearErrors: () => dispatch(clearErrors()),
-    processLoginForm: (user) => dispatch(login(user)),
-    processSignupForm: (user) => dispatch(signup(user)),
-    loginGuest: () => dispatch(login({user: {username: "GUEST", password: "password"}})),
-    checkUserNameAvailability: (user) => dispatch(checkUserNameAvailability(user))
-  };
-};
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  toggleSessionForm: (formType) => dispatch(toggleSessionForm(formType)),
+  clearErrors: () => dispatch(clearErrors()),
+  processLoginForm: (user) => dispatch(login(user)),
+  processSignupForm: (user) => dispatch(signup(user)),
+  checkUserNameAvailability: (user) => dispatch(checkUserNameAvailability(user)),
+  loginGuest: () => dispatch(login({user: {username: "GUEST", password: "password"}})),
+});
 
 export default connect(
   mapStateToProps,

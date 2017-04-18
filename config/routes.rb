@@ -3,11 +3,12 @@ Rails.application.routes.draw do
   root "static_pages#root"
 
   namespace :api, defaults: {format: :json} do
-    resource :user, only: [:create, :show] do 
+    resource :user, only: [:create, :show] do
       collection do
         get 'checkusername'
       end
     end
+
     resource :session, only: [:create, :destroy]
     resources :taskers, only: [:index]
     resources :tasks, only: [:index, :create, :destroy]

@@ -35,40 +35,30 @@ export const receiveUsernameAvailability = (availability) => ({
 
 export const checkUserNameAvailability = (user) => dispatch => (
   UserApiUtil.checkUserName(user).then(
-    (availability) => {
-      console.log(availability);
-      dispatch(receiveUsernameAvailability(availability));
-    }
+    (errors) => dispatch(receiveUsernameAvailability(errors))
   )
 );
 
 export const signup = (newUser) => dispatch => (
-    SessionApiUtil.signup(newUser)
-    .then(
-      (user) => dispatch(receiveCurrentUser(user)),
-      (errors) => {
-        dispatch(receiveErrors(errors.responseJSON));
-        console.log("errors:",  errors);
-        console.log("errors.responseJSON:",  errors.responseJSON);
-      }
-    )
+  UserApiUtil.signup(newUser).then(
+    (user) => dispatch(receiveCurrentUser(user)),
+    (errors) => dispatch(receiveErrors(errors.responseJSON))
+  )
 );
 
 export const login = (user) => dispatch => (
-  SessionApiUtil.login(user)
-    .then(
-      (user) => {
-        dispatch(receiveCurrentUser(user));
-        // return fetchTasks()(dispatch);
-      },
-      (errors) => dispatch(receiveErrors(errors.responseJSON))
-    )
+  SessionApiUtil.login(user).then(
+    (user) => {
+      dispatch(receiveCurrentUser(user));
+      return fetchTasks()(dispatch);
+    },
+    (errors) => dispatch(receiveErrors(errors.responseJSON))
+  )
 );
 
 export const logout = () => dispatch => (
-  SessionApiUtil.logout()
-    .then(
-      (user) => dispatch(receiveCurrentUser(null)),
-      (errors) => dispatch(receiveErrors(errors.responseJSON))
-    )
+  SessionApiUtil.logout().then(
+    (user) => dispatch(receiveCurrentUser(null)),
+    (errors) => dispatch(receiveErrors(errors.responseJSON))
+  )
 );

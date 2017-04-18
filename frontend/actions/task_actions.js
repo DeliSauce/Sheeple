@@ -19,10 +19,7 @@ export const clearTasks = (task) => ({
 });
 
 export const fetchTasks = () => (dispatch) => {
-  TaskAPIUtil.fetchTasks().then((tasks) => {
-    console.log(tasks);
-    dispatch(receiveTasks(tasks));
-  });
+  TaskAPIUtil.fetchTasks().then((tasks) => dispatch(receiveTasks(tasks)));
 };
 
 export const deleteTask = (taskId) => (dispatch) => (
