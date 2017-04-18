@@ -12,7 +12,7 @@ class Api::TasksController < ApplicationController
 
   def index
     @tasks = Task.joins(:tasker).where("user_id = ?", current_user.id)
-    sleep 2
+    # sleep 2 -- test for loading spinner on the dashboard
     render :index
   end
 

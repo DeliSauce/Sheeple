@@ -1,6 +1,8 @@
 import * as SessionApiUtil from '../util/session_api_util';
+import * as UserApiUtil from '../util/user_api_util';
 import {fetchTasks} from './task_actions';
 
+export const USERNAME_AVAILABILITY = 'USERNAME_AVAILABILITY';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
@@ -26,11 +28,29 @@ export const clearErrors = () => {
   };
 };
 
+export const receiveUsernameAvailability = (availability) => ({
+  type: USERNAME_AVAILABILITY,
+  errors: availability
+});
+
+export const checkUserNameAvailability = (user) => dispatch => (
+  UserApiUtil.checkUserName(user).then(
+    (availability) => {
+      console.log(availability);
+      dispatch(receiveUsernameAvailability(availability));
+    }
+  )
+);
+
 export const signup = (newUser) => dispatch => (
     SessionApiUtil.signup(newUser)
     .then(
       (user) => dispatch(receiveCurrentUser(user)),
-      (errors) => dispatch(receiveErrors(errors.responseJSON))
+      (errors) => {
+        dispatch(receiveErrors(errors.responseJSON));
+        console.log("errors:",  errors);
+        console.log("errors.responseJSON:",  errors.responseJSON);
+      }
     )
 );
 

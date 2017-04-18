@@ -35,7 +35,7 @@ class Filters extends React.Component {
   }
 
   handleClearFilter(){
-    this.props.updateFilter('clear', 'clear');
+    this.props.updateFilter('clear');
     this.setState({date: null, minRate: 0, maxRate: 30});
   }
 

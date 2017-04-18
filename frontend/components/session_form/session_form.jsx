@@ -75,16 +75,20 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    let fieldError;
+    let fieldError = false;
     return (e) => {
+      this.setState({[field]: e.currentTarget.value});
       if (field === 'username') {
+        if (this.formType() === 'signup') {
+          this.props.checkUserNameAvailability({user: {username: e.currentTarget.value}});
+        }
         fieldError = 'usernameError';
       } else if (field === 'password' && e.currentTarget.value.length === 6) {
         fieldError = 'passwordError';
       } else if (field === 'email') {
         fieldError = 'emailError';
       }
-      this.setState({[field]: e.currentTarget.value, [fieldError]: false});
+      if (fieldError) this.setState({[fieldError]: false});
     };
   }
 

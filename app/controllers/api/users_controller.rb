@@ -8,7 +8,16 @@ class Api::UsersController < ApplicationController
       login(@user)
       render "api/users/show"
     else
+      p @user.errors.full_messages
       render json: @user.errors.full_messages, status: 422
+    end
+  end
+
+  def checkusername
+    if User.where("username = ?", user_params[:username]).length == 0
+      render json: []
+    else
+      render json: ['Username has already been taken']
     end
   end
 

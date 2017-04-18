@@ -26,7 +26,6 @@ export const changeFilter = (field, value) => {
       break;
     case 'rates':
       type = UPDATE_RATES;
-      // debugger;
       break;
     case 'skill':
       type = UPDATE_SKILL;

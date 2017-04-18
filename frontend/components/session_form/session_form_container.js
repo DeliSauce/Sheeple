@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { login, logout, signup, clearErrors} from '../../actions/session_actions';
+import { login, logout, signup, clearErrors, checkUserNameAvailability} from '../../actions/session_actions';
 import {toggleSessionForm} from '../../actions/modal_actions';
 import SessionForm from './session_form';
 
@@ -19,6 +19,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     processLoginForm: (user) => dispatch(login(user)),
     processSignupForm: (user) => dispatch(signup(user)),
     loginGuest: () => dispatch(login({user: {username: "GUEST", password: "password"}})),
+    checkUserNameAvailability: (user) => dispatch(checkUserNameAvailability(user))
   };
 };
 

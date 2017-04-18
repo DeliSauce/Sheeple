@@ -58,7 +58,6 @@ class Dashboard extends React.Component {
     }
 
     if (this.props.tasks.length === 0){
-      console.log('task are empty');
       pendingTasks =
       <div className="empty-dashboard-response">
         You don't appear to have any bookings yet
