@@ -1,7 +1,5 @@
-![sheeple-logo]
-[sheeple-logo]: ./app/assets/images/sheeple_logo.png
-[live link!][sheeple]
-[sheeple]: https://www.sheeple.co
+![sheeple-logo](./app/assets/images/sheeple_logo.png)
+[live link!](https://www.sheeple.co)
 
 
 # Sheeple
